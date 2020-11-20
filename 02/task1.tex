@@ -1,3 +1,4 @@
+Start with the definition of the continuous factorial:
 \begin{align}
     n!
     &=\int_0^\infty x^n\cdot e^{-x}\cdot dx \\
@@ -6,12 +7,21 @@
 \end{align}
 With $f(y)=-y+\log(ny)$ this can be written as
 \begin{align}
-    &=n\cdot\int_0^\infty e^{nf(y)}\cdot dy
+    &=n\cdot\int_0^\infty e^{nf(y)}\cdot dy.
 \end{align}
 The maximum of $f(y)$ is at $y_0=1$. Taylor expansion 
 around $y_0$:
 \begin{equation}
-    f(y)\approx\log(y)-1-y^2
+    f(y)\approx\log(n)-1-\frac{(y-1)^2}{2}.
 \end{equation}
-
-Hallo from Eugen
+Thus
+\begin{align}
+	n!
+    &\approx n e^{n\log(n) -n} \cdot\int_0^\infty e^{-n(y-1)^2/2}\cdot dy \notag \\
+    &= n e^{n\log(n) -n} \sqrt{\frac{\pi}{2n}}\left(1 + \text{Erf}\left(\sqrt{\frac{n}{2}}\right)\right) \notag \\
+    &\approx  \sqrt{2 \pi n} e^{n\log(n) -n} ,
+\end{align}
+where we have used Erf$(x) \approx 1$ for large $x$. Taking the logarithm yields the Stirling formula:
+\begin{align}
+    \log(n!) = n \log(n) - n + \frac{1}{2} \log(2\pi n).
+\end{align}
