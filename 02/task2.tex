@@ -1,0 +1,40 @@
+\paragraph{a) without characteristic function} \ \\ 
+\\
+Let $p_x$ and $p_y$ be Gaussian distributions with 
+parameters $\mu_x$, $\mu_y$ and $\sigma$.
+\begin{equation}
+    p_x(x)=\frac{1}{\sqrt{2\pi\sigma}}
+    \exp\bigg(-\frac{(x-\mu_x)^2}{2\sigma^2}\bigg)
+\end{equation}
+\begin{equation}
+    p_y(y)=\frac{1}{\sqrt{2\pi\sigma}}
+    \exp\bigg(-\frac{(y-\mu_y)^2}{2\sigma^2}\bigg)
+\end{equation}
+\begin{align}
+    p_z(z)
+    &=\int dx\int dy\cdot\delta(z-(x+y))\cdot p(x,y) \\
+    &=\int dx\int dy\cdot\delta(z-(x+y))\cdot p(x)\cdot p(y) \\
+    &=\frac{1}{2\pi\sigma^2}\int dx\int dy\cdot
+    \delta(z-(x+y))\cdot
+    \exp\bigg(-\frac{(y-\mu_y)^2}{2\sigma^2}\bigg)\cdot
+    \exp\bigg(-\frac{(x-\mu_x)^2}{2\sigma^2}\bigg) \\
+    &=
+    &=\frac{1}{\sqrt{4\pi\sigma^2}}\cdot
+    \exp\bigg(-\frac{(z-\mu_x-\mu_y)^2}{4\sigma^2}\bigg)
+\end{align}
+With $\mu_z=\frac{\mu_x+\mu_y}{2}$
+and $\sigma_z=\frac{\sigma}{\sqrt{2}}$, this can be 
+rewritten as
+\begin{equation}
+    p_z(z)
+    =\frac{1}{\sqrt{2\pi\sigma_z^2}}\cdot
+    \exp\bigg(-\frac{(z/2-\mu_z)^2}{2\sigma^2}\bigg)
+\end{equation}
+    % \mu_=
+    % \sigma_z=
+    % \footnote{
+    % \url{ en.wikipedia.org/wiki/Sum_of_normally_distributed_random_variables } 
+    % }
+
+\paragraph{b) with characteristic function} \ \\
+

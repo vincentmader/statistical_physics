@@ -1,0 +1,15 @@
+\begin{align}
+    n!
+    &=\int_0^\infty x^n\cdot e^{-x}\cdot dx \\
+    &=\int_0^\infty e^{-x+n\log x}\cdot dx \\
+    &=n\cdot\int_0^\infty e^{-ny+n\log(ny)}\cdot dy
+\end{align}
+With $f(y)=-y+\log(ny)$ this can be written as
+\begin{align}
+    &=n\cdot\int_0^\infty e^{nf(y)}\cdot dy
+\end{align}
+The maximum of $f(y)$ is at $y_0=1$. Taylor expansion 
+around $y_0$:
+\begin{equation}
+    f(y)\approx\log(y)-1-y^2
+\end{equation}
