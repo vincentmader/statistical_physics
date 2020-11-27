@@ -15,21 +15,35 @@ in physics.
     \begin{align}
         1
         &=\int_{-\infty}^\infty f(x)\cdot dx \\
-        &=\int_{-\infty}^\infty c\bigg[
+        &=\int_{-\infty}^\infty c\cdot\bigg[
             \frac{\gamma}{(x-x_0)^2+\gamma^2}
         \bigg]\cdot dx \\
-        &=...
+        &=\frac{c}{\gamma}\cdot\int_{-\infty}^\infty \bigg[
+            \frac{1}{(\frac{x-x_0}{\gamma})^2+1}
+        \bigg]\cdot dx \\
+        &=\frac{c}{\gamma}\cdot\int_{-\infty}^\infty \bigg[
+            \frac{1}{z^2+1}
+        \bigg]\cdot dz\ \ \ \ \ \ \ \ \ 
+        \textnormal{with } z:=\frac{x-x_0}{\gamma} \\
+        &=\frac{c}{\gamma}\cdot\bigg[\arctan(z)\bigg]^{\infty}_{-\infty} \\
+        &=\frac{c}{\gamma}\cdot(\frac{\pi}{2}-(-\frac{\pi}{2})) \\
+        &=\frac{c}{\gamma}\cdot\pi \\
+        \Rightarrow c&=\frac{\gamma}{\pi}
     \end{align}
     For the median $x_m$, we have to solve
     \begin{align}
         \frac{1}{2}
         &=\int_{-\infty}^{x_m}f(x)\cdot dx \\
-        &=\int_{-\infty}^{x_m}c\bigg[
+        &=\int_{-\infty}^{x_m}c\cdot\bigg[
             \frac{\gamma}{(x-x_0)^2+\gamma^2}
         \bigg]\cdot dx \\
-        &=...
+        &=\frac{c}{\gamma}\cdot\bigg[\arctan(z)\bigg]^{x_m}_{-\infty} \\
+        &=\frac{c}{\gamma}\cdot\bigg(\arctan(x_m)+\frac{\pi}{2}\bigg) \\
+        \Rightarrow x_m
+        &=\tan\bigg({\frac{\gamma}{2c}-\frac{\pi}{2}}\bigg)
     \end{align}
 
+\newpage
 \paragraph{b) Try to evaluate the first two moments of the distribution.
     What problem arises? Compare the situation to the Gaussian 
     distribution and comment on the implications for large derivations

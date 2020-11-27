@@ -8,19 +8,20 @@
     the new Lagrangian multiplier associated to the condition in $N$?
 } \ \\
 \\
-
-Consider the function 
-\begin{align}
-f(p_i) = - \sum_i p_i \ln p_i - \lambda_1 \left( \sum_i p_i E_i - U \right) - \lambda_2 \left( \sum_i p_i N_i - N \right).
-\end{align}
-The variation with respect to the probability distribution yields
-\begin{align}
-\delta f(p_i) = - \sum_i p_i \left( \ln p_i + 1 + \lambda_1 E_i + \lambda_2 N_i \right) \delta p_i =^{!} 0.
-\end{align}
-Which in fact yields:
-\begin{align}
-p_i = e^{- (1 + \lambda_1 E_i + \lambda_2 N_i)}.
-\end{align}
+    Consider the function 
+    \begin{align}
+    f(p_i) = - \sum_i p_i \ln p_i - \lambda_1 \left( \sum_i p_i E_i - U \right) 
+    - \lambda_2 \left( \sum_i p_i N_i - N \right).
+    \end{align}
+    The variation with respect to the probability distribution yields
+    \begin{align}
+    \delta f(p_i) = - \sum_i p_i \left( \ln p_i + 1 + 
+    \lambda_1 E_i + \lambda_2 N_i \right) \delta p_i =^{!} 0.
+    \end{align}
+    Which in fact yields:
+    \begin{align}
+    p_i = e^{- (1 + \lambda_1 E_i + \lambda_2 N_i)}.
+    \end{align}
 
 
 \paragraph{b) Rational probabilities: if one does not know the 
@@ -34,16 +35,28 @@ p_i = e^{- (1 + \lambda_1 E_i + \lambda_2 N_i)}.
     $\bar{p}_n=\frac{\mu^n}{(1+\mu)^{n+1}}$
 } \ \\
 \\
-
-Now the function would look like this:
-\begin{align}
-f(p_i) = - \sum_i p_i \ln p_i - \lambda_1 \left( \sum_n p_i n - \mu \right).
-\end{align}
-Variation with respect to $p_n$ yields
-\begin{align}
-p_n = e^{- (1 + \lambda_1 n)}.
-\end{align}
-From the normalization condition, we get:
-\begin{align}
-\sum_{n=0}^{\infty} p_n = 1 \ \ \ \longrightarrow \ \ \ \lambda_1 = \ln\left(\frac{e}{e-1}\right).
-\end{align}
+    Now the function would look like this:
+    \begin{align}
+    f(p_i)=-\sum_i p_i\ln p_i-\lambda_1\left(\sum_n p_nn-\mu\right).
+    \end{align}
+    Variation with respect to $p_n$ yields
+    \begin{align}
+    p_n = e^{- (1 + \lambda_1 n)}.
+    \end{align}
+    % From the normalization condition we get:
+    % \begin{align}
+    % \sum_{n=0}^{\infty} p_n = 1 \ \ \ \longrightarrow \ \ \ \lambda_1 = \ln\left(\frac{e}{e-1}\right).
+    % \end{align}
+    Constraint for $\mu$:
+    \begin{align}
+        \mu
+        &=\sum_n n\exp(-\lambda n+1)
+        =\frac{e^{\lambda-1}}{(e^{\lambda}-1)^2} \\
+        \Rightarrow 0
+        &=\mu(e^\lambda-1)^2-e^{\lambda-1} \\
+        &=\mu e^{2\lambda}-2\mu e^\lambda+\mu-e^{\lambda-1} \\
+        &=z^2-\bigg(2+\frac{1}{\mu e}\bigg)z+1\ \ \ \ \ \ \ 
+        \textnormal{with } z=e^\lambda
+    \end{align}
+    This should now be solvable using the quadratic formula, which unfortunately
+    does not seem to lead to the expected result.

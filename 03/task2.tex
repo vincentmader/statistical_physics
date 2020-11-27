@@ -19,49 +19,53 @@ to zero.
     its derivative should vanish at $x=\pm\infty$.
 } \ \\
 \\
-    Balance between fiction and potential force:
+    % Balance between fiction and potential force:
+    % \begin{align}
+    %     \xi v(x)
+    %     &=-\partial_x U(x) \\
+    %     \Rightarrow v(x)&=-\frac{1}{\xi}\partial_x U
+    % \end{align}
+    % Plug into \autoref{eq:fokker} and set $\dot p(x,t)=0$ to find 
+    % stationary solution:
+    % \begin{align}
+    %     \partial_x\bigg(-\frac{1}{\xi}\partial_x U\cdot p(x,t)\bigg)
+    %     &=\partial_x^2\bigg(D(x)\cdot p(x,t)\bigg) \\
+    %     &=...
+    % \end{align}
+    From the balance between friction force $\xi v$ and potential force 
+    $-\partial_xU(x)$ we can deduce
     \begin{align}
-        \xi v(x)
-        &=-\partial_x U(x) \\
-        \Rightarrow v(x)&=-\frac{1}{\xi}\partial_x U
+        \xi v(x) 
+        &= -\partial_xU(x) \notag \\
+        &= -kx \notag \\
+        \Rightarrow v(x) 
+        &= -\frac{kx}{\xi}.
     \end{align}
-    Plug into \autoref{eq:fokker} and set $\dot p(x,t)=0$ to find 
-    stationary solution:
+    Assuming $D$ to be constant, we get
     \begin{align}
-        \partial_x\bigg(-\frac{1}{\xi}\partial_x U\cdot p(x,t)\bigg)
-        &=\partial_x^2\bigg(D(x)\cdot p(x,t)\bigg) \\
-        &=...
+    	\dot{p}(x,t)&=-\partial_x\bigg(v(x)p(x,t)\bigg)+
+        \partial_x^2\bigg(D(x)p(x,t)\bigg) \notag \\
+        \dot{p}(x,t)&=\frac{k}{\xi} p(x,t) + \frac{kx}{\xi} \partial_x p(x,t) +
+        D \partial_x^2 p(x,t) .
     \end{align}
-
-From the balance between friction force $\xi v$ and potential force $-\partial_xU(x)$
-we can deduce
-\begin{align}
-\xi v(x) &= -\partial_xU(x) \notag \\\\
-\xi v(x) &= -kx \notag \\
-v(x) &= - \frac{kx}{\xi}.
-\end{align}
-Assuming $D$ to be constant, we get
-\begin{align}
-	\dot{p}(x,t)&=-\partial_x\bigg(v(x)p(x,t)\bigg)+
-    \partial_x^2\bigg(D(x)p(x,t)\bigg) \notag \\
-    \dot{p}(x,t)&=\frac{k}{\xi} p(x,t) + \frac{kx}{\xi} \partial_x p(x,t) +
-    D \partial_x^2 p(x,t) .
-\end{align}
-The stationary solution is given where $\dot{p}(x,t) = 0$. Thus
-\begin{align}
-	0 = \frac{k}{\xi D} p(x,t) + \frac{kx}{\xi D} p'(x,t) + p''(x,t).
-\end{align}
-This is the equation for the damped harmonic oscillator...
+    The stationary solution is given where $\dot{p}(x,t) = 0$. Thus
+    \begin{align}
+    	0 = \frac{k}{\xi D} p(x,t) + \frac{kx}{\xi D} p'(x,t) + p''(x,t).
+    \end{align}
+    This is the equation for the damped harmonic oscillator...
 
 
+\newpage
 \paragraph{b) Compare to the Boltzmann distribution 
     $p_s(x)\sim\exp\bigg(-\frac{U(x)}{k_BT}\bigg)$ and from this derive a 
     relation between diffusion constant $D$ and friction coefficient $\xi$.
 } \ \\
 \\
+    ...
 
 \paragraph{c) Calculate the first and second moments of the stationary
     distribution. Interpret your results in terms of physics.
 } \ \\
 \\
+    ...
 
