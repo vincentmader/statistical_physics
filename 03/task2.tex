@@ -4,6 +4,7 @@ that they are not constant, the Fokker-Planck equation reads
 \begin{equation}
     \dot{p}(x,t)=-\partial_x\bigg(v(x)p(x,t)\bigg)+
     \partial_x^2\bigg(D(x)p(x,t)\bigg)
+    \label{eq:fokker}
 \end{equation}
 To find the stationary limit, the left hand side $\dot p(x,t)$ is set 
 to zero.
@@ -18,14 +19,27 @@ to zero.
     its derivative should vanish at $x=\pm\infty$.
 } \ \\
 \\
+    Balance between fiction and potential force:
+    \begin{align}
+        \xi v(x)
+        &=-\partial_x U(x) \\
+        \Rightarrow v(x)&=-\frac{1}{\xi}\partial_x U
+    \end{align}
+    Plug into \autoref{eq:fokker} and set $\dot p(x,t)=0$ to find 
+    stationary solution:
+    \begin{align}
+        \partial_x\bigg(-\frac{1}{\xi}\partial_x U\cdot p(x,t)\bigg)
+        &=\partial_x^2\bigg(D(x)\cdot p(x,t)\bigg) \\
+        &=...
+    \end{align}
 
 \paragraph{b) Compare to the Boltzmann distribution 
-    $p_s(x)\sim\exp(-\frac{U(x)}{k_BT}$ and from this derive a relation
-    between diffusion constant $D$ and friction coefficient $\xi$.
+    $p_s(x)\sim\exp\bigg(-\frac{U(x)}{k_BT}\bigg)$ and from this derive a 
+    relation between diffusion constant $D$ and friction coefficient $\xi$.
 } \ \\
 \\
 
-\paragraph{Calculate the first and second moments of the stationary
+\paragraph{c) Calculate the first and second moments of the stationary
     distribution. Interpret your results in terms of physics.
 } \ \\
 \\
