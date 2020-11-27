@@ -52,7 +52,11 @@ to zero.
     \begin{align}
     	0 = \frac{k}{\xi D} p(x,t) + \frac{kx}{\xi D} p'(x,t) + p''(x,t).
     \end{align}
-    This is the equation for the damped harmonic oscillator...
+    This is the equation for the damped harmonic oscillator with the general solution
+    \begin{align}
+    	p(x) = C_1 e^{\lambda_1 x} + C_2 e^{\lambda_2 x}
+    \end{align}
+    with $\lambda_{1/2} = -\frac{k}{\xi D} \pm \sqrt{\frac{k^2}{\xi^2 D^2} - \frac{k}{\xi D}}$.
 
 
 \newpage
@@ -61,7 +65,12 @@ to zero.
     relation between diffusion constant $D$ and friction coefficient $\xi$.
 } \ \\
 \\
-    ...
+    We see that we get $p(x)\sim\exp\bigg(-\frac{k}{\xi D}\bigg)$. In comparison to the Boltzmann
+    distribution, one can see:
+    \begin{align}
+    \frac{U(x)}{k_BT} &= \frac{k}{\xi D} \,, \\
+    \frac{x^2}{2k_BT} &= \frac{1}{\xi D} \,.
+    \end{align}
 
 \paragraph{c) Calculate the first and second moments of the stationary
     distribution. Interpret your results in terms of physics.
