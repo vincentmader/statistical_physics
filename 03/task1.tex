@@ -53,16 +53,24 @@ in physics.
     First moment:
     \begin{align}
         \int_{-\infty}^\infty x\cdot f(x)\cdot dx
-        &=\int_{-\infty}^\infty c\bigg[
+        &=\int_{-\infty}^\infty c\cdot\bigg[
             \frac{\gamma\cdot x}{(x-x_0)^2+\gamma^2}
         \bigg]\cdot dx \\
-        &=...
+        &=\frac{c}{\gamma}\cdot\int_{-\infty}^\infty\bigg[
+            \frac{x}{(\frac{x-x_0}{\gamma})^2+1}
+        \bigg]\cdot dx
     \end{align}
     Second moment:
     \begin{align}
         \int_{-\infty}^\infty x^2\cdot f(x)\cdot dx
-        &=\int_{-\infty}^\infty c\bigg[
+        &=\int_{-\infty}^\infty c\cdot\bigg[
             \frac{\gamma\cdot x^2}{(x-x_0)^2+\gamma^2}
         \bigg]\cdot dx \\
-        &=...
+        &=\frac{c}{\gamma}\cdot\int_{-\infty}^\infty\bigg[
+            \frac{x^2}{(\frac{x-x_0}{\gamma})^2+1}
+        \bigg]\cdot dx
     \end{align}
+    The problem that arises is that both of these integrals do not converge. \\
+    \\
+    \textcolor{red}{Implications?}
+
