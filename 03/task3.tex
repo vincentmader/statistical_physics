@@ -9,9 +9,23 @@
 } \ \\
 \\
 
+Consider the function 
+\begin{align}
+f(p_i) = - \sum_i p_i \ln p_i - \lambda_1 \left( \sum_i p_i E_i - U \right) - \lambda_2 \left( \sum_i p_i N_i - N \right).
+\end{align}
+The variation with respect to the probability distribution yields
+\begin{align}
+\delta f(p_i) = - \sum_i p_i \left( \ln p_i + 1 + \lambda_1 E_i + \lambda_2 N_i \right) \delta p_i =^{!} 0.
+\end{align}
+Which in fact yields:
+\begin{align}
+p_i = e^{- (1 + \lambda_1 E_i + \lambda_2 N_i)}.
+\end{align}
+
+
 \paragraph{b) Rational probabilities: if one does not know the 
     probabilities of events, one can define so-called 
-    ratioanl probabilities $\bar{p}$ such that entropy is maximized 
+    rational probabilities $\bar{p}$ such that entropy is maximized 
     subject to the constraints imposed by the available information.
     Assume that in a certain game, a player can score any integer 
     $n=0,1...$ and it is known that the mean score is $\mu$. Use again
@@ -21,3 +35,16 @@
 } \ \\
 \\
 
+Now the function would look like this:
+\begin{align}
+f(p_i) = - \sum_i p_i \ln p_i - \lambda_1 \left( \sum_n p_i n - \mu \right).
+\end{align}
+Variation with respect to $p_n$ yields
+\begin{align}
+p_n = e^{- (1 + \lambda_1 n)}.
+\end{align}
+From the normalization condition, we get:
+\begin{align}
+\sum_{n=0}^{\infty} p_n = 1 \ \ \ \longrightarrow \ \ \ \lambda_1 = \ln\left(\frac{e}{e-1}\right).
+\end{align}
+?????

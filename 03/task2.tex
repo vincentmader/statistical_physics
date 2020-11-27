@@ -33,6 +33,27 @@ to zero.
         &=...
     \end{align}
 
+From the balance between friction force $\xi v$ and potential force $-\partial_xU(x)$
+we can deduce
+\begin{align}
+\xi v(x) &= -\partial_xU(x) \notag \\\\
+\xi v(x) &= -kx \notag \\
+v(x) &= - \frac{kx}{\xi}.
+\end{align}
+Assuming $D$ to be constant, we get
+\begin{align}
+	\dot{p}(x,t)&=-\partial_x\bigg(v(x)p(x,t)\bigg)+
+    \partial_x^2\bigg(D(x)p(x,t)\bigg) \notag \\
+    \dot{p}(x,t)&=\frac{k}{\xi} p(x,t) + \frac{kx}{\xi} \partial_x p(x,t) +
+    D \partial_x^2 p(x,t) .
+\end{align}
+The stationary solution is given where $\dot{p}(x,t) = 0$. Thus
+\begin{align}
+	0 = \frac{k}{\xi D} p(x,t) + \frac{kx}{\xi D} p'(x,t) + p''(x,t).
+\end{align}
+This is the equation for the damped harmonic oscillator...
+
+
 \paragraph{b) Compare to the Boltzmann distribution 
     $p_s(x)\sim\exp\bigg(-\frac{U(x)}{k_BT}\bigg)$ and from this derive a 
     relation between diffusion constant $D$ and friction coefficient $\xi$.
