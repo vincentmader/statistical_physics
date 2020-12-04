@@ -52,12 +52,10 @@ to zero.
     \begin{align}
     	0 = \frac{k}{\xi D} p(x) + \frac{kx}{\xi D} p'(x) + p''(x).
     \end{align}
-    This is the equation for the damped harmonic oscillator with the general solution
-    \begin{align}
-    	p(x) = C_1 e^{\lambda_1 x} + C_2 e^{\lambda_2 x}
-    \end{align}
-    with $\lambda_{1/2} = -\frac{k}{\xi D} \pm \sqrt{\frac{k^2}{\xi^2 D^2} - \frac{k}{\xi D}}$.
-
+    Ansatz: Gauss function $p \propto e^{-\lambda x^2}$. Then solve for $\lambda$ and find
+	\begin{align}
+	\lambda = \frac{k}{2D\xi}.
+	\end{align}
 
 \newpage
 \paragraph{b) Compare to the Boltzmann distribution 
@@ -65,16 +63,22 @@ to zero.
     relation between diffusion constant $D$ and friction coefficient $\xi$.
 } \ \\
 \\
-    We see that we get $p(x)\sim\exp\bigg(-\frac{k}{\xi D}\bigg)$. In comparison to the Boltzmann
+    We see that we get $p(x)\sim\exp\bigg(-\frac{k x^2}{2D\xi}\bigg)$. In comparison to the Boltzmann
     distribution, one can see:
     \begin{align}
-    \frac{U(x)}{k_BT} &= \frac{k}{\xi D} \,, \\
-    \frac{x^2}{2k_BT} &= \frac{1}{\xi D} \,.
+    \frac{U(x)}{k_BT} &= \frac{k x^2}{2D\xi} \,, \\
+    \frac{1}{2k_BT} &= \frac{1}{2D\xi} \,, \\
+    k_BT &= \xi D \,.
     \end{align}
 
 \paragraph{c) Calculate the first and second moments of the stationary
     distribution. Interpret your results in terms of physics.
 } \ \\
 \\
-    ...
-
+    First, you have to find the normalization $c$ then calculate the integrals
+    \begin{align}
+    <x> &= c \int_{-\infty}^{\infty} dx \ x e^{-\lambda x^2} \,, \\
+    <x^2> &= c \int_{-\infty}^{\infty} dx \ x^2 e^{-\lambda x^2} \,.
+    \end{align}
+	From symmetry, one can see that the first moment is zero because we integrate an anti-symmetric function over a symmetric intervall. \\
+	Carrying out the other integral yields for the second moment: $<x^2> = D\xi / k$.

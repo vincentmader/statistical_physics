@@ -30,6 +30,18 @@ in physics.
         &=\frac{c}{\gamma}\cdot\pi \\
         \Rightarrow c&=\frac{\gamma}{\pi}
     \end{align}
+    Addition: The integral 
+    \begin{align}
+    \int_{\infty}^{\infty} \frac{dx}{1+x^2}
+    \end{align}
+    can be solved beautifully with complex analysis. Notice that from the residue theorem follows
+    \begin{align}
+    \int_{\infty}^{\infty} \frac{dx}{1+x^2} = \oint \frac{dx}{(x+i)(x-i)} = 2\pi i \text{Res}\left( \frac{1}{1+x^2} , i \right) = \pi.
+    \end{align}
+    The residue is given by
+    \begin{align}
+    \text{Res}\left( \frac{1}{1+x^2} , i \right) = \lim_{x \rightarrow i} \ (x - i) \frac{1}{1+x^2} = \lim_{x \rightarrow i} \ \frac{1}{x+i} = \frac{1}{2i}.
+    \end{align}
     For the median $x_m$, we have to solve
     \begin{align}
         \frac{1}{2}
@@ -40,10 +52,11 @@ in physics.
         &=\frac{c}{\gamma}\cdot\bigg[\arctan(z)\bigg]^{x_m}_{-\infty} \\
         &=\frac{c}{\gamma}\cdot\bigg(\arctan(x_m)+\frac{\pi}{2}\bigg) \\
         \Rightarrow x_m
-        &=\tan\bigg({\frac{\gamma}{2c}-\frac{\pi}{2}}\bigg)
+        &=\tan\bigg({\frac{\gamma}{2c}-\frac{\pi}{2}}\bigg) ???
     \end{align}
+    Addition: In general, every symmetric distribution has median 0 from symmetry reasons.
 
-\newpage
+
 \paragraph{b) Try to evaluate the first two moments of the distribution.
     What problem arises? Compare the situation to the Gaussian 
     distribution and comment on the implications for large derivations

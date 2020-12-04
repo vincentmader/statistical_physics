@@ -10,17 +10,32 @@
 \\
     Consider the function 
     \begin{align}
-    f(p_i) = - \sum_i p_i \ln p_i - \lambda_1 \left( \sum_i p_i E_i - U \right) 
-    - \lambda_2 \left( \sum_i p_i N_i - N \right).
+    f(p_i) = - \sum_i p_i \ln p_i - \lambda_1 \left( \sum_i p_i - 1 \right) - \lambda_2 \left( \sum_i p_i E_i - U \right) 
+    - \lambda_3 \left( \sum_i p_i N_i - N \right).
     \end{align}
+    The Lagrangian multipliers are responsible for the respective constraints like normalization, mean energy and mean particle number.
     The variation with respect to the probability distribution yields
     \begin{align}
-    \delta f(p_i) = - \sum_i p_i \left( \ln p_i + 1 + 
-    \lambda_1 E_i + \lambda_2 N_i \right) \delta p_i =^{!} 0.
+    \delta f(p_i) = - \left( \ln p_i + 1 + 
+    \lambda_1 + \lambda_2 E_i + \lambda_3 N_i \right) \delta p_i =^{!} 0.
     \end{align}
-    Which in fact yields:
+    Which in fact yields the following for the probability distribution:
     \begin{align}
-    p_i = e^{- (1 + \lambda_1 E_i + \lambda_2 N_i)}.
+    p_i = e^{- (1 + \lambda_1 + \lambda_2 E_i + \lambda_3 N_i)}.
+    \end{align}
+    Now, apply the first constraint (normalization) to find $\lambda_1$:
+    \begin{align}
+    \sum_i p_i = e^{-(1 + \lambda_1)} Z = 1.
+    \end{align}
+    Here, we defined the partition sum $Z = \sum_i e^{- (\lambda_2 E_i + \lambda_3 N_i)}$.
+    From the other constraints we find $\lambda_2$ and $\lambda_3$. The Lagrangian multiplier for $N$ plays
+    the role of the chemical potential. One can find the analogies:
+    \begin{align}
+    \lambda_2 = \beta \,, \qquad \lambda_3 = \beta \mu \,,
+    \end{align}
+    to recover the probability distribution
+    \begin{align}
+    p_i = \frac{1}{Z} e^{-\beta(E_i + \mu N_i)} \,.
     \end{align}
 
 
@@ -35,28 +50,27 @@
     $\bar{p}_n=\frac{\mu^n}{(1+\mu)^{n+1}}$
 } \ \\
 \\
-    Now the function would look like this:
+    We follow the same procedure. Now, the function would look like this:
     \begin{align}
-    f(p_i)=-\sum_i p_i\ln p_i-\lambda_1\left(\sum_n p_nn-\mu\right).
+    f(p_i)=-\sum_i p_i\ln p_i - \lambda_1 \left( \sum_i p_i - 1 \right) - \lambda_2 \left(\sum_n p_nn-\mu\right) \,.
     \end{align}
     Variation with respect to $p_n$ yields
     \begin{align}
-    p_n = e^{- (1 + \lambda_1 n)}.
+    p_n = e^{- (1 + \lambda_1 + \lambda_2 n)} \,.
     \end{align}
-    % From the normalization condition we get:
-    % \begin{align}
-    % \sum_{n=0}^{\infty} p_n = 1 \ \ \ \longrightarrow \ \ \ \lambda_1 = \ln\left(\frac{e}{e-1}\right).
-    % \end{align}
-    Constraint for $\mu$:
+    From the normalization condition we get:
     \begin{align}
-        \mu
-        &=\sum_n n\exp(-\lambda n+1)
-        =\frac{e^{\lambda-1}}{(e^{\lambda}-1)^2} \\
-        \Rightarrow 0
-        &=\mu(e^\lambda-1)^2-e^{\lambda-1} \\
-        &=\mu e^{2\lambda}-2\mu e^\lambda+\mu-e^{\lambda-1} \\
-        &=z^2-\bigg(2+\frac{1}{\mu e}\bigg)z+1\ \ \ \ \ \ \ 
-        \textnormal{with } z=e^\lambda
+    p_n = \frac{1}{Z} e^{- \lambda_2 n} \,,
     \end{align}
-    This should now be solvable using the quadratic formula, which unfortunately
-    does not seem to lead to the expected result.
+    where $Z = \sum_n e^{- \lambda_2 n} = \frac{1}{1-e^{- \lambda_2}}$ is the geometrical series. From the constraint for $\mu$ we find:
+    \begin{align}
+        \mu = \sum_n n p_n = \frac{1}{Z} \sum_n n e^{-\lambda_2 n} = - \frac{1}{Z} \partial_{\lambda_2} \sum_n e^{-\lambda_2 n} = - \partial_{\lambda_2} \ln Z = \frac{e^{-\lambda_2}}{1-e^{-\lambda_2}} \,.
+    \end{align}
+    This can be inverted to give
+    \begin{align}
+    \lambda_2 = \ln\left(\frac{1+\mu}{\mu}\right) \,.
+    \end{align}
+    Thus, we obtain
+    \begin{align}
+    p_n = \frac{1}{Z} e^{- \lambda_2 n} = e^{- \lambda_2 n} \left(1-e^{-\lambda_2}\right) = \left(\frac{\mu}{1+\mu}\right)^n \left(1-\frac{\mu}{1+\mu}\right) = \frac{\mu^n}{(1+\mu)^{n+1}} \,.
+    \end{align}
