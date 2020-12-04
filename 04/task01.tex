@@ -1,0 +1,36 @@
+The Fokker-Planck equation for $p(x,p,t)$ reads
+\begin{align}
+\dot{p}(x,p,t) = \left( - \frac{p}{m} \partial_x + kx \partial_p + \frac{\xi}{m} + \frac{\xi}{m} p \partial_p + D_p \partial^2_p \right) p(x,p,t) \,.
+\end{align}
+Note that here $D_p$ is a diffusion constant for the momentum $p$, not for the position $x$. \\
+
+1. The stationary solution $p_s(x,p)$ is a product of two Gaussians in $x$ and $p$. Write the ansatz
+\begin{align}
+p_s(x,p) \propto e^{-\lambda_1 x^2}e^{-\lambda_2 p^2}.
+\end{align}
+Insert in the above equation and obtain
+\begin{align}
+0 &= \left( \frac{p}{m} 2\lambda_1 x - kx 2p\lambda_2 + \frac{\xi}{m} - \frac{\xi}{m} 2p^2\lambda_2 + D_p (-2\lambda_2 + 4p^2\lambda_2^2) \right) e^{-\lambda_1 x^2}e^{-\lambda_2 p^2} \,, \\
+0 &= \left( \frac{p}{m} \lambda_1 x - kx p\lambda_2 + \frac{\xi}{2m} - \frac{\xi}{m} p^2\lambda_2 + D_p (-\lambda_2 + 2p^2\lambda_2^2) \right) \,.
+\end{align}
+We notice that the constant term has to vanish independentely of the others: $\frac{\xi}{2m} - D_p \lambda_2 = 0$. From this, we can deduce
+\begin{align}
+\lambda_2 = \frac{\xi}{2mD_p} \,.
+\end{align}
+This is consistent with the condition that the terms proportional to $p^2$ have to vanish too.
+It follows that $\lambda_1$ is given by
+\begin{align}
+\lambda_1 = mk\lambda_2 = \frac{k\xi}{2D_p} \,.
+\end{align}
+And thus
+\begin{align}
+p_s(x,p) \propto e^{-\frac{k\xi x^2}{2D_p}}e^{-\frac{\xi p^2}{2mD_p}}.
+\end{align}
+
+2. Comparing the Boltzmann distribution $p_s(x,p) \propto e^{-(T(p)+U(x))/(k_B T)}$, where $T(p) = p^2/(2m)$ is the kinetic energy term, we can identify the following relations
+\begin{align}
+D_p = \xi k_B T \,, \\
+\frac{U(x)}{k_B T} = \frac{k\xi x^2}{2D_p} \,.
+\end{align}
+
+3. Calculate the first and second moments of the stationary distribution. Explain the physical meaning of your results.
