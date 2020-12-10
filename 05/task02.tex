@@ -15,71 +15,72 @@ Einstein's mass-energy relation:
 \end{equation}
 
 \subsection{Specific heat $c_V$}
-From \autoref{eq:hawking}:
-\begin{equation}
-    \Rightarrow M=\frac{\hbar c^3}{8\pi Gk_BT}
-\end{equation}
-Assumption: inner energy $U=E$. \\
-\\
-With \autoref{eq:einstein} and $c_V=\frac{\partial U}{\partial T}$ follows:
-\begin{align}
-    E&=\frac{\hbar c^5}{8\pi Gk_BT} \\
-    \Rightarrow c_V&=\frac{\partial E}{\partial T}
-    =-\frac{\hbar c^5}{8\pi Gk_BT^2}
-\end{align}
+    From \autoref{eq:hawking}:
+    \begin{equation}
+        \Rightarrow M=\frac{\hbar c^3}{8\pi Gk_BT}
+    \end{equation}
+    Assumption: inner energy $U=E$. \\
+    \\
+    With \autoref{eq:einstein} and $c_V=\frac{\partial U}{\partial T}$ follows:
+    \begin{align}
+        E&=\frac{\hbar c^5}{8\pi Gk_BT} \\
+        \Rightarrow c_V&=\frac{\partial E}{\partial T}
+        =-\frac{\hbar c^5}{8\pi Gk_BT^2}
+    \end{align}
 
 \subsection{Entropy $S$}
-To get an expression for the entropy, we first plug 
-\autoref{eq:einstein} in \autoref{eq:hawking}:
-\begin{equation}
-    T(E)=\frac{\hbar c^5}{8\pi Gk_BE}
-\end{equation}
-Next we use the definition of temperature:
-% from minium entropy principle
-\begin{equation}
-    \frac{\partial S(E)}{\partial E}:=\frac{1}{T(E)}
-    =\frac{8\pi Gk_BE}{\hbar c^5}
-\end{equation}
-Integration leads to
-\begin{equation}
-    S(E)=\frac{4\pi Gk_BE^2}{\hbar c^5}
-\end{equation}
-The integration constant is set to zero to be consistent with 
-the condition $S(M=0)\overset{!}{=}0$. \\
-\\
-Plugging first \autoref{eq:einstein} and then \autoref{eq:schwarzschild} into 
-this result leads to
-\begin{align}
-    S
-    % &=\frac{4\pi Gk_BE^2}{\hbar c^5} \\
-    % &=\frac{\hbar G}{c^3}\frac{4\pi k_BE^2}{\hbar^2 c^2} \\
-    % &=L_P\frac{4\pi k_BE^2}{\hbar^2c^2}
-    % \frac{\sqrt{\hbar G/c^3}}{\sqrt{\hbar G/c^3}}
-    &=\frac{4\pi Gk_BM^2c^4}{\hbar c^5} \\
-    &=\frac{\pi k_BR^2c}{G\hbar} \\
-    &=\frac{k_B}{4c^2}\frac{4\pi R^2}{L_P^2}
-\end{align}
-\textcolor{red}{$c^2$?} \\
-As we can see, the entropy is directly proportional the surface area of a 
-black hole measured in units of the Planck length $L_P=\sqrt{\hbar G/c^3}$.
+    To get an expression for the entropy, we first plug 
+    \autoref{eq:einstein} in \autoref{eq:hawking}:
+    \begin{equation}
+        T(E)=\frac{\hbar c^5}{8\pi Gk_BE}
+    \end{equation}
+    Next we use the definition of temperature:
+    % from minium entropy principle
+    \begin{equation}
+        \frac{\partial S(E)}{\partial E}:=\frac{1}{T(E)}
+        =\frac{8\pi Gk_BE}{\hbar c^5}
+    \end{equation}
+    Integration leads to
+    \begin{equation}
+        S(E)=\frac{4\pi Gk_BE^2}{\hbar c^5}
+    \end{equation}
+    The integration constant is set to zero to be consistent with 
+    the condition $S(M=0)\overset{!}{=}0$. \\
+    \\
+    Plugging first \autoref{eq:einstein} and then \autoref{eq:schwarzschild} 
+    into this result leads to
+    \begin{align}
+        S
+        % &=\frac{4\pi Gk_BE^2}{\hbar c^5} \\
+        % &=\frac{\hbar G}{c^3}\frac{4\pi k_BE^2}{\hbar^2 c^2} \\
+        % &=L_P\frac{4\pi k_BE^2}{\hbar^2c^2}
+        % \frac{\sqrt{\hbar G/c^3}}{\sqrt{\hbar G/c^3}}
+        &=\frac{4\pi Gk_BM^2c^4}{\hbar c^5} \\
+        &=\frac{\pi k_BR^2c}{G\hbar} \\
+        &=\frac{k_B}{4c^2}\frac{4\pi R^2}{L_P^2}
+    \end{align}
+    \textcolor{red}{$c^2$?} \\
+    As we can see, the entropy is directly proportional the surface area of a 
+    black hole measured in units of the Planck length $L_P=\sqrt{\hbar G/c^3}$.
 
 \subsection{Information storage}
-Thermodynamical entropy:
-\begin{equation}
-    S_\textnormal{t}=k_B\log{\Omega}
-    \label{}
-\end{equation}
-Information entropy ($=$ number of bits):
-\begin{equation}
-    S_\textnormal{i}=\log_2(\Omega)
-\end{equation}
-Combining the last two relations yields
-\begin{equation}
-    S_\textnormal{i}=\log_2\bigg[\exp\bigg(\frac{S_t}{k_B}\bigg)\bigg]
-\end{equation}
-\textcolor{red}{
-    TODO: calculate bit number for small black hole ($\sim1$cm) with $S_t(E(R))$
-}
+    Thermodynamical entropy:
+    \begin{equation}
+        S_\textnormal{t}=k_B\log{\Omega}
+        \label{}
+    \end{equation}
+    Information entropy ($=$ number of bits):
+    \begin{equation}
+        S_\textnormal{i}=\log_2(\Omega)
+    \end{equation}
+    Combining the last two relations yields
+    \begin{equation}
+        S_\textnormal{i}=\log_2\bigg[\exp\bigg(\frac{S_t}{k_B}\bigg)\bigg]
+    \end{equation}
+    \textcolor{red}{
+        TODO: calculate bit number for small black hole 
+        ($\sim1$cm) with $S_t(E(R))$
+    }
 
 % dS = dQ / T
 % S = k_B log(Omega)

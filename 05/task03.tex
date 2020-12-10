@@ -7,27 +7,36 @@ not matter in which sequence we take the partial derivatives for a second
 derivative like $\frac{\partial^2 E}{\partial S\partial V}$.
 
 \subsection{Derive the Maxwell relation}
-We introduce the notation $\partial_x:=\frac{\partial}{\partial x}$
-\begin{align}
-    \frac{\partial^2 E}{\partial S\partial V}
-    &=\frac{\partial^2 E}{\partial V\partial S} \\
-    \partial_S\partial_V E &=\partial_V\partial_S E \\
-    % \frac{\partial}{\partial S}\frac{\partial E}{\partial V}
-    % &=
-    % \frac{\partial}{\partial V}\frac{\partial E}{\partial S} \\
-    -\partial_S p\ \bigg|_{V,N} &= \partial_V T\ \bigg|_{S,N} 
-\end{align}
-For this, we used the fact that
-\begin{equation}
-    \partial_S E\ \bigg|_{V,N}=T
-    \ \ \ \ \ \ \textnormal{and}\ \ \ \ \ \
-    \partial_V E\ \bigg|_{S,N}=-p
-\end{equation}
-which can easiliy be verified using the fundamental equation:
-\begin{equation}
-    dE=T\cdot dS-p\cdot dV+\mu\cdot dN
-\end{equation}
-There are three Maxwell relations, one for each of the energy terms.
-
+    We introduce the notation $\partial_x:=\frac{\partial}{\partial x}$
+    \begin{align}
+        \frac{\partial^2 E}{\partial S\partial V}
+        &=\frac{\partial^2 E}{\partial V\partial S} \\
+        \partial_S\partial_V E &=\partial_V\partial_S E \\
+        % \frac{\partial}{\partial S}\frac{\partial E}{\partial V}
+        % &=
+        % \frac{\partial}{\partial V}\frac{\partial E}{\partial S} \\
+        -\partial_S p\ \bigg|_{V,N} &= \partial_V T\ \bigg|_{S,N} 
+    \end{align}
+    For this, we used the fact that
+    \begin{equation}
+        \partial_S E\ \bigg|_{V,N}=T
+        \ \ \ \ \ \ \textnormal{and}\ \ \ \ \ \
+        \partial_V E\ \bigg|_{S,N}=-p
+    \end{equation}
+    which can easiliy be verified using the fundamental equation:
+    \begin{equation}
+        dE=T\cdot dS-p\cdot dV+\mu\cdot dN
+    \end{equation}
+    There are three Maxwell relations, one for each of the energy terms.
 
 \subsection{Confirm Maxwell relation explicitly for the ideal gas}
+    The entropy of the ideal gas is given by (from the lecture)
+    \begin{equation}
+        S=k_BN\bigg\{\bigg[\bigg(\frac{V}{N}\bigg)\cdot
+        \bigg(\frac{4\pi mE}{3h^2N}\bigg)^{3/2}\bigg]+\frac{5}{2}\bigg\}
+    \end{equation}
+    \begin{itemize}
+        \item invert to get $E$
+        \item then differentiate once by $V$, once by $S$
+        \item compare
+    \end{itemize}
