@@ -5,26 +5,73 @@ considered as an ideal gas with the total energy $E$.
 \subsection{Phase space volume}
     For a single species of an ideal gas:
     \begin{equation}
-        \Omega(E,\delta E)=\frac{1}{h^{3N}N!}\cdot
-        \int_{E-\delta E\leq H(\vec q,\vec p)\leq E}
-        d\vec q d\vec p
+        \Omega(E)=\frac{1}{h^{3N}N!}\cdot
+        \int \prod_{i=1}^{3N} dq_i \int \prod_{i=1}^{3N} dp_i \ \theta\left(E - H(q_i, p_i)\right)
     \end{equation}
     For two different species with $N_1>>1$ and $N_2>>1$, 
-    the phase space volume $\Omega(E,V,N_1,N_2)$ ... \\
-    \\
-    \textcolor{red}{...}
+    the phase space volume $\Omega(E,V,N_1,N_2)$ is
+    \begin{equation}
+        \Omega(E)=\frac{V^N}{h^{3N}N_1!N_2!}\cdot
+        \int \prod_{i=1}^{3N_1} dp_i \int \prod_{j=1}^{3N_2} dp_j \ \theta\left(E - H(q_i, p_i)\right)
+    \end{equation}
+    The factorials arise from the fact that we are dealing with two independent gas species and the integral over $dq$
+    is carried out already and gives the volume $V^N$ since the Hamiltonian 
+    \begin{equation}
+    H(q_i, p_i) = \sum_{i=1}^{3N_1}\frac{p_i^2}{2m_1} + \sum_{j=1}^{3N_2}\frac{p_j^2}{2m_2}
+	\end{equation}        
+    is independent of the position.
+    At this point we can perform the momentum transformation
+    \begin{align}
+        \bar{\mathsf{p}}_i &= \frac{p_i}{2m_1} \\
+        \bar{\mathsf{p}}_j &= \frac{p_j}{2m_2}
+    \end{align}
+    to give 
+    \begin{align}
+        \Omega(E)&=\frac{V^N (2m_1)^{\frac{3N_1}{2}} (2m_2)^{\frac{3N_2}{2}}}{h^{3N}N_1!N_2!}\cdot
+        \int \prod_{i=1}^{3N} d\bar{\mathsf{p}}_i \ \theta\left(E - \sum_{i=1}^{3N}\bar{\mathsf{p}}_i^2\right) \\
+        &=\frac{V^N (2m_1)^{\frac{3N_1}{2}} (2m_2)^{\frac{3N_2}{2}}}{h^{3N}N_1!N_2!}\cdot
+        \frac{\pi^{\frac{3N}{2}} E^{\frac{3N}{2}}}{(\frac{3N}{2})!}
+    \end{align}
+    which was again just an integration over a $3N$-dimensional sphere of radius $E$. \\
+    Introducing the reduced mass $\mu = m_1 m_2 / (m_1 + m_2)$ one can find the following result
+    \begin{align}
+        \Omega(E)=\frac{V^N \pi^{\frac{3N}{2}} (2\mu E)^{\frac{3N}{2}}}{h^{3N}N!\left(\frac{3N}{2}\right)!}\cdot
+        \frac{N!}{N_1!N_2!}\left( \frac{m_1}{\mu} \right)^{\frac{3N_1}{2}}\left( \frac{m_2}{\mu} \right)^{\frac{3N_2}{2}} \,.
+    \end{align}
+    
 
 \subsection{Entropy as a function of the ratio $N_1/N_2$}
-
+	The entropy of the system will be given by
+	\begin{align}
+        S &= k_B \ln \Omega(E) \\
+        &= k_B \left[\ln\left( \frac{V^N \pi^{\frac{3N}{2}} (2\mu E)^{\frac{3N}{2}}}{h^{3N}N!\left(\frac{3N}{2}\right)!} \right)
+         + \ln\left( \frac{N!}{N_1!N_2!}\left( \frac{m_1}{\mu} \right)^{\frac{3N_1}{2}}\left( \frac{m_2}{\mu} \right)^{\frac{3N_2}{2}} \right)\right]
+    \end{align}
+    The first term corresponds to the standard result for an ideal gas of $N$ identical particles with mass $\mu$
+    \begin{equation}
+    S_{\text{id}} = k_B N \left\{ \ln\left[ \frac{V}{N} \left( \frac{4\pi\mu E}{3h^2N} \right)^{\frac{3}{2}}  \right] + \frac{5}{2} \right\} 
+    \end{equation}
+    and the second term is given by
+    \begin{equation}
+    S_{\text{mixed}} = k_B \left[ N\ln N - N_1\ln N_1 - N_2\ln N_2 + N_1 \ln\left(\frac{m_1}{\mu}\right)^{\frac{3}{2}} + N_2 \ln\left(\frac{m_2}{\mu}\right)^{\frac{3}{2}} \right]
+    \end{equation}
+    using Stirling's approximation formula. Defining the ratio $\eta = N_1/N_2$, the mixed term can be rewritten to
+    \begin{equation}
+    S_{\text{mixed}} = k_B N \left[ \frac{\eta}{1+\eta}\left( \ln\left( \frac{m_1}{\mu} \right)^{\frac{3}{2}} - \ln\frac{\eta}{1+\eta}\right) 
+    + \frac{1}{1+\eta}\left( \ln\left( \frac{m_2}{\mu} \right)^{\frac{3}{2}} - \ln\frac{1}{1+\eta}\right) \right] \,.
+    \end{equation}
+    To find the maximum entropy, we need only differentiate the mixed contribution since the identical contribution is not a function of $\eta$
+    \begin{equation}
+    \frac{\partial S}{\partial \eta} = 0 \, \, \,  \longrightarrow  \, \, \,  \eta_0 = \frac{N_1}{N_2} = \left(\frac{m_1}{m_2}\right)^{\frac{3}{2}} \,.
+    \end{equation}
+    
+    
 \subsection{Total and partial pressures}
-    Total pressure:
+    To calculate the pressure, using the equation given, we need only differentiate $S_{\text{id}}$ since $S_{\text{mixed}}$ is not a function of volume
     \begin{equation}
-        p=T\bigg(\frac{\partial S}{\partial V}\bigg)_{E,N_1,N_2}
+        p=T\bigg(\frac{\partial S_{\text{id}}}{\partial V}\bigg)_{E,N_1,N_2} = \frac{N k_B T}{V} = \frac{N_1 k_B T}{V} + \frac{N_2 k_B T}{V} = p_1 + p_2
     \end{equation}
-    Partial pressures:
-    \begin{equation}
-        p_i=...
-    \end{equation}
+    So we can see both gases contribute to the pressure according to their number of particles.
 
 \subsection{Entropy of mixing}
     Consider a situation in which the container is separated into two volumes 
@@ -33,19 +80,21 @@ considered as an ideal gas with the total energy $E$.
     thermal and mechanical equilibrium. 
 
 \paragraph{Entropy of the demixed state} \ \\
-    From the lecture:
+    From the lecture, we know the entropy for the unmixed gas:
     \begin{equation}
-        \Omega_i(E)
-        =\frac{V^{N_i}\cdot\pi^{3N_i/2}\cdot(2mE)^{3N_i/2}}
-        {h^{3N_i}\cdot N_i!\cdot(\frac{3N_i}{2}!)}
+        S = S_1 + S_2
     \end{equation}
-    The total entropy is the sum of the individual entropies:
+    with 
     \begin{align}
-        S&=S_1+S_2 \\
-         &=k_B\cdot\bigg(\log(\Omega_1)+\log(\Omega_2)\bigg) \\
-         &=k_B\cdot\log(\Omega_1\cdot\Omega_2)
+    S_1 &= k_B N_1 \left\{ \ln\left[ \frac{V_1}{N} \left( \frac{4\pi m_1 E}{3h^2N} \right)^{\frac{3}{2}}  \right] + \frac{5}{2} \right\} \,, \\
+    S_2 &= k_B N_2 \left\{ \ln\left[ \frac{V_2}{N} \left( \frac{4\pi m_2 E}{3h^2N} \right)^{\frac{3}{2}}  \right] + \frac{5}{2} \right\} \,.
     \end{align}
-    
-    \paragraph{Entropy of the mixture} \ \\
-    \\
-    \textcolor{red}{comparison}
+    Rewriting it with the reduced mass $\mu$ yields
+    \begin{align}
+    S_1 &= k_B N_1 \left\{ \ln\left[ \frac{V}{N} \left( \frac{4\pi \mu E}{3h^2N} \right)^{\frac{3}{2}}  \right] + \frac{5}{2} + \ln\left( \frac{m_1}{\mu} \right)^{\frac{3}{2}} \right\} \,, \\
+    S_2 &= k_B N_2 \left\{ \ln\left[ \frac{V}{N} \left( \frac{4\pi \mu E}{3h^2N} \right)^{\frac{3}{2}}  \right] + \frac{5}{2} + \ln\left( \frac{m_2}{\mu} \right)^{\frac{3}{2}} \right\} \,.
+    \end{align}
+    The entropy after mixing will be higher than before, the change in entropy will be
+    \begin{align}
+    \Delta S = S_{\text{id}} + S_{\text{mixed}} - S_1 - S_2 = - k_B \left( N_1 \ln\frac{N_1}{N} + N_2 \ln\frac{N_2}{N} \right) \,.
+    \end{align}
