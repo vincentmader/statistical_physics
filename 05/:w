@@ -46,18 +46,12 @@ Integration leads to
 The integration constant is set to zero to be consistent with 
 the condition $S(M=0)\overset{!}{=}0$. \\
 \\
-The surface area of a black hole...
-Plugging first \autoref{eq:einstein} and then \autoref{eq:schwarzschild} into 
-this result leads to
+The surface area of a black hole
 \begin{align}
-    S
-    % &=\frac{4\pi Gk_BE^2}{\hbar c^5} \\
-    % &=\frac{\hbar G}{c^3}\frac{4\pi k_BE^2}{\hbar^2 c^2} \\
-    % &=L_P\frac{4\pi k_BE^2}{\hbar^2c^2}
+    S(E)
+    &=\frac{4\pi Gk_BE^2}{\hbar c^5} \\
+    &=\frac{4\pi\hbar Gk_BE^2}{\hbar^2 c^5}
     % \frac{\sqrt{\hbar G/c^3}}{\sqrt{\hbar G/c^3}}
-    &=\frac{4\pi Gk_BM^2c^4}{\hbar c^5} \\
-    &=\frac{\pi k_BR^2c}{G\hbar} \\
-    &=\frac{k_B}{4c^2}\frac{4\pi R^2}{L_P^2} \\
 \end{align}
 
 
