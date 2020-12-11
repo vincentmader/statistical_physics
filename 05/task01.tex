@@ -12,18 +12,18 @@ considered as an ideal gas with the total energy $E$.
     the phase space volume $\Omega(E,V,N_1,N_2)$ is
     \begin{equation}
         \Omega(E)=\frac{V^N}{h^{3N}N_1!N_2!}\cdot
-        \int \prod_{i=1}^{3N_1} dp_i \int \prod_{j=1}^{3N_2} dp_j \ \theta\left(E - H(q_i, p_i)\right)
+        \int \prod_{i=1}^{3N_1} dp_i \int \prod_{j=3N_1+1}^{3N} dp_j \ \theta\left(E - H(q_i, p_i)\right)
     \end{equation}
     The factorials arise from the fact that we are dealing with two independent gas species and the integral over $dq$
     is carried out already and gives the volume $V^N$ since the Hamiltonian 
     \begin{equation}
-    H(q_i, p_i) = \sum_{i=1}^{3N_1}\frac{p_i^2}{2m_1} + \sum_{j=1}^{3N_2}\frac{p_j^2}{2m_2}
+    H(q_i, p_i) = \sum_{i=1}^{3N_1}\frac{p_i^2}{2m_1} + \sum_{j=3N_1+1}^{3N}\frac{p_j^2}{2m_2}
 	\end{equation}        
     is independent of the position.
     At this point we can perform the momentum transformation
     \begin{align}
-        \bar{\mathsf{p}}_i &= \frac{p_i}{2m_1} \\
-        \bar{\mathsf{p}}_j &= \frac{p_j}{2m_2}
+        \bar{\mathsf{p}}_i &= \frac{p_i}{\sqrt{2m_1}} \\
+        \bar{\mathsf{p}}_j &= \frac{p_j}{\sqrt{2m_2}}
     \end{align}
     to give 
     \begin{align}
@@ -32,7 +32,7 @@ considered as an ideal gas with the total energy $E$.
         &=\frac{V^N (2m_1)^{\frac{3N_1}{2}} (2m_2)^{\frac{3N_2}{2}}}{h^{3N}N_1!N_2!}\cdot
         \frac{\pi^{\frac{3N}{2}} E^{\frac{3N}{2}}}{(\frac{3N}{2})!}
     \end{align}
-    which was again just an integration over a $3N$-dimensional sphere of radius $E$. \\
+    which was again just an integration over a $3N$-dimensional sphere of radius $\sqrt{E}$. \\
     Introducing the reduced mass $\mu = m_1 m_2 / (m_1 + m_2)$ one can find the following result
     \begin{align}
         \Omega(E)=\frac{V^N \pi^{\frac{3N}{2}} (2\mu E)^{\frac{3N}{2}}}{h^{3N}N!\left(\frac{3N}{2}\right)!}\cdot
