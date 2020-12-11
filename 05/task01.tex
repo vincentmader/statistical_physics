@@ -8,6 +8,9 @@ considered as an ideal gas with the total energy $E$.
         \Omega(E)=\frac{1}{h^{3N}N!}\cdot
         \int \prod_{i=1}^{3N} dq_i \int \prod_{i=1}^{3N} dp_i \ \theta\left(E - H(q_i, p_i)\right)
     \end{equation}
+    % h^3 is minimum phase phase volume
+    % N! because of indistinguishable particles/states
+    % integrate over all particles' positions and momenta for which H < E
     For two different species with $N_1>>1$ and $N_2>>1$, 
     the phase space volume $\Omega(E,V,N_1,N_2)$ is
     \begin{equation}
@@ -40,9 +43,10 @@ considered as an ideal gas with the total energy $E$.
     \end{align}
     
 
+\newpage
 \subsection{Entropy as a function of the ratio $N_1/N_2$}
-	The entropy of the system will be given by
-	\begin{align}
+    The entropy of the system will be given by
+    \begin{align}
         S &= k_B \ln \Omega(E) \\
         &= k_B \left[\ln\left( \frac{V^N \pi^{\frac{3N}{2}} (2\mu E)^{\frac{3N}{2}}}{h^{3N}N!\left(\frac{3N}{2}\right)!} \right)
          + \ln\left( \frac{N!}{N_1!N_2!}\left( \frac{m_1}{\mu} \right)^{\frac{3N_1}{2}}\left( \frac{m_2}{\mu} \right)^{\frac{3N_2}{2}} \right)\right]
@@ -73,6 +77,7 @@ considered as an ideal gas with the total energy $E$.
     \end{equation}
     So we can see both gases contribute to the pressure according to their number of particles.
 
+\newpage
 \subsection{Entropy of mixing}
     Consider a situation in which the container is separated into two volumes 
     $V_1$ and $V_2$ containing only molecules of species 1 and 2, respectively. 
