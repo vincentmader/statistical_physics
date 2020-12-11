@@ -1,1 +1,32 @@
-Add this after tutorial!
+Consider an ideal gas with energy $E$, volume $V$ and particle number $N$. Use the fundamental postulate
+to show that in the microcanonical ensemble the $x$-component $p_1$ of the momentum of the first atom
+is Gaussian-distributed with variance $2mE/(3N)$. \\
+
+The fundamental postulate states that each microstate corresponding to one macrostate is equally likely in thermal equilibrium. Thus, the probability of finding the $x$-component $p_1$ of the momentum of the first atom to be a certain value $q$ is equal to
+\begin{align}
+p(q) = \frac{\#\text{ states with } p_1 = q}{\#\text{ states}}.
+\end{align}
+The number of the states is proportional to the phase space volume. The number of all possible states which correspond to the energy $E$ is given by the following phase space integral
+\begin{align}
+\#\text{ states} \propto V_{3N}(R) &= \int d^{3N}q \int d^{3N}p \, \delta\left( E - \sum_{i=1}^{3N} \frac{p_i^2}{2m} \right) \\
+&= V^{3N} \int p^{3N-1} dp \int d\Omega_{3N} \, \frac{m}{\sqrt{2mE}} \, \delta\left( p - \sqrt{2mE} \right) \\
+&\approx V^{3N} \cdot \frac{\pi^{\frac{3N}{2}}(2mE)^{\frac{3N}{2}}}{\Gamma\left( \frac{3N}{2} \right)} \,,
+\end{align}
+where we used the properties of the delta function
+\begin{align}
+\delta(f(x)) = \sum_{x_0: f(x_0) = 0} \frac{\delta(x-x_0)}{\vert f'(x_0)\vert}
+\end{align}
+and the fact that for large $N$, the volume of a $3N$-dimensional hypersphere with radius $R = \sqrt{2mE}$ is almost completely on its surface. For a better explaination, see \url{https://homepage.univie.ac.at/franz.vesely/sp_english/sp/node15.html}. \\
+By constraining $p_1 = q$, we go from a $3N$-dimensional hypersurface to a $(3N-1)$-dimensional hypersurface. So we have
+\begin{align}
+p(q) = \frac{V_{3N-1}(R')}{V_{3N}(R)} \propto \frac{R'^{3N-1}}{R^{3N}}.
+\end{align}
+From $E = \frac{q^2}{2m} + \sum_{i=2}^{3N} \frac{p_i^2}{2m}$, we see that $R' = \sqrt{2mE - q^2}$ and thus
+\begin{align}
+p(q) &\propto \frac{1}{\sqrt{2mE-q^2}} \left( 1-\frac{q^2}{2mE} \right)^{\frac{3N}{2}} \\
+&\approx \frac{1}{\sqrt{2mE}} \left( \exp\left(-\frac{q^2}{2mE}\right) \right)^{\frac{3N}{2}} \\
+&\propto e^{- \frac{3Nq^2}{4mE}} \,.
+\end{align}
+We used the approximation that the momentum of the single particle is much smaller than the total energy $q^2 \ll 2mE$. This is a Boltzmann distribution with variance $\sigma^2 = \frac{2mE}{3N}$. \\
+
+Note: This is just a sketch. A lot of details are skipped but you get the idea how to do it.

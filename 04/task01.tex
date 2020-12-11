@@ -26,6 +26,10 @@ And thus
 \begin{align}
 p_s(x,p) \propto e^{-\frac{k\xi x^2}{2D_p}}e^{-\frac{\xi p^2}{2mD_p}}.
 \end{align}
+This is a product of two Gaussians with $\sigma_x^2 = \frac{D_p}{k\xi}$ and $\sigma_p^2 = \frac{m D_p}{\xi}$. The normalization can be found easily:
+\begin{align}
+p_s(x,p) = \frac{1}{2\pi \sigma_x \sigma_p} e^{-\frac{x^2}{2\sigma_x}}e^{-\frac{p^2}{2\sigma_p}}.
+\end{align}
 
 2. Comparing the Boltzmann distribution $p_s(x,p) \propto e^{-(T(p)+U(x))/(k_B T)}$, where $T(p) = p^2/(2m)$ is the kinetic energy term, we can identify the following relations
 \begin{align}
@@ -33,4 +37,5 @@ D_p = \xi k_B T \,, \\
 \frac{U(x)}{k_B T} = \frac{k\xi x^2}{2D_p} \,.
 \end{align}
 
-3. Calculate the first and second moments of the stationary distribution. Explain the physical meaning of your results.
+3. Calculate the first and second moments of the stationary distribution. Explain the physical meaning of your results. \\
+The first momenta correspond to the means $\mu_x$ and $\mu_p$ and are zero. And the second momenta are therefore the variances $\sigma_x$ and $\sigma_p$.
