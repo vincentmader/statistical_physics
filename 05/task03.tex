@@ -29,14 +29,85 @@ derivative like $\frac{\partial^2 E}{\partial S\partial V}$.
     \end{equation}
     There are three Maxwell relations, one for each pair of the energy terms.
 
+\newpage
 \subsection{Confirm Maxwell relation explicitly for the ideal gas}
-    The entropy of the ideal gas is given by (from the lecture)
+    From the lecture we know that the entropy of an ideal gas is given by 
     \begin{equation}
         S=k_BN\bigg\{\bigg[\bigg(\frac{V}{N}\bigg)\cdot
         \bigg(\frac{4\pi mE}{3h^2N}\bigg)^{3/2}\bigg]+\frac{5}{2}\bigg\}
     \end{equation}
-    \begin{itemize}
-        \item invert to get $E$
-        \item then differentiate once by $V$, once by $S$
-        \item compare
-    \end{itemize}
+    Rearrange for $E$ and define $C:=\frac{3h^2N}{4\pi k_Bm}$
+    \begin{align}
+        E&=
+        \frac{3h^2N}{4\pi m}\cdot
+        \bigg[\frac{N}{V}\cdot
+        \bigg(\frac{S}{k_BN}-\frac{5}{2}
+        \bigg)\bigg]^{2/3} \\
+        &=
+        C\cdot
+        \bigg[\bigg(\frac{S}{V}-\frac{5}{2}Nk_B
+        \bigg)\bigg]^{2/3}
+    \end{align}
+    Differentiate both for volume and entropy:
+    \begin{align}
+        \pder{}{S}\pder{E}{V}     
+        &=\pder{}{S}\bigg[
+            \frac{2C}{3}\cdot
+            \bigg(\frac{S}{V}-\frac{5}{2}Nk_B\bigg)^{-1/3}
+            \cdot\bigg(-\frac{S}{V^2}\bigg)
+        \bigg] \\
+        &=-\frac{2C}{3V^2}\cdot\pder{}{S}\bigg[
+            \bigg(\frac{S}{V}-\frac{5}{2}Nk_B\bigg)^{-1/3}
+            \cdot S
+        \bigg] \\
+        &=-\frac{2C}{3V^2}\cdot\pder{}{S}\bigg[
+            \bigg(\frac{S}{VS^3}-\frac{5Nk_B}{2}\frac{1}{S^3}\bigg)^{-1/3}
+        \bigg] \\
+        % &=-\frac{2C}{3V^2}\cdot\bigg(
+        %     \frac{S}{VS^3}-\frac{5Nk_B}{2}\frac{1}{S^3}
+        % \bigg)^{-4/3}\cdot\bigg(
+        %     \frac{-2}{VS^3}-\frac{-3\cdot 5Nk_B}{2S^4}
+        % \bigg) \\
+        &=\frac{2C}{9V^2}\cdot\bigg(
+            \frac{1}{VS^2}-\frac{5Nk_B}{2}\frac{1}{S^3}
+        \bigg)^{-4/3}\cdot\bigg(
+            \frac{-2}{VS^3}
+        \bigg) \\
+        &=-\frac{4C}{9V^2}\cdot\bigg(
+            \frac{S}{V}-\frac{5}{2}Nk_B
+        \bigg)^{-4/3}\cdot S^4\cdot\frac{1}{VS^3} \\
+        &=-\frac{4C}{9}\cdot\frac{S}{V^3}\cdot\bigg(
+            \frac{S}{V}-\frac{5}{2}Nk_B
+        \bigg)^{-4/3}
+    \end{align}
+    \begin{align}
+        \pder{}{V}\pder{E}{S}     
+        &=\pder{}{V}\bigg[
+            \frac{2C}{3}\cdot
+            \bigg(\frac{S}{V}-\frac{5}{2}Nk_B\bigg)^{-1/3}
+            \cdot\frac{1}{V}
+        \bigg] \\
+        % &=\frac{2C}{3}\cdot\pder{}{V}\bigg[
+        %     \bigg(\frac{S}{V}-\frac{5}{2}Nk_B\bigg)^{-1/3}
+        %     \cdot \frac{1}{V}
+        % \bigg] \\
+        &=\frac{2C}{3}\cdot\pder{}{V}\bigg[
+            \bigg(SV^2-\frac{5Nk_B}{2}V^3\bigg)^{-1/3}
+        \bigg] \\
+        % &=\frac{2C}{3S}\cdot\bigg(
+        %     \frac{SV^3}{V}-\frac{5Nk_B}{2}V^3
+        % \bigg)^{-4/3}\cdot\bigg(
+        %     2SV-\frac{3\cdot5Nk_BV^2}{2}
+        % \bigg) \\
+        &=-\frac{4C}{9}\cdot\bigg(
+            SV^2-\frac{5Nk_B}{2}V^3
+        \bigg)^{-4/3}\cdot SV \\
+        &=-\frac{2C}{9}\cdot\bigg(
+            \frac{S}{V}-\frac{5}{2}Nk_B
+        \bigg)^{-4/3}\cdot\frac{1}{V^4}\cdot2SV \\
+        &=-\frac{4C}{9}\cdot\frac{S}{V^3}\cdot\bigg(
+            \frac{S}{V}-\frac{5}{2}Nk_B
+        \bigg)^{-4/3}
+    \end{align}
+    Both leads to the same outcome, so
+    Maxwell's relations for $S$ and $V$ do in fact hold for the ideal gas.
