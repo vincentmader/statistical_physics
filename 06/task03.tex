@@ -7,13 +7,26 @@ to the open state when all units to its left are already open.
     \\
     Definition of partition sum:
     \begin{equation}
-        Z=\sum_i\exp(-\beta E_i)
+        Z=\sum_0^N\Omega_i\exp(-\beta E_i)
         \ \ \ \ \ \ \ \textnormal{with }
         \beta:=\frac{1}{k_BT}
+    \end{equation}
+    For each number $i$ of open bonds, there is only a single possible state 
+    (due to the fact that a given unit can only switch to the open state if 
+    all units to its left are open), thus $\Omega_i=1$. The energy of a given 
+    state with $i$ open bonds is given by $E_i=\varepsilon\cdot i$. The 
+    partition sum can then be written as
+    \begin{equation}
+        Z=\sum_{i=1}^N\exp(-\beta E_i)
     \end{equation}
 
 \paragraph{b) Determine the average number of open units. Discuss the limit 
     $\beta_\varepsilon>>1$. \textit{(2 points)}} \ \\
     \\
     ...
+    \begin{equation}
+        \langle N\rangle 
+        =\sum_{i=1}^N\frac{N\cdot\exp(-\beta E_i)}{Z}
+    \end{equation}
+
  

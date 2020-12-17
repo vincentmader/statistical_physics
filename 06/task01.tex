@@ -14,12 +14,14 @@ using the microcanonical ensemble.
     % contour length L_0=Na
     % effective/projected length L (here: called X)
     Number of different states for given $N_+$ and $N+-$:
-    \begin{equation}
-        \Omega=\frac{N!}{N_+!N_-!}
-    \end{equation}
+    \begin{align}
+        \Omega_X
+        &=\frac{N!}{N_+!\cdot N_-!} \\
+        &=...
+    \end{align}
     Partition sum:
     \begin{equation}
-        Z=\Omega\cdot\sum_{X=0}^{Na}\exp(-\beta E_X)
+        Z=\sum_{X=-Na}^{Na}\Omega_X\cdot\exp(-\beta E_X)
         \ \ \ \ \ \ \ \textnormal{with }
         E_X=-FX
     \end{equation}
@@ -33,13 +35,14 @@ using the microcanonical ensemble.
         \item $\Rightarrow$ relationship between force and length $X$
     \end{itemize}
     ...
-    \begin{equation}
-        F=k_BT\cdot\frac{L}{Na^2} \textcolor{red}{\ \ \ \ (?)}
-    \end{equation}
 
 \paragraph{b) Show that your result is identical to the one in the lecture.
     Discuss the limits $Fa<<k_BT$ and $Fa>>k_BT$. (\textit{2 points})
 } \ \\
     \\
     ...
+    \begin{equation}
+        F\approx-k_BT\cdot\frac{L}{Na^2}
+    \end{equation}
+    \red{(fuer kleine Auslenkungen)}
 

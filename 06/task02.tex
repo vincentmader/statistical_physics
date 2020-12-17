@@ -8,9 +8,21 @@ in the lecture.
     resulting heat capacity. (\textit{4 points})
 } \ \\
     \\
+    The specific heat is given by
     \begin{equation}
         c_v(T)
-        =\frac{9Nk_B}{u^3_m}\cdot\int_0^{u_m}\frac{e^uu^4}{(e^u-1)^2}\cdot\dd u
+        =\frac{9Nk_B}{u^3_m}\cdot\int_0^{u_m}
+        \frac{e^u\cdot u^4}{(e^u-1)^2}\cdot\dd u
+        \ \ \ \ \ \ \textnormal{with }
+        u:=\beta\hbar\omega=\frac{\hbar\omega}{k_BT}
+        =\frac{\hbar\omega}{k_BT_D}\cdot\frac{T_D}{T}
+    \end{equation}
+    This integral can not be solved analytically, which is why we approximate
+    the integrand via Taylor expansion up to the second order for small $u$,
+    i.e. for large $T$:
+    \begin{equation}
+        \frac{e^u\cdot u^4}{(e^u-1)^2}
+        \approx u^2+\frac{u^4}{12}+\frac{x^6}{240}
     \end{equation}
 
 \paragraph{b) \textit{Number of phonons:} Write the mean number of phonons 
@@ -19,4 +31,19 @@ in the lecture.
     and high temperatures. (\textit{4 points})
 } \ \\
     \\
-    ...
+    Energy:
+    \begin{align}
+        E
+        &=-\partial_\beta Z\log Z \\
+        &=\sum_\textnormal{modes}\hbar\omega
+        \bigg(\frac{1}{e^{\beta\hbar\omega-1}}+\frac{1}{2}\bigg) \\
+        &\overset{!}{=}\sum_\textnormal{modes}\hbar\omega
+        \bigg(N+\frac{1}{2}\bigg)
+    \end{align}
+    Particle number:
+    \begin{align}
+        N
+        &=\sum_\textnormal{modes}
+        \frac{1}{e^{\beta\hbar\omega-1}} \\
+        &=...
+    \end{align}  % see p.82 in script
