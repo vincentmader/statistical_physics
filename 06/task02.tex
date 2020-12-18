@@ -1,4 +1,4 @@
-Consider the Devye model for the specific heat of a crystal as discussed 
+Consider the Debye model for the specific heat of a crystal as discussed 
 in the lecture.
 
 \paragraph{a) \textit{Corrections to classical limit:} In the lecture it was 
@@ -15,14 +15,27 @@ in the lecture.
         \frac{e^u\cdot u^4}{(e^u-1)^2}\cdot\dd u
         \ \ \ \ \ \ \textnormal{with }
         u:=\beta\hbar\omega=\frac{\hbar\omega}{k_BT}
-        =\frac{\hbar\omega}{k_BT_D}\cdot\frac{T_D}{T}
+        =\frac{\hbar\omega}{k_BT_D}\cdot\frac{T_D}{T} \,,
     \end{equation}
+    where $u_m = \beta\hbar\omega_D = T_D/T$ because $T_D = \hbar\omega_D/k_B$.
     This integral can not be solved analytically, which is why we approximate
     the integrand via Taylor expansion up to the second order for small $u$,
     i.e. for large $T$:
     \begin{equation}
         \frac{e^u\cdot u^4}{(e^u-1)^2}
-        \approx u^2+\frac{u^4}{12}+\frac{x^6}{240}
+        \approx u^2+\frac{u^4}{12}+\frac{u^6}{240} \,.
+    \end{equation}
+    Thus, the specific heat can be approximated by
+    \begin{equation}
+        c_v(T)
+        \approx\frac{9Nk_B}{u^3_m}\cdot\int_0^{u_m}
+        u^2+\frac{u^4}{12}+\frac{u^6}{240}\cdot\dd u
+        = 3Nk_B\cdot\left[1+\frac{1}{20}\left(\frac{T_D}{T}\right)^2+\frac{1}{560}\left(\frac{T_D}{T}\right)^4\right] \,.
+    \end{equation}
+    With the formula $c_v(T) = \dd E/\dd T$, we find for the energy corrections
+    \begin{equation}
+        E
+        = 3Nk_B\cdot\left[T-\frac{1}{20}\frac{T_D^2}{T}-\frac{1}{1680}\frac{T_D^4}{T^3}\right] \,.
     \end{equation}
 
 \paragraph{b) \textit{Number of phonons:} Write the mean number of phonons 
@@ -31,19 +44,28 @@ in the lecture.
     and high temperatures. (\textit{4 points})
 } \ \\
     \\
-    Energy:
+    In the script, we had the following formula for the mean energy:
     \begin{align}
         E
-        &=-\partial_\beta Z\log Z \\
-        &=\sum_\textnormal{modes}\hbar\omega
-        \bigg(\frac{1}{e^{\beta\hbar\omega-1}}+\frac{1}{2}\bigg) \\
-        &\overset{!}{=}\sum_\textnormal{modes}\hbar\omega
-        \bigg(N+\frac{1}{2}\bigg)
+        =\sum_\textnormal{modes}\hbar\omega
+        \bigg(\frac{1}{e^{\beta\hbar\omega-1}}+\frac{1}{2}\bigg)
+        \overset{!}{=}\hbar\omega
+        \bigg(N+\frac{1}{2}\bigg) \,.
     \end{align}
-    Particle number:
+    We conclude that the formula for the mean particle number will be given by:
     \begin{align}
         N
-        &=\sum_\textnormal{modes}
-        \frac{1}{e^{\beta\hbar\omega-1}} \\
-        &=...
+        =\sum_\textnormal{modes}
+        \frac{1}{e^{\beta\hbar\omega-1}}
+        = 3N\int_0^{\omega_D} \dd\omega \ \frac{3\omega^2}{\omega_D^3}\frac{1}{e^{\beta\hbar\omega}-1} \,.
     \end{align}  % see p.82 in script
+    For low $T$ (large $\beta$):
+    \begin{align}
+        N
+        &\approx 3N\int_0^{\omega_D} \dd\omega \ \frac{3\omega^2}{\omega_D^3}\frac{1}{e^{\beta\hbar\omega}} \ \longrightarrow 0 \,.
+    \end{align}
+    For large $T$ (small $\beta$):
+    \begin{align}
+        N
+        &\approx 3N\int_0^{\omega_D} \dd\omega \ \frac{3\omega^2}{\omega_D^3}\frac{1}{\beta\hbar\omega} = \frac{9NT}{2T_D} \,.
+    \end{align}

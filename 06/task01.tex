@@ -8,22 +8,42 @@ using the microcanonical ensemble.
     configuration). Note that the polymer is "ideal", i.e. the distribution of 
     bonds does not change the energy of the chain in the force-free case;
     in turn, under an external force $F$ the energy of this system is given by 
-    $E=-FX$.
+    $E(X)=-FX$.
 } \ \\
     \\
-    % contour length L_0=Na
-    % effective/projected length L (here: called X)
-    Number of different states for given $N_+$ and $N+-$:
-    \begin{align}
-        \Omega_X
-        &=\frac{N!}{N_+!\cdot N_-!} \\
-        &=...
-    \end{align}
-    Partition sum:
+    The partition sum for the canonical ensemble is given by 
     \begin{equation}
-        Z=\sum_{X=-Na}^{Na}\Omega_X\cdot\exp(-\beta E_X)
-        \ \ \ \ \ \ \ \textnormal{with }
-        E_X=-FX
+        Z=\sum_i e^{-\beta E_i}
+        \,, \ \ \ \ \ \ \textnormal{with }
+        \beta:=\frac{1}{k_BT} \,.
+    \end{equation}
+    The sum is performed over all configurations $i$ with energy $E_i$.
+    Define the length of the polymer as $L = Na$ and the effective length
+    of the polymer,
+    \begin{equation}
+    X=\sum_ix_i=(N_+ - N_-)a=(2N_+ - N)a \,,
+	\end{equation}        
+    where $N_+$ corresponds
+    to the number of monomers with $x_i=+a$ and $N_-$ corresponds
+    to the number of monomers with $x_i=-a$. We used the condition $N=N_+ + N_-$. \\
+    We need to take into account that there are
+    \begin{align}
+        \Omega(X)
+        =\frac{N!}{N_+! N_-!} = \binom{N}{N_+}
+    \end{align}
+    different configurations that lead to the same length $X$.
+    Thus, the partition sum is given by
+    \begin{equation}
+        Z=\sum_X\Omega(X) e^{-\beta E(X)}
+        =\sum_{i=0}^N \binom{N}{i} e^{-(N - 2i) \beta F a} = \left(e^{\beta F a} + e^{-\beta F a}\right)^N \,.
+    \end{equation}
+    In the last step, we used the binomial theorem,
+    \begin{equation}
+        (x+y)^n = \sum_{i=0}^n \binom{n}{i} x^{n-i} y^i \,,
+    \end{equation}
+    and set $x = e^{-\beta F a}$ and $y = e^{\beta F a}$. Therefore, the partition sum is given by
+    \begin{equation}
+        Z=2^N \cosh\left( \beta F a \right)^N \,.
     \end{equation}
     Thermodynamical free energy:
     \begin{equation}
