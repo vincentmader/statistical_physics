@@ -12,7 +12,7 @@ def F(X):
 def entropy(X):
 
     foo = F(X) * a / (kB * T)
-    bar = log(2 * cosh(foo)) - tanh(foo) * F(X) * a / (kB * T)
+    bar = log(2 * cosh(foo)) - tanh(foo) * foo
 
     return kB * N * bar
 
@@ -27,4 +27,6 @@ plt.xticks(
 )
 plt.xlim(0, N)
 plt.ylim(0, 1)
+plt.xlabel('$X / L_0$')
+plt.ylabel(f'$S / (N \cdot k_B)$')
 plt.savefig('../figures/entropy.pdf')

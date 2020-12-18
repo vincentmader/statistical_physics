@@ -107,14 +107,16 @@ using the microcanonical ensemble.
     ... \\
     \\
     \textbf{...} \\
-    free energy:
+
+    \newpage \noindent
+    To further check our results, we can calculate the free energy
     \begin{align}
         F
         &=-k_BT\cdot\ln(Z) \\
         &=-k_BTN\cdot\ln\bigg(2\cosh(\beta Fa)\bigg) \\
         &=-k_BTN\cdot\ln\bigg(2\cosh\bigg(\frac{Fa}{k_BT}\bigg)\bigg) \\
     \end{align}
-    entropy:
+    and from this the entropy
     \begin{align}
         S
         &=-\bigg(\frac{\partial F}{\partial T}\bigg)_{V,N} \\
@@ -125,9 +127,11 @@ using the microcanonical ensemble.
         &=k_BN\cdot\bigg\{\ln\bigg[2\cosh\bigg(\frac{Fa}{k_BT}\bigg)\bigg]
         -\tanh\bigg(\frac{Fa}{k_BT}\bigg)\cdot\frac{Fa}{k_BT}\bigg\} \\
     \end{align}
-
+    Plotting the entropy as a function of $\frac{X}{L_0}$ gives the following 
+    plot:
     \begin{figure}[h!]
         \centering
-        \includegraphics[width=\textwidth]{./figures/entropy.pdf}
+        \includegraphics[width=.8\textwidth]{./figures/entropy.pdf}
     \end{figure} \ \\ 
+    This is what we would expect from what we have already seen in the lecture.
 
