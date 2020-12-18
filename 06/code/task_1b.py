@@ -2,19 +2,23 @@ import matplotlib.pyplot as plt
 from numpy import log, cosh, tanh, linspace, logspace
 
 
-kB, N, F, a = 1, 1, 1, 1
+kB, N, a, T = 1.38e-23, 1e4, 1, 1e4
 
 
-def entropy(T):
-
-    foo = F * a / (kB * T)
-    bar = kB * N * log(2 * cosh(foo)) - tanh(foo) * N * F * a / T
-
-    return bar
+def F(X):
+    return -X / (N * a**2) * kB * T
 
 
-T = linspace(1, 1e2, 1000)
-S = entropy(T)
+def entropy(X):
 
-plt.plot(T, S)
+    foo = F(X) * a / (kB * T)
+    bar = log(2 * cosh(foo)) - tanh(foo) * F(X) * a / (kB * T)
+
+    return kB * N * bar
+
+
+X = linspace(0, 1, 1000)
+S = entropy(X) / (kB * N)
+
+plt.plot(X, S)
 plt.savefig('../figures/entropy.pdf')
