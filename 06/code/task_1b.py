@@ -1,14 +1,15 @@
 import matplotlib.pyplot as plt
+import numpy as np
 from numpy import log, cosh, tanh, linspace, logspace
 
 
-kB, N, a, T = 1.38e-23, 1e7, 1, 1e4
+kB, N, a, T = 1.38e-23, 1e3, 1, 1e10
 E = 1
 
 
 def F(X):
-    return -E / X
-    # return -X / (N * a**2) * kB * T
+    # return -E / X
+    return -X / (N * a**2) * kB * T
 
 
 def entropy(X):
@@ -19,7 +20,7 @@ def entropy(X):
     return kB * N * bar
 
 
-X = linspace(1, N * a, 1000)
+X = linspace(1, N * a, 10000, dtype=np.float128)
 S = entropy(X)
 
 plt.plot(X, S / (kB * N))
