@@ -66,7 +66,7 @@ Einstein's mass-energy relation:
 \subsection{Information storage}
     Thermodynamical entropy:
     \begin{equation}
-        S_\textnormal{t}=k_B\log{\Omega}
+        S_\textnormal{t}=k_B\ln{\Omega}
         \label{}
     \end{equation}
     Information entropy ($=$ number of bits):
@@ -79,7 +79,16 @@ Einstein's mass-energy relation:
     \end{equation}
     For a small black hole ($R\approx 1$cm), one gets for the number of bits
     \begin{equation}
-        S_\textnormal{i} \approx 10^{66} \,.
+        S_\textnormal{i} \approx \ln{\Omega} \approx 10^{66} \,.
+    \end{equation}
+    Addition: One can also think about this in the following way:\\
+    The thermodynamical entropy for a bit (two-state system) is given by
+    \begin{equation}
+        S_\textnormal{bit} = k_B \ln 2 \,.
+    \end{equation}
+    Thus, the number of bits is given by
+    \begin{equation}
+        \# \textnormal{bits} = \frac{S_t}{S_\textnormal{bit}} = \frac{\ln{\Omega}}{\ln 2} \approx 10^{66} \,.
     \end{equation}
 
 % dS = dQ / T
