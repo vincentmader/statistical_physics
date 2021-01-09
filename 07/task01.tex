@@ -22,3 +22,42 @@ phonons.
     low temperatures. \textit{(5 points)}
 } \ \\
 \\
+According to the Debye model, the modes are counted in the following way:
+\begin{equation}
+	\sum_{\text{modes}} (...) = 3N \int_0^{\infty} \dd\omega \, D(\omega) \, (...) \,,
+\end{equation}
+Thus, the energy is given by
+\begin{equation}
+	E = \sum_{\text{modes}} \hbar \omega \left( \frac{1}{e^{\beta\hbar\omega}-1} - \frac{1}{2} \right) 
+	  = E_0 + 3N \int_0^{\infty} \dd\omega \, D(\omega) \, \frac{\hbar\omega}{e^{\beta\hbar\omega}-1} \,.
+\end{equation}
+The specific heat is given by
+\begin{align}
+	c_v(T) &= \frac{\partial E}{\partial T}
+			= \frac{3\hbar^2N}{k_B T^2} \int_0^{\infty} \dd\omega \, D(\omega) \, 
+			  \frac{e^{\beta\hbar\omega} \, \omega^2}{\left(e^{\beta\hbar\omega}-1\right)^2} \notag \\
+		   &= \frac{3\hbar^2N}{k_B T^2} \int_0^{\infty} \dd\omega \, 
+		      \left[ D_\textnormal{D}(\omega)+\delta(\omega-2\omega_\textnormal{D}) \right] \, 
+			  \frac{e^{\beta\hbar\omega} \, \omega^2}{\left(e^{\beta\hbar\omega}-1\right)^2} \notag \\
+		   &= \frac{9Nk_B}{u_m^3} \int_0^{u_m} \dd u \, \frac{e^u \, u^4}{\left(e^u-1\right)^2}
+			   + \frac{12\hbar^2N}{k_B T^2}  
+			  \frac{e^{2\beta\hbar\omega_D} \, \omega_D^2}{\left(e^{2\beta\hbar\omega_D}-1\right)^2} \,,
+\end{align}
+where the first term is well known from the lecture and $u_m = \beta k_B T_D$ with the Debye 
+temperature $T_D$ and $\omega_D = k_B T_D / \hbar$. The second term approximately describes the optical phonons. \\
+\\
+High temperatures: \\
+\\
+We know that the first term becomes $c_{v,\text{D}}(T) \approx 3Nk_B$. The second term can be approximated by
+$c_{v,\delta}(T) \approx 3Nk_B$. Thus
+\begin{equation}
+	c_{v}(T) \approx 6Nk_B \,.
+\end{equation}
+Low temperatures: \\
+\\
+We know that the first term becomes $c_{v,\text{D}}(T) \approx \frac{12}{5} \pi^4Nk_B (T/T_D)^3$. 
+The second term can be approximated by
+$c_{v,\delta}(T) \approx 0$. Thus
+\begin{equation}
+	c_{v}(T) \approx \frac{12\pi^4}{5} N k_B \left( \frac{T}{T_D} \right)^3 \,.
+\end{equation}

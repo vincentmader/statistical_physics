@@ -19,16 +19,55 @@ reservoir with temperature $T$ and chemical potential $\mu$.
     \textit{(2 points)}
 } \ \\
 \\
+The grand canonical partition sum is defined as
+\begin{equation}
+	Z_G = \sum_i e^{-\beta(E_i - \mu N_i)} \,.
+\end{equation}
+In our case, this is a sum over all states $i$ with unoccupied sites, only once 
+occupied sites, only twice occupied sites and a mixture of once and
+twice occupied sites.
+Since the $N$ sites do not interact, the grand canonical partition sum
+can be calculated by
+\begin{equation}
+	Z_G  = z_G^N \,,
+\end{equation}
+where $z_G$ is the single particle partition sum,
+\begin{equation}
+	z_G = 1 + e^{-\beta(\varepsilon_1 - \mu)} + \sum_{\nu=0}^{\infty} 
+		e^{-\beta(\varepsilon_2 + \nu\hbar\omega - 2\mu)} \,,
+\end{equation}
+because one site can be either unoccupied, occupied once or occupied
+twice. When the site is occupied twice, there are many vibrational modes
+with $\nu=0,1,2,...$. Thus, we have
+\begin{equation}
+	Z_G = \left( 1 + e^{-\beta (\varepsilon_1 - \mu)} 
+		+ \frac{e^{-\beta(\varepsilon_2 - \hbar\omega - 2\mu)}}{e^{\beta\hbar\omega}-1}  \right)^N \,.
+\end{equation}
 
 \paragraph{b) Calculate the grand canonical potential $\Psi$. 
     \textit{(1 point)}
 } \ \\
 \\
+\begin{equation}
+	\Psi = - k_B T \ln Z_G = - N k_B T \ln \left( 1 + e^{-\beta (\varepsilon_1 - \mu)} 
+		+ \frac{e^{-\beta(\varepsilon_2 - \hbar\omega - 2\mu)}}{e^{\beta\hbar\omega}-1}  \right) \,.
+\end{equation}
+
+\newpage
 
 \paragraph{c) Calculate the mean number of adsorbed molecules on the 
     surface from $Z_G$. \textit{(1 point)}
 } \ \\
 \\
+We can use a small trick here: First, calculate the mean number of adsorbed
+molecules on one site and then multiply by the total number of sites $N$
+(since all sites are equal and independent):
+\begin{align}
+	\langle N \rangle &= N \left( \frac{0\cdot 1 + 1\cdot e^{-\beta (\varepsilon_1 - \mu)}
+	+2\cdot\frac{e^{-\beta(\varepsilon_2 - \hbar\omega - 2\mu)}}{e^{\beta\hbar\omega}-1}}{z_G} \right) \notag \\
+	&= N \left( \frac{e^{-\beta (\varepsilon_1 - \mu)}
+	+\frac{2e^{-\beta(\varepsilon_2 - \hbar\omega - 2\mu)}}{e^{\beta\hbar\omega}-1}}{z_G} \right) \,.
+\end{align}
 
 \paragraph{d) Calculate the mean number of adsorbed molecules on the 
     surface directly from $\Psi$ and convince yourself that it gives 
@@ -36,8 +75,20 @@ reservoir with temperature $T$ and chemical potential $\mu$.
     \textit{(2 points)}
 } \ \\
 \\
+\begin{align}
+	\langle N \rangle &= \frac{1}{\beta} \partial_{\mu} \ln Z_G = - \partial_{\mu} \Psi \notag \\
+	&= N k_B T \, \frac{\beta e^{-\beta (\varepsilon_1 - \mu)}
+	+\frac{2\beta e^{-\beta(\varepsilon_2 - \hbar\omega - 2\mu)}}{e^{\beta\hbar\omega}-1}}
+	{\left( 1 + e^{-\beta (\varepsilon_1 - \mu)} 
+	+ \frac{e^{-\beta(\varepsilon_2 - \hbar\omega - 2\mu)}}{e^{\beta\hbar\omega}-1}  \right)} \notag \\
+	&= N \left( \frac{e^{-\beta (\varepsilon_1 - \mu)}
+	+\frac{2e^{-\beta(\varepsilon_2 - \hbar\omega - 2\mu)}}{e^{\beta\hbar\omega}-1}}{z_G} \right) \,.
+\end{align}
 
 \paragraph{e) Give the probability that an adsorption site is in the 
     state with $n=2$ and $\nu=3$. \textit{(1 point)}
 } \ \\
 \\
+\begin{equation}
+	p(n=2,\nu=3) = \frac{e^{-\beta (\varepsilon_2 + 3\hbar\omega - 2\mu)}}{z_G} \,.
+\end{equation}
