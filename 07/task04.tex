@@ -55,8 +55,7 @@ problem and you can explore larger $N$.
         def random_step(x, y):
             dx = np.random.choice([-1, 0, 1])
             dy = np.random.choice([-1, 0, 1])
-            return x+dx, y+dy
-    \end{code}
+            return x+dx, y+dy\end{code}
 
 \newpage
 \paragraph{b) Write the program for a SAW} \ \\
@@ -97,9 +96,7 @@ problem and you can explore larger $N$.
             return trajectory\end{code}
 
     \begin{code}{main.py}
-        from plot_MSD_vs_step_num import main as plot_MSD_vs_step_num
         from calc_random_walk_trajectory import main as calc_random_walk_trajectory
-        from plot_trajectory import main as plot_trajectory
         
         
         def main(nr_of_steps=30, self_avoiding=True):
@@ -168,8 +165,10 @@ problem and you can explore larger $N$.
 } \ \\
 \\
     To get the average over different trajectories, for each number of 
-    steps we calculate 100 trajectories, then we take the mean. 
-    We plot this in a linear fashion: \\
+    steps we calculate 100 trajectories (in this case, without 
+    allowing diagonal steps), then we calculate the squared 
+    displacements for each of the trajectories and take the mean.
+    Then, we plot this in a linear fashion: \\
     \begin{figure}[h!]
         \centering
         \includegraphics[width=\textwidth]{./figures/MSD_vs_N.pdf}
