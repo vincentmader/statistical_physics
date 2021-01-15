@@ -24,11 +24,18 @@ momentum. Each energy level of the rotating molecule has the degeneracy
     \begin{align}
         Z=\sum_i\exp(-\beta E_i)
     \end{align}
-    In our case, this is
+    Let us define $k:=\frac{\beta\hbar^2}{2I}$. \\
+    \\
+    In the case of 
+    a rigid rotator with degenerate energy levels, the partition sum becomes
     \begin{align}
         Z
-        &=\sum_l\exp\bigg(-\frac{\beta\hbar^2}{2I}\cdot l(l+1)\bigg)
-        \red{\cdot g_l ?}
+        &=\sum_{l=0}^\infty g_l\cdot\exp\bigg(
+            -k\cdot l(l+1)
+        \bigg) \\
+        &=\sum_{l=0}^\infty(2l+1)\cdot\exp\bigg(
+            -k\cdot l(l+1)
+        \bigg)
     \end{align}
 
 \paragraph{b) Show that for high temperatures, $Z$ can be approximated 
@@ -38,14 +45,114 @@ momentum. Each energy level of the rotating molecule has the degeneracy
     summation range. \textit{(2 points)}
 } \ \\
 \\
+    For high temperatures, the energy spacing between the 
+    individual energy levels becomes small (when compared to 
+    $k_BT$). Thus, we can replace the summation by the integral
+    % For $x\to0$, $\exp(x)\approx1+x$. Thus, for $\beta\to\infty$:
+    \begin{align}
+        Z
+        &=\int_0^\infty (2l+1)\cdot\exp\bigg(
+            -k\cdot l(l+1)
+        \bigg)\cdot dl \\
+        &=\int_0^\infty \exp\bigg(
+            -k\cdot l(l+1)
+        \bigg)\cdot d(l(l+1)) \\
+        &=\frac{1}{k}=\frac{2I}{\hbar^2\beta}
+        % &\approx\sum_l(2l+1)\cdot\bigg(
+        %     1-kl(l+1)
+        % \bigg) \\
+        % &=\sum_l\bigg(
+        %     2l+1-2kl^2(l+1)-kl(l+1)
+        % \bigg) \\
+        % &=\sum_l\bigg(
+        %     2l+1-2kl^3-2kl^2-kl^2-kl
+        % \bigg) \\
+        % &=\sum_l\bigg(
+        %     -2kl^3-3kl^2+(2-k)l+1
+        % \bigg) \\
+        % &=\sum_l\int_0^l\bigg(
+        %     -6kl'^2-6kl'+2-k
+        % \bigg)\cdot dl' \\
+        % &=\sum_l\int_0^l\bigg(
+        %     -6k(l'^2+l')+2-k
+        % \bigg)\cdot dl' \\
+        % &=\red{...} \\
+        % &=\int_0^l\sum_l\bigg(
+        %     -6k(l'^2+l')+2-k
+        % \bigg)\cdot dl' \\
+        % &=\int_0^l\bigg[
+        %     \sum_l\bigg(
+        %         -6k(l'^2+l')
+        %     \bigg)+(2-k)\cdot l
+        % \bigg]\cdot dl' \\
+        % &=\red{...}
+    \end{align}
 
 \paragraph{c) Evaluate the high temperature mean energy $E$ and the heat 
     capacity $C_V$. \textit{(2 points)}
 } \ \\
 \\
+    The mean energy $E$ (i.e. short for $\langle E\rangle$) can be 
+    calculated from the partition sum
+    \begin{align}
+        E
+        &=-\pder{\ln Z}{\beta} \\
+        &=-\pder{}{\beta}\ln\bigg(
+            \frac{2I}{\hbar^2\beta}
+        \bigg) \\
+        &=\frac{1}{\beta}=k_BT
+    \end{align}
+    Heat capacity:
+    \begin{align}
+        C_V
+        =\pder{E}{T}
+        % &=2k_BT\cdot\pder{\ln Z}{T}
+        % +k_BT^2\cdot\frac{\partial^2\ln Z}{\partial T^2} \\
+        =k_B
+    \end{align}
 
 \paragraph{d) Find the low-temperature approximations to the canonical 
     partition function, the mean energy $E$ and the heat capacity $C_V$.
     \textit{(3 points)}
 } \ \\
 \\
+    At low temperatures, the majority of the particles will 
+    be occupying the ground state. We can therefore approximate
+    the partition function simply by ignoring all terms after 
+    the first two:
+    \begin{align}
+        Z
+        &=\sum_{l=0}^{\infty}(2l+1)\cdot\exp\bigg(
+            -l(l+1)\cdot\frac{\hbar^2\beta}{2I}
+        \bigg) \\
+        &=1+3\cdot\exp\bigg(
+            -\frac{\beta\hbar^2}{I}
+        \bigg)
+    \end{align}
+    The average energy is thus
+    \begin{align}
+        E
+        &=-\pder{}{\beta}\ln Z \\
+        &=-\pder{}{\beta}\ln\bigg[
+            1+3\cdot\exp\bigg(
+                -\frac{\beta\hbar^2}{I}
+            \bigg)
+        \bigg] \\
+        &=\frac{3\hbar^2/I}{e^{\beta\hbar^2/I}+3}
+    \end{align}
+    And the heat capacity:
+    \begin{align}
+        C_V
+        &=\pder{\beta}{T}\pder{}{\beta}E \\
+        &=-\frac{1}{k_BT^2}\cdot\pder{}{\beta}\bigg(
+            \frac{3\hbar^2/I}{e^{\beta\hbar^2/I}+3}
+        \bigg) \\
+        &=\frac{3\hbar^4}{k_BT^2I^2}\cdot
+        \frac{e^{\hbar^2\beta/I}}{e^{\beta\hbar/I}+3} \\
+        &\approx3k_B\bigg(
+            \frac{\hbar^2}{Ik_BT}
+        \bigg)^2\cdot\exp\bigg(
+            -\frac{\hbar^2}{Ik_BT}
+        \bigg)
+    \end{align}
+    
