@@ -27,3 +27,4 @@ if __name__ == "__main__":
     # main(nr_of_steps=300, self_avoiding=False)
     # main(nr_of_steps=30, self_avoiding=True)
     plot_MSD_vs_step_num(500)
+    plot_MSD_vs_step_num(30, self_avoiding=True)

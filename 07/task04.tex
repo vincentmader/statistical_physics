@@ -154,13 +154,17 @@ problem and you can explore larger $N$.
           } 
         \end{minipage}
     \end{figure} \ \\
+    When the particle crosses its own path, the trajectory can
+    look a bit messy. Therefore, we added a color coding from 
+    green (first step) to red (last step) to improve the 
+    visualization.
 
 \newpage
 \paragraph{d) Measure the mean squared displacements (MSD) 
     $\langle x^2(n)\rangle$ as a function of the number of steps $n$ 
     for both cases (the average is over different trajectories). If you 
     plot the results in log-log-scale you can extract the exponents 
-    $\alpha$, where $\langle x^2(n)\rangle\sim n\alpha$, for the two 
+    $\alpha$, where $\langle x^2(n)\rangle\sim n^\alpha$, for the two 
     cases. Compare and discuss.
 } \ \\
 \\
@@ -169,18 +173,54 @@ problem and you can explore larger $N$.
     allowing diagonal steps), then we calculate the squared 
     displacements for each of the trajectories and take the mean.
     Then, we plot this in a linear fashion: \\
+    % \begin{figure}[h!]
+    %     \centering
+    %     \includegraphics[width=\textwidth]{./figures/MSD_vs_N.pdf}
+    %     \caption{mean squared displacement as a function of steps}
+    % \end{figure} \ \\
     \begin{figure}[h!]
         \centering
-        \includegraphics[width=\textwidth]{./figures/MSD_vs_N.pdf}
-        \caption{mean squared displacement as a function of steps}
+        \begin{minipage}{.5\linewidth}
+          \centering
+          \subfloat[linear plot for the normal RW]{
+            \label{:a}
+            \includegraphics[scale=.7]{./figures/MSD_vs_N.pdf}
+          }
+        \end{minipage}%
+        \begin{minipage}{.5\linewidth}
+          \centering
+          \subfloat[linear plot for the SAW]{
+            \label{:b}
+            \includegraphics[scale=.7]{./figures/MSD_vs_N_SA.pdf}
+          }
+        \end{minipage}
     \end{figure} \ \\
-    \\
     And now as a log-log plot: \\
+    % \begin{figure}[h!]
+    %     \centering
+    %     \includegraphics[width=\textwidth]{./figures/MSD_vs_N_loglog.pdf}
+    %     \caption{mean squared displacement as a function of steps}
+    % \end{figure} \ \\
     \begin{figure}[h!]
         \centering
-        \includegraphics[width=\textwidth]{./figures/MSD_vs_N_loglog.pdf}
-        \caption{mean squared displacement as a function of steps}
+        \begin{minipage}{.5\linewidth}
+          \centering
+          \subfloat[log-log plot for the normal RW]{
+            \label{:a}
+            \includegraphics[scale=.7]{./figures/MSD_vs_N_loglog.pdf}
+          }
+        \end{minipage}%
+        \begin{minipage}{.5\linewidth}
+          \centering
+          \subfloat[log-log plot for the SAW]{
+            \label{:b}
+            \includegraphics[scale=.7]{./figures/MSD_vs_N_loglog_SA.pdf}
+          }
+        \end{minipage}
     \end{figure} \ \\
     \\
-
-
+    As expected, we find $\alpha\approx1$ for the normal 
+    random-walk. The self-avoiding random walk leads to an 
+    exponent of $\alpha>1$, which also makes sense, since the 
+    movement of the particle is restricted in a way that makes 
+    it less likely to travel towards its point of origin.
