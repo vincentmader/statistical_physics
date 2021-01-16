@@ -81,12 +81,12 @@ using the microcanonical ensemble.
 } \ \\
     \\
     Because the system's energy is related to the applied force by 
-    $\langle E\rangle=FX$, it follows that 
+    $\langle E\rangle=-FX$, it follows that 
     \begin{align}
         FX
-        &=-NFa\cdot\tanh(\beta Fa) \\
+        &= NFa\cdot\tanh(\beta Fa) \\
         \Rightarrow X
-        &=-Na\cdot\tanh(\beta Fa)
+        &= Na\cdot\tanh(\beta Fa)
         \label{eq:fx_relation}
     \end{align}
     \textbf{For large $T$:} \\
@@ -94,7 +94,7 @@ using the microcanonical ensemble.
     For small input values $x$, we can approximate $\tanh(x)\approx x$.
     Thus, for large temperatures we can rewrite \autoref{eq:fx_relation} as
     \begin{equation}
-        F\approx-\frac{X}{Na^2}\cdot k_BT,
+        F\approx \frac{X}{Na^2}\cdot k_BT,
     \end{equation}
     which is the result that we already know from the lecture. \\
     % ...
@@ -106,9 +106,9 @@ using the microcanonical ensemble.
     \textbf{For small $T$:} \\
     In the limit of $x\to\infty$, $\tanh(x)\to1$. Therefore, we get 
     \begin{equation}
-        X\approx-N\cdot a=-L_0,
+        X\approx N\cdot a= L_0,
     \end{equation}
-    which means that $N_+=0$ and $N_-=N$, i.e. the polymer is expanded to its 
+    which means that $N_+=N$ and $N_-=0$, i.e. the polymer is expanded to its 
     full length.
 
     % \newpage \noindent
