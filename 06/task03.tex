@@ -16,11 +16,12 @@ to the open state when all units to its left are already open.
     all units to its left are open). The energy of a given configuration
     with $i$ open bonds is given by $E_i=\varepsilon\cdot i$. The 
     partition sum can then be written as
-    \begin{equation}
-        Z=1+e^{-\beta\varepsilon}+e^{-2\beta\varepsilon}+... 
-        = \sum_{i=0}^N e^{-i\beta\varepsilon} 
-        = \frac{e^{-(N+1)\beta\varepsilon} - 1}{e^{-\beta\varepsilon} - 1} \,.
-    \end{equation}
+    \begin{align}
+        Z
+        &=1+e^{-\beta\varepsilon}+e^{-2\beta\varepsilon}+... \\
+        &=\sum_{i=0}^N e^{-i\beta\varepsilon} \\
+        &=\frac{e^{-(N+1)\beta\varepsilon} - 1}{e^{-\beta\varepsilon} - 1} \,.
+    \end{align}
     Starting with the configuration were all units are closed and sum up until all units
     are open.
 
@@ -30,10 +31,11 @@ to the open state when all units to its left are already open.
     The average number of open units is given by
     \begin{align}
         \langle n\rangle 
-        &=\frac{1\cdot 0+e^{-\beta\varepsilon}\cdot 1+e^{-2\beta\varepsilon}\cdot 2+...}{Z}
-        =\frac{1}{Z} \sum_{i=0}^N i e^{-i\beta\varepsilon}
-        = -\frac{1}{\varepsilon} \partial_{\beta} \ln Z \\
-        &= \frac{N+1}{1-e^{(N+1)\beta\varepsilon}} - \frac{1}{1-e^{\beta\varepsilon}} \,.
+        &=\frac{1\cdot 0+e^{-\beta\varepsilon}\cdot 
+        1+e^{-2\beta\varepsilon}\cdot 2+...}{Z} \\
+        &=\frac{1}{Z} \sum_{i=0}^N i e^{-i\beta\varepsilon} \\
+        &=-\frac{1}{\varepsilon} \partial_{\beta} \ln Z \\
+        &=\frac{N+1}{1-e^{(N+1)\beta\varepsilon}} - \frac{1}{1-e^{\beta\varepsilon}} \,.
     \end{align}
 
  

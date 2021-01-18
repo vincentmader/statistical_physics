@@ -109,27 +109,28 @@ using the microcanonical ensemble.
         X\approx-N\cdot a=-L_0,
     \end{equation}
     which means that $N_+=0$ and $N_-=N$, i.e. the polymer is expanded to its 
-    full length.
-
-    % \newpage \noindent
-    % To further check our results, we can calculate the free energy
-    % \begin{align}
-    %     F
-    %     &=-k_BT\cdot\ln(Z) \\
-    %     &=-k_BTN\cdot\ln\bigg(2\cosh(\beta Fa)\bigg) \\
-    %     &=-k_BTN\cdot\ln\bigg(2\cosh\bigg(\frac{Fa}{k_BT}\bigg)\bigg) \\
-    % \end{align}
-    % and from this the entropy
-    % \begin{align}
-    %     S
-    %     &=-\bigg(\frac{\partial F}{\partial T}\bigg)_{V,N} \\
-    %     &=k_BN\cdot\ln\bigg[2\cosh\bigg(\frac{Fa}{k_BT}\bigg)\bigg]
-    %     -k_BTN\cdot\frac{1}{2\cosh\bigg(\frac{Fa}{k_BT}\bigg)}\cdot
-    %     2\sinh\bigg(\frac{Fa}{k_BT}\bigg)\cdot\frac{Fa}{k_BT^2} \\
-    %     % \ln\bigg(2\cosh\bigg(\frac{Fa}{k_BT}\bigg)\bigg) \\
-    %     &=k_BN\cdot\bigg\{\ln\bigg[2\cosh\bigg(\frac{Fa}{k_BT}\bigg)\bigg]
-    %     -\tanh\bigg(\frac{Fa}{k_BT}\bigg)\cdot\frac{Fa}{k_BT}\bigg\} \\
-    % \end{align}
+    full length. \\
+    \\
+    % \newpage 
+    \noindent
+    To further check our results, we can calculate the free energy
+    \begin{align}
+        F
+        &=-k_BT\cdot\ln(Z) \\
+        &=-k_BTN\cdot\ln\bigg(2\cosh(\beta Fa)\bigg) \\
+        &=-k_BTN\cdot\ln\bigg(2\cosh\bigg(\frac{Fa}{k_BT}\bigg)\bigg) \\
+    \end{align}
+    and from this the entropy
+    \begin{align}
+        S
+        &=-\bigg(\frac{\partial F}{\partial T}\bigg)_{V,N} \\
+        &=k_BN\cdot\ln\bigg[2\cosh\bigg(\frac{Fa}{k_BT}\bigg)\bigg]
+        -k_BTN\cdot\frac{1}{2\cosh\bigg(\frac{Fa}{k_BT}\bigg)}\cdot
+        2\sinh\bigg(\frac{Fa}{k_BT}\bigg)\cdot\frac{Fa}{k_BT^2} \\
+        % \ln\bigg(2\cosh\bigg(\frac{Fa}{k_BT}\bigg)\bigg) \\
+        &=k_BN\cdot\bigg\{\ln\bigg[2\cosh\bigg(\frac{Fa}{k_BT}\bigg)\bigg]
+        -\tanh\bigg(\frac{Fa}{k_BT}\bigg)\cdot\frac{Fa}{k_BT}\bigg\} \\
+    \end{align}
     % Plotting the entropy as a function of $\frac{X}{L_0}$ gives the following 
     % plot:
     % \begin{figure}[h!]
