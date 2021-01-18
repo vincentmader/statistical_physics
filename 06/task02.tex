@@ -23,20 +23,22 @@ in the lecture.
     i.e. for large $T$:
     \begin{equation}
         \frac{e^u\cdot u^4}{(e^u-1)^2}
-        \approx u^2+\frac{u^4}{12}+\frac{u^6}{240} \,.
+        \approx u^2-\frac{u^4}{12}+\frac{u^6}{240} \,.
     \end{equation}
     Thus, the specific heat can be approximated by
     \begin{equation}
         c_v(T)
         \approx\frac{9Nk_B}{u^3_m}\cdot\int_0^{u_m}
-        u^2+\frac{u^4}{12}+\frac{u^6}{240}\cdot\dd u
-        = 3Nk_B\cdot\left[1+\frac{1}{20}\left(\frac{T_D}{T}\right)^2+\frac{1}{560}\left(\frac{T_D}{T}\right)^4\right] \,.
+        \left(u^2-\frac{u^4}{12}+\frac{u^6}{240}\right)\cdot\dd u
+        = 3Nk_B\cdot\left[1-\frac{1}{20}\left(\frac{T_D}{T}\right)^2+\frac{1}{560}\left(\frac{T_D}{T}\right)^4\right] \,.
     \end{equation}
     With the formula $c_v(T) = \dd E/\dd T$, we find for the energy corrections
     \begin{equation}
         E
-        = 3Nk_B\cdot\left[T-\frac{1}{20}\frac{T_D^2}{T}-\frac{1}{1680}\frac{T_D^4}{T^3}\right] \,.
+        = E_0 + 3Nk_B\cdot\left[T+\frac{1}{20}\frac{T_D^2}{T}-\frac{1}{1680}\frac{T_D^4}{T^3}\right] \,.
     \end{equation}
+    For this exercise it would be actually better to start directly with the expression for the
+    energy (see Eq.~\eqref{energy}) to also fix the constant term $E_0$.
 
 \paragraph{b) \textit{Number of phonons:} Write the mean number of phonons 
     $\langle N\rangle$ in the Debye model as an integral (similar but 
@@ -46,6 +48,7 @@ in the lecture.
     \\
     In the script, we had the following formula for the mean energy:
     \begin{align}
+    \label{energy}
         E
         =\sum_\textnormal{modes}\hbar\omega
         \bigg(\frac{1}{e^{\beta\hbar\omega-1}}+\frac{1}{2}\bigg)
