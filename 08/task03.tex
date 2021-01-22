@@ -1,52 +1,43 @@
 An ultra-relativistic ideal Fermi fluid is contained in a 
 volume $V$. The chemical potential is $\mu$. Consider only 
 the special case $T=0$ in the following. Calculate the mean 
-particle number ⟨N⟩ and the mean total energy ⟨E⟩. 
-Express ⟨E⟩ in terms of ⟨N⟩ and µ. \\
+particle number $\langle N \rangle$ and the mean total energy
+$\langle E \rangle$.
+Express $\langle E \rangle$ in terms of $\langle N \rangle$ and 
+$\mu$. \\
 \\
 HINT: Ultra-relativistic means that you can neglect the mass 
 term in the relativistic formula for the energy of the 
 particles:
 \begin{equation}
     \varepsilon(\vec p)=\sqrt{m^2c^4+\vec p^2c^2}
-    \approx |\vec p|c
-    =\hbar c\cdot|\vec k|
-\end{equation}
-From the lecture script:
+    \approx pc \,.
+\end{equation} \\
+\\
+We use the following identity from the lecture script:
 \begin{align}
-    N
-    &=\sum_{\vec k,m_S\textnormal{  for } p\le p_F} \\
-    &=2\frac{V}{h^3}\int_{p\le p_F}\dd\vec p \\
-    &=\frac{2V}{h^3}\cdot\frac{4\pi}{3}\cdot p_F^3 \\
-    &=\frac{2V}{h^3}\cdot
-    \frac{4\pi}{3}\cdot\bigg(\frac{E_F}{c}\bigg)^3 \\
-    &=\frac{2V}{h^3}\cdot
-    \frac{4\pi}{3}\cdot\bigg(\frac{\mu}{c}\bigg)^3
+    \sum_{\vec k,m_S} (...)
+    =2\cdot\frac{V}{h^3}\int\dd\vec p \, (...)
+    =\frac{2V}{h^3}\int_0^{\infty}\dd p \, 4 \pi p^2 (...) \,.
 \end{align}
-\red{?}
-$\langle E\rangle=\frac{3}{5}=E_F\frac{3}{5}\mu$
-% Partition sum for fermions:
-% \begin{equation}
-%     Z_G=\prod_{\vec k,m_S}z_{\vec k,m_S}
-% \end{equation}
-% with 
-% \begin{equation}
-%     z_{\vec k,m_S}=1+\exp\bigg(
-%         -\beta\cdot(\varepsilon_{\vec k,m_S}-\mu)
-%     \bigg)
-% \end{equation}
-% and 
-% \begin{equation}
-%     \varepsilon_{\vec k,m_S}
-%     \approx\hbar c\cdot|\vec k|
-% \end{equation}
-% Mean energy $\mean{E}$:
-% \begin{equation}
-%     \mean{E}
-%     =-\partial_\beta\ln(Z)
-% \end{equation}
-% Mean particle number $\mean{N}$:
-% \begin{equation}
-%     \mean{N}
-%     =-\frac{1}{\beta}\partial_\mu\ln(Z)
-% \end{equation}
+Thus, the mean particle number is given by
+\begin{align}
+    \langle N \rangle = \sum_{\vec k,m_S} n_{\vec k,m_S}
+    =\frac{8\pi V}{c^3h^3}\int_0^{\infty}\dd\varepsilon \, \varepsilon^2 n(\varepsilon) \,,
+\end{align}
+where we used the linear dispersion relation $\varepsilon(p)=pc$ for 
+ultra-relativistic particles. In the limit $T=0$, the Fermi function
+becomes $n(\varepsilon) = \theta(\mu - \varepsilon)$:
+\begin{align}
+    \langle N \rangle
+    =\frac{8\pi V}{c^3h^3}\int_0^{\mu}\dd\varepsilon \, \varepsilon^2 
+    =\frac{8\pi V}{3c^3h^3} \mu^3 \,.
+\end{align}
+A similar calculation is done for the mean energy:
+\begin{align}
+    \langle E \rangle
+    =\frac{8\pi V}{c^3h^3}\int_0^{\infty}\dd\varepsilon \, \varepsilon^2 n(\varepsilon)\varepsilon
+    =\frac{8\pi V}{c^3h^3}\int_0^{\mu}\dd\varepsilon \, \varepsilon^3
+    =\frac{2\pi V}{c^3h^3}\mu^4
+    =\frac{3}{4} \langle N \rangle \mu \,.
+\end{align}
