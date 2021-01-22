@@ -15,38 +15,77 @@ so weak that only its first order effect should be considered.
     magnetic field, respectively. \textit{(3 points)}
 } \ \\
     \\
-    \begin{equation}
-        Z=Z_++Z_-
-    \end{equation}
-    \begin{equation}
-        Z_\pm=
-        \int_0^{\infty}\dd\varepsilon\cdot\bigg(
-            1+\exp(-\beta\varepsilon)
-        \bigg)\cdot n_\pm(\varepsilon)
-    \end{equation}
-
+    % \begin{equation}
+    %     Z=Z_++Z_-
+    % \end{equation}
+    % \begin{equation}
+    %     Z_\pm=
+    %     \int_0^{\infty}\dd\varepsilon\cdot\bigg(
+    %         1+\exp(-\beta\varepsilon)
+    %         \ \red{?}
+        % \bigg)\cdot n_\pm(\varepsilon)
+    % \end{equation}
+    Total number of particles:
+    \begin{align}
+        \langle N\rangle
+        &=2\cdot\frac{V}{h^3}\cdot\int_0^{p_F}d^3p \\
+        &=2\cdot\frac{V}{h^3}\cdot4\pi\cdot\int_0^{p_F}p^2dp \\
+        &=2\cdot\frac{4\pi V}{3h^3}\cdot p_F^3 \\
+        \Rightarrow \mean{N_\pm}
+        &=\frac{4\pi V}{3h^3}p^3_{F\pm}
+    \end{align}
+    with
+    \begin{align}
+        p_{F+}=\sqrt{
+            2m(\mu_0-\mu_mB)
+        }
+        \ \ \ \ \textnormal{and}\ \ \ \
+        p_{F-}=\sqrt{
+            2m(\mu_0+\mu_mB)
+        }
+    \end{align}
     % \begin{equation}
     %     N=
     %     \int d\varepsilon\cdot D(\varepsilon) 
     %     \cdot n_+(\varepsilon)\cdot n_-(\varepsilon)
     % \end{equation}
-
-    \begin{equation}
-        \mean{N}
-        =-\frac{1}{\beta}\partial_\mu\ln(Z)
-    \end{equation}
+    % \begin{equation}
+        % \mean{N_\pm}
+        % =-\frac{1}{\beta}\partial_\mu\ln(Z_\pm) 
+        % =\frac{4\pi V}{3h^3}p^3_{F\pm}
+    % \end{equation}
 
 
 \paragraph{b) Calculate the mean magnetization $M$ and the magnetic 
     susceptibility $\chi$. \textit{(2 points)}
 } \ \\
-    \\
-    \begin{equation}
-        M=\mu_m\cdot(\langle N_+\rangle - \langle N_-\rangle)
-    \end{equation}
-    \begin{equation}
-        \chi=\bigg(\pder{M}{B}\bigg)
-    \end{equation}
+    % \\
+    \begin{align}
+        M
+        &=\mu_m\cdot(\langle N_+\rangle-\langle N_-\rangle) \\
+        &=\mu_B\cdot\bigg(
+            \frac{4\pi V}{3h^3}p_{F+}^3-
+            \frac{4\pi V}{3h^3}p_{F-}^3
+        \bigg) \\
+        &=\mu_B\cdot\frac{4\pi V}{3h^3}\cdot\bigg(
+            [2m\cdot(\mu-\mu_mB)]^{3/2}-
+            [2m\cdot(\mu+\mu_mB)]^{3/2}
+        \bigg) \\
+    % \end{align}
+    % \begin{align}
+        \Rightarrow\chi
+        &=\bigg(\pder{M}{B}\bigg) \\
+        &=\mu_m\cdot\partial_B\bigg(
+            \langle N_+\rangle-\langle N_-\rangle
+        \bigg) \\
+        &=\mu_m\cdot\bigg(
+            \frac{3}{2}\cdot\sqrt{2m\cdot(\mu+\mu_mB)}
+            -\frac{3}{2}\cdot\sqrt{2m\cdot(\mu-\mu_mB)}
+        \bigg) \\
+        &=\frac{3}{2}\mu_m\sqrt{2m}\cdot\bigg(
+            \sqrt{\mu+\mu_mB}-\sqrt{\mu-\mu_mB}
+        \bigg) 
+    \end{align}
 
 
 \paragraph{c) Express the chemical potential $\mu$ in terms of the 
