@@ -1,0 +1,69 @@
+Consider a \textit{two}-dimensional, ideal Bose fluid.
+
+\paragraph{a) What is the expression for the mean particle number for a 2D system?
+    \textit{(1 point)}
+} \ \\
+\\
+Recall that the particle number $N$ for spin-0 bosons (degeneracy g = 1) 
+for a 3D system is given by
+\begin{align}
+	N = \sum_{\vec{k}} n_{\vec{k}}
+	= \frac{V}{h^3} \int \dd \vec{p} \, \frac{1}{e^{\beta (\epsilon(p) - \mu)}-1} \,,
+\end{align}
+where we encounter the sum over all modes and the Bose distribution. 
+The corresponding expression for a 2D system is given by
+\begin{align}
+	N = \frac{A}{h^2} \int \dd \vec{p} \, \frac{1}{e^{\beta (\epsilon(p) - \mu)}-1}
+	= \frac{2\pi A}{h^2} \int_0^{\infty} \dd p \, \frac{p}{e^{\beta (\epsilon(p) - \mu)}-1} \,.
+\end{align}
+
+\paragraph{b) First consider particles with energy $\epsilon(p)=\frac{p^2}{2m}$.
+	Evaluate the mean particle number and investigate whether there is a Bose-Einstein 
+	condensation (BEC) at finite temperature.
+    \textit{(2.5 points)}
+} \ \\
+\\
+With the formula from above, we get $\dd p = m \dd\epsilon / p$ and
+\begin{align}
+	N &= \frac{2\pi A}{h^2} \int_0^{\infty} \dd p \, \frac{p}{e^{\beta (\epsilon(p) - \mu)}-1}
+	= \frac{2\pi m A}{h^2} \int_0^{\infty} \dd\epsilon \, \frac{1}{e^{\beta (\epsilon - \mu)}-1} \notag \\
+	&= \frac{2\pi m A}{h^2} \sum_{l=1}^{\infty} e^{\beta\mu l} \int_0^{\infty} \dd\epsilon \, e^{- \beta\epsilon l}
+	= \frac{2\pi m A}{\beta h^2} \sum_{l=1}^{\infty} \frac{z^l}{l} \notag \\
+	&= \frac{A}{\lambda^2} \, g_1(z) \,,
+\end{align}
+where we introduced the fugacity $z=e^{\beta\mu}$, the thermal wavelength $\lambda=\frac{h}{\sqrt{2\pi m k_B T}}$ 
+and the generalized Riemann Zeta function $g_{\nu}(z)=\sum_{l=1}^{\infty}\frac{z^l}{l^{\nu}}$. \\
+
+Plot $g_1(z) = - \ln(1-z)$ from $z=0$ to $z=1$. \\
+
+See that it diverges for $z \longrightarrow 1$. Thus, no BEC!
+
+\paragraph{c) Now consider massless bosons with energy $\epsilon(p)=cp$.
+	Again evaluate the mean particle number and investigate whether there is a 
+	BEC at finite temperature.
+    \textit{(2.5 points)}
+} \ \\
+\\
+With the formula from above, we get $\dd p = \dd\epsilon / c$ and
+\begin{align}
+	N &= \frac{2\pi A}{h^2} \int_0^{\infty} \dd p \, \frac{p}{e^{\beta (\epsilon(p) - \mu)}-1}
+	= \frac{2\pi A}{c^2 h^2} \int_0^{\infty} \dd\epsilon \, \frac{\epsilon}{e^{\beta (\epsilon - \mu)}-1} \notag \\
+	&= \frac{2\pi A}{c^2 h^2} \sum_{l=1}^{\infty} e^{\beta\mu l} \int_0^{\infty} \dd\epsilon \, \epsilon \, e^{- \beta\epsilon l}
+	= \frac{2\pi A}{\beta^2 c^2 h^2} \sum_{l=1}^{\infty} \frac{z^l}{l^2} \notag \\
+	&= \frac{2\pi A}{\beta^2 c^2 h^2} \, g_2(z) \,.
+\end{align}
+
+Plot $g_2(z) = \text{Li}_2(z)$ from $z=0$ to $z=1$. \\
+
+See that it converges for $z \longrightarrow 1$. Thus, BEC!
+
+\paragraph{c) In case you find a BEC, give the respective expression for the critical temperature.
+    \textit{(1 point)}
+} \ \\
+\\
+When the system reaches the critical temperature, the chemical potential is zero ($\mu=0$). \\
+Thus, by defining the particle density $\rho = N/A$, we get
+\begin{align}
+	\rho = \frac{2\pi}{\beta^2 c^2 h^2} \, g_2(1) \quad \longleftrightarrow \quad
+	T_c = \frac{hc}{k_B} \sqrt{\frac{\rho}{2\pi g_2(1)}} = \frac{hc}{k_B} \sqrt{\frac{3\rho}{\pi^3}} \,.
+\end{align}
