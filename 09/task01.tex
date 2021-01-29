@@ -26,8 +26,8 @@ respectively. From thermodynamics, we also know $\Psi=-pV$.
     Talor expansion of the natural logarithm:
     \begin{align}
         \ln(1\pm x)
-        &=\sum_{n=1}^\infty(-1)^{n+1}\cdot\frac{x^n}{n} \\
-        &=\pm x-\frac{x^2}{2}+O(x^3) 
+        &=\sum_{n=1}^\infty(-1)^{n+1}\cdot\frac{x^n}{n}
+        =\pm x-\frac{x^2}{2}+O(x^3) 
         % \ln(1-x)
         % &=-\sum_{n=1}^\infty\frac{x^n}{n} \\
         % &=-x-\frac{x^2}{2}+O(x^3)
@@ -42,16 +42,16 @@ respectively. From thermodynamics, we also know $\Psi=-pV$.
             \pm ze^{-\beta\frac{\vec p^2}{2m}}
             -\frac{z^2}{2}e^{-2\beta\frac{\vec p^2}{2m}}
         \bigg] \\
-        &=\mp Cz\cdot\bigg[
-            \pm\int\dd\vec p\cdot
-                e^{-\beta\frac{\vec p^2}{2m}}
-            -\frac{z}{2}\cdot\int\dd\vec p\cdot
-                e^{-\beta\frac{\vec p^2}{m}}
-        \bigg] \\
-        &=\mp 4\pi Cz\cdot\bigg[
-            \pm\int p^2\dd p\cdot
+        % &=\mp C\cdot\bigg[
+        %     \pm\int\dd\vec p\cdot
+        %         ze^{-\beta\frac{\vec p^2}{2m}}
+        %     -\frac{z^2}{2}\cdot\int\dd\vec p\cdot
+        %         e^{-\beta\frac{\vec p^2}{m}}
+        % \bigg] \\
+        &=\mp 4\pi C\cdot\bigg[
+            \pm z\int p^2\dd p\cdot
                 e^{-\beta\frac{p^2}{2m}}
-            -\frac{z}{2}\cdot\int p^2\dd p\cdot
+            -\frac{z^2}{2}\cdot\int p^2\dd p\cdot
                 e^{-\beta\frac{p^2}{m}}
         \bigg]
     \end{align}
@@ -61,39 +61,54 @@ respectively. From thermodynamics, we also know $\Psi=-pV$.
     =-m\cdot\partial_\beta e^{-\beta\frac{p^2}{m}}$:
     \begin{align}
         \Psi(T,V,\mu)
-        &=\mp 4\pi Cz\cdot\bigg[
-            \mp2m\int \dd p\cdot\partial_\beta
+        &=\mp 4\pi C\cdot\bigg[
+            \mp2mz\int \dd p\cdot\partial_\beta
                 e^{-\beta\frac{p^2}{2m}}
-            +\frac{mz}{2}\cdot\int \dd p\cdot\partial_\beta
+            +\frac{mz^2}{2}\cdot\int \dd p\cdot\partial_\beta
                 e^{-\beta\frac{p^2}{m}}
         \bigg] \\
-        &=\mp 4\pi Cmz\cdot\partial_\beta\bigg[
-            \mp2\int \dd p\cdot
+        &=\mp 4\pi\cdot Cm\cdot\bigg[
+            \mp2z\cdot\partial_\beta\int \dd p\cdot
                 e^{-\beta\frac{p^2}{2m}}
-            +\frac{z}{2}\cdot\int \dd p\cdot
+            +\frac{z^2}{2}\cdot\partial_\beta\int \dd p\cdot
                 e^{-\beta\frac{p^2}{m}}
         \bigg]
     \end{align}
     Substituting $q=\sqrt{\frac{\beta}{2m}}\cdot p$
     \begin{align}
         \Psi(T,V,\mu)
-        &=\mp 4\pi Cmz\cdot\partial_\beta
-            \sqrt{\frac{2m}{\beta}}\cdot\bigg[
-            \mp2\int \dd q\cdot
-                e^{-q^2}
-            +\frac{z}{2}\cdot\int \dd q\cdot
-                e^{-q^2}
+        &=\mp 4\pi\cdot Cm\cdot\bigg[
+            \mp2z\cdot\partial_\beta
+                \sqrt{\frac{2m}{\beta}}
+                \int e^{-q^2} \dd q
+            +\frac{z^2}{2}\cdot\partial_\beta
+                \sqrt{\frac{2m}{\beta}}
+                \int e^{-q^2} \dd q
         \bigg] \\
-        &=\mp 4\pi Cmz\cdot\partial_\beta
-        \sqrt{\frac{2m}{\beta}}\cdot\sqrt{\pi}\bigg(
-            \frac{z}{2}\mp2
-        \bigg) \\
-        &=\pm 4\sqrt{2}C\cdot
-        \bigg(
-            \frac{m\pi}{\beta}
-            \bigg)^{3/2}\cdot\bigg(
-            \frac{z^2}{2}\mp2z
-        \bigg)
+        &=\mp 4\pi\cdot Cm\cdot\sqrt{2m\pi}\cdot\bigg[
+            \mp2z\cdot\partial_\beta
+                \frac{1}{\sqrt{\beta}}
+            +\frac{z^2}{2}\cdot\partial_\beta
+                \frac{1}{\sqrt{\beta}}
+        \bigg] \\
+        % &=\mp 4\pi\cdot\sqrt{2}Cm^{3/2}\cdot\bigg[
+        %     \mp2z\partial_\beta
+        %     \sqrt{\frac{1}{\beta}}\cdot\int \dd q\cdot
+        %         e^{-q^2}
+        %     +\frac{z^2}{2}\cdot\partial_\beta
+        %     \sqrt{\frac{1}{\beta}}\cdot\int \dd q\cdot
+        %         e^{-q^2}
+        % \bigg] \\
+        % &=\mp 4\pi Cm\cdot\partial_\beta
+        % \sqrt{\frac{2m}{\beta}}\cdot\sqrt{\pi}\bigg(
+        %     \frac{z}{2}\mp2
+        % \bigg) \\
+        % &=\pm 4\sqrt{2}C\cdot
+        % \bigg(
+        %     \frac{m\pi}{\beta}
+        %     \bigg)^{3/2}\cdot\bigg(
+        %     \frac{z^2}{2}\mp2z
+        % \bigg)
     \end{align}
 
 \newpage
@@ -103,7 +118,7 @@ respectively. From thermodynamics, we also know $\Psi=-pV$.
     (2.5 points)
 } \ \\
     \\
-    With $z=e^{-\beta\mu}$:
+    With $z=e^{\beta\mu}$:
     \begin{align}
         \Psi(T,V,\mu)
         &=\mp 4\pi C\cdot\bigg(
