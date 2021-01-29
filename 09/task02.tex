@@ -33,10 +33,33 @@ With the formula from above, we get $\dd p = m \dd\epsilon / p$ and
 \end{align}
 where we introduced the fugacity $z=e^{\beta\mu}$, the thermal wavelength $\lambda=\frac{h}{\sqrt{2\pi m k_B T}}$ 
 and the generalized Riemann Zeta function $g_{\nu}(z)=\sum_{l=1}^{\infty}\frac{z^l}{l^{\nu}}$. \\
+\\
+Plot $g_1(z) = - \ln(1-z)$ from $z=0$ to $z=1$: \\
 
-Plot $g_1(z) = - \ln(1-z)$ from $z=0$ to $z=1$. \\
+\begin{tikzpicture}
+\begin{axis}[
+	xmin = 0, xmax = 1,
+	ymin = 0, ymax = 5.0,
+	xtick distance = 0.2,
+	ytick distance = 1.0,
+	width = 0.55\textwidth,
+	height = 0.35\textwidth,
+	xlabel = {$z$},
+	ylabel = {$g_1(z)$},]
 
+% Plot a function
+\addplot[
+	domain = 0:1,
+	samples = 100,
+	smooth,
+	thick,
+	blue,
+] {-ln(1-x)};
+\end{axis}
+\end{tikzpicture}
+\\ \\
 See that it diverges for $z \longrightarrow 1$. Thus, no BEC!
+
 
 \paragraph{c) Now consider massless bosons with energy $\epsilon(p)=cp$.
 	Again evaluate the mean particle number and investigate whether there is a 
@@ -52,15 +75,37 @@ With the formula from above, we get $\dd p = \dd\epsilon / c$ and
 	= \frac{2\pi A}{\beta^2 c^2 h^2} \sum_{l=1}^{\infty} \frac{z^l}{l^2} \notag \\
 	&= \frac{2\pi A}{\beta^2 c^2 h^2} \, g_2(z) \,.
 \end{align}
+Plot $g_2(z) = \text{Li}_2(z)$ from $z=0$ to $z=1$: \\
 
-Plot $g_2(z) = \text{Li}_2(z)$ from $z=0$ to $z=1$. \\
+\begin{tikzpicture}
+\begin{axis}[
+	xmin = 0, xmax = 1,
+	ymin = 0, ymax = 3.0,
+	xtick distance = 0.2,
+	ytick distance = 0.5,
+	width = 0.55\textwidth,
+	height = 0.35\textwidth,
+	xlabel = {$z$},
+	ylabel = {$g_2(z)$},]
 
+% Plot a function
+\addplot[
+	domain = 0:1,
+	samples = 100,
+	smooth,
+	thick,
+	blue,
+] {x+x*x/4+x*x*x/9+x*x*x*x/16+x*x*x*x*x/25+x*x*x*x*x*x/36};
+\end{axis}
+\end{tikzpicture}
+\\ \\
 See that it converges for $z \longrightarrow 1$. Thus, BEC!
 
-\paragraph{c) In case you find a BEC, give the respective expression for the critical temperature.
+\paragraph{d) In case you find a BEC, give the respective expression for the critical temperature.
     \textit{(1 point)}
 } \ \\
 \\
+We have found a BEC for the case of massless particles. \\
 When the system reaches the critical temperature, the chemical potential is zero ($\mu=0$). \\
 Thus, by defining the particle density $\rho = N/A$, we get
 \begin{align}
