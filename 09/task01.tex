@@ -96,12 +96,46 @@ respectively. From thermodynamics, we also know $\Psi=-pV$.
         \bigg)
     \end{align}
 
+\newpage
 \paragraph{2. Calculate the mean particle number 
     $N =-\partial_\mu\Psi$ in the same order. Invert this 
     relation to get $u=\rho\lambda^3/g_s$ as a function of $z$. 
     (2.5 points)
 } \ \\
     \\
+    With $z=e^{-\beta\mu}$:
+    \begin{align}
+        \Psi(T,V,\mu)
+        &=\mp 4\pi C\cdot\bigg(
+            \frac{m\pi}{\beta}
+            \bigg)^{3/2}\cdot\bigg(
+            \frac{z^2}{2}-2z
+        \bigg) \\
+        &=\mp 4\pi C\cdot\bigg(
+            \frac{m\pi}{\beta}
+            \bigg)^{3/2}\cdot\bigg(
+            \frac{1}{2}e^{-2\beta\mu}-2e^{-\beta\mu}
+        \bigg)
+    \end{align}
+    Particle number $N$:
+    \begin{align}
+        N
+        &=-\partial_\mu\Psi \\
+        &=\pm 4\pi C\bigg(
+            \frac{m\pi}{\beta}
+        \bigg)^{3/2}\cdot\partial_\mu\bigg(
+            \frac{1}{2}e^{-2\beta\mu}-2e^{-\beta\mu}
+        \bigg) \\
+        &=\pm 4\pi C\bigg(
+            \frac{m\pi}{\beta}
+        \bigg)^{3/2}\cdot\bigg(
+            -\beta e^{-2\beta\mu}+2\beta e^{-\beta\mu}
+        \bigg) \\
+        &=\pm 4\pi C\frac{(m\pi)^{3/2}}{\sqrt{\beta}}
+        \cdot\bigg(
+            2e^{-\beta\mu}-e^{-2\beta\mu}
+        \bigg)
+    \end{align}
 
 \paragraph{3. Combine your results for $\Psi$ and $u$ to obtain 
     the first two terms for pressure p in an expansion in 
