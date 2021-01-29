@@ -25,12 +25,12 @@ respectively. From thermodynamics, we also know $\Psi=-pV$.
     \\
     Talor expansion of the natural logarithm:
     \begin{align}
-        \ln(1+x)
+        \ln(1\pm x)
         &=\sum_{n=1}^\infty(-1)^{n+1}\cdot\frac{x^n}{n} \\
-        &=x-\frac{x^2}{2}+O(x^3) \\
-        \ln(1-x)
-        &=-\sum_{n=1}^\infty\frac{x^n}{n} \\
-        &=x-\frac{x^2}{2}+O(x^3)
+        &=\pm x-\frac{x^2}{2}+O(x^3) 
+        % \ln(1-x)
+        % &=-\sum_{n=1}^\infty\frac{x^n}{n} \\
+        % &=-x-\frac{x^2}{2}+O(x^3)
     \end{align}
     We define $C=g_Sk_BT\frac{V}{h^3}$ and plug the 
     definition of the Taylor expansion into 
@@ -39,17 +39,17 @@ respectively. From thermodynamics, we also know $\Psi=-pV$.
         \Psi(T,V,\mu)
         &\approx\mp C\cdot
         \int\dd\vec p\cdot\bigg[
-            ze^{-\beta\frac{\vec p^2}{2m}}
+            \pm ze^{-\beta\frac{\vec p^2}{2m}}
             -\frac{z^2}{2}e^{-2\beta\frac{\vec p^2}{2m}}
         \bigg] \\
         &=\mp Cz\cdot\bigg[
-            \int\dd\vec p\cdot
+            \pm\int\dd\vec p\cdot
                 e^{-\beta\frac{\vec p^2}{2m}}
             -\frac{z}{2}\cdot\int\dd\vec p\cdot
                 e^{-\beta\frac{\vec p^2}{m}}
         \bigg] \\
         &=\mp 4\pi Cz\cdot\bigg[
-            \int p^2\dd p\cdot
+            \pm\int p^2\dd p\cdot
                 e^{-\beta\frac{p^2}{2m}}
             -\frac{z}{2}\cdot\int p^2\dd p\cdot
                 e^{-\beta\frac{p^2}{m}}
@@ -62,13 +62,13 @@ respectively. From thermodynamics, we also know $\Psi=-pV$.
     \begin{align}
         \Psi(T,V,\mu)
         &=\mp 4\pi Cz\cdot\bigg[
-            -2m\int \dd p\cdot\partial_\beta
+            \mp2m\int \dd p\cdot\partial_\beta
                 e^{-\beta\frac{p^2}{2m}}
             +\frac{mz}{2}\cdot\int \dd p\cdot\partial_\beta
                 e^{-\beta\frac{p^2}{m}}
         \bigg] \\
         &=\mp 4\pi Cmz\cdot\partial_\beta\bigg[
-            -2\int \dd p\cdot
+            \mp2\int \dd p\cdot
                 e^{-\beta\frac{p^2}{2m}}
             +\frac{z}{2}\cdot\int \dd p\cdot
                 e^{-\beta\frac{p^2}{m}}
@@ -79,20 +79,20 @@ respectively. From thermodynamics, we also know $\Psi=-pV$.
         \Psi(T,V,\mu)
         &=\mp 4\pi Cmz\cdot\partial_\beta
             \sqrt{\frac{2m}{\beta}}\cdot\bigg[
-            -2\int \dd q\cdot
+            \mp2\int \dd q\cdot
                 e^{-q^2}
             +\frac{z}{2}\cdot\int \dd q\cdot
                 e^{-q^2}
         \bigg] \\
         &=\mp 4\pi Cmz\cdot\partial_\beta
         \sqrt{\frac{2m}{\beta}}\cdot\sqrt{\pi}\bigg(
-            \frac{z}{2}-2
+            \frac{z}{2}\mp2
         \bigg) \\
         &=\pm 4\sqrt{2}C\cdot
         \bigg(
             \frac{m\pi}{\beta}
             \bigg)^{3/2}\cdot\bigg(
-            \frac{z^2}{2}-2z
+            \frac{z^2}{2}\mp2z
         \bigg)
     \end{align}
 
@@ -109,12 +109,12 @@ respectively. From thermodynamics, we also know $\Psi=-pV$.
         &=\mp 4\pi C\cdot\bigg(
             \frac{m\pi}{\beta}
             \bigg)^{3/2}\cdot\bigg(
-            \frac{z^2}{2}-2z
+            \frac{z^2}{2}\mp2z
         \bigg) \\
         &=\mp 4\pi C\cdot\bigg(
             \frac{m\pi}{\beta}
             \bigg)^{3/2}\cdot\bigg(
-            \frac{1}{2}e^{-2\beta\mu}-2e^{-\beta\mu}
+            \frac{1}{2}e^{-2\beta\mu}\mp2e^{-\beta\mu}
         \bigg)
     \end{align}
     Particle number $N$:
@@ -124,16 +124,16 @@ respectively. From thermodynamics, we also know $\Psi=-pV$.
         &=\pm 4\pi C\bigg(
             \frac{m\pi}{\beta}
         \bigg)^{3/2}\cdot\partial_\mu\bigg(
-            \frac{1}{2}e^{-2\beta\mu}-2e^{-\beta\mu}
+            \frac{1}{2}e^{-2\beta\mu}\mp2e^{-\beta\mu}
         \bigg) \\
         &=\pm 4\pi C\bigg(
             \frac{m\pi}{\beta}
         \bigg)^{3/2}\cdot\bigg(
-            -\beta e^{-2\beta\mu}+2\beta e^{-\beta\mu}
+            -\beta e^{-2\beta\mu}\pm2\beta e^{-\beta\mu}
         \bigg) \\
         &=\pm 4\pi C\frac{(m\pi)^{3/2}}{\sqrt{\beta}}
         \cdot\bigg(
-            2e^{-\beta\mu}-e^{-2\beta\mu}
+            \pm2e^{-\beta\mu}-e^{-2\beta\mu}
         \bigg)
     \end{align}
 
