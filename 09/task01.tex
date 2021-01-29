@@ -23,11 +23,11 @@ respectively. From thermodynamics, we also know $\Psi=-pV$.
     and perform the two integrals. \textit{(2 points)}
 } \ \\
     \\
-    Talor expansion of the natural logarithm:
+    Taylor expansion of the natural logarithm:
     \begin{align}
         \ln(1\pm x)
         &=\sum_{n=1}^\infty(-1)^{n+1}\cdot\frac{x^n}{n}
-        =\pm x-\frac{x^2}{2}+O(x^3) 
+        =\pm\ x-\frac{x^2}{2}+O(x^3) 
         % \ln(1-x)
         % &=-\sum_{n=1}^\infty\frac{x^n}{n} \\
         % &=-x-\frac{x^2}{2}+O(x^3)
@@ -75,6 +75,7 @@ respectively. From thermodynamics, we also know $\Psi=-pV$.
         \bigg]
     \end{align}
     Substituting $q=\sqrt{\frac{\beta}{2m}}\cdot p$
+    and $r=\sqrt{\frac{\beta}{m}}\cdot p$
     \begin{align}
         \Psi(T,V,\mu)
         &=\mp 4\pi\cdot Cm\cdot\bigg[
@@ -82,39 +83,36 @@ respectively. From thermodynamics, we also know $\Psi=-pV$.
                 \sqrt{\frac{2m}{\beta}}
                 \int e^{-q^2} \dd q
             +\frac{z^2}{2}\cdot\partial_\beta
-                \sqrt{\frac{2m}{\beta}}
-                \int e^{-q^2} \dd q
+                \sqrt{\frac{m}{\beta}}
+                \int e^{-r^2} \dd r
         \bigg] \\
-        &=\mp 4\pi\cdot Cm\cdot\sqrt{2m\pi}\cdot\bigg[
-            \mp2z\cdot\partial_\beta
+        &=\mp 4\pi\cdot Cm\cdot\sqrt{m\pi}\cdot\bigg[
+            \mp2\sqrt{2}z\cdot\partial_\beta
                 \frac{1}{\sqrt{\beta}}
             +\frac{z^2}{2}\cdot\partial_\beta
                 \frac{1}{\sqrt{\beta}}
         \bigg] \\
             &=\pm C\cdot
-            \bigg( \frac{2\pi m}{\beta} \bigg)^{3/2}\cdot
+            \bigg(\frac{\pi m}{\beta}\bigg)^{3/2}
+            \cdot
         \bigg[
-            \mp2z
+            \mp2\sqrt{2}z
             +\frac{z^2}{2}
         \bigg] \\
-        % &=\mp 4\pi\cdot\sqrt{2}Cm^{3/2}\cdot\bigg[
-        %     \mp2z\partial_\beta
-        %     \sqrt{\frac{1}{\beta}}\cdot\int \dd q\cdot
-        %         e^{-q^2}
-        %     +\frac{z^2}{2}\cdot\partial_\beta
-        %     \sqrt{\frac{1}{\beta}}\cdot\int \dd q\cdot
-        %         e^{-q^2}
-        % \bigg] \\
-        % &=\mp 4\pi Cm\cdot\partial_\beta
-        % \sqrt{\frac{2m}{\beta}}\cdot\sqrt{\pi}\bigg(
-        %     \frac{z}{2}\mp2
-        % \bigg) \\
-        % &=\pm 4\sqrt{2}C\cdot
-        % \bigg(
-        %     \frac{m\pi}{\beta}
-        %     \bigg)^{3/2}\cdot\bigg(
-        %     \frac{z^2}{2}\mp2z
-        % \bigg)
+            &=\pm g_sV\cdot k_BT\cdot
+            \bigg(\frac{\pi m}{\beta h^2}\bigg)^{3/2}
+            \cdot
+        \bigg[
+            \mp2\sqrt{2}z
+            +\frac{z^2}{2}
+        \bigg] \\
+            &=\pm g_sV\cdot k_BT\cdot
+            \bigg(\frac{\pi m}{\beta h^2}\bigg)^{3/2}
+            \cdot
+        \bigg[
+            \mp\sqrt{8}e^{\beta\mu}
+            +\frac{1}{2}e^{2\beta\mu}
+        \bigg]
     \end{align}
 
 \newpage
@@ -124,38 +122,49 @@ respectively. From thermodynamics, we also know $\Psi=-pV$.
     (2.5 points)
 } \ \\
     \\
-    With $z=e^{\beta\mu}$:
     \begin{align}
         \Psi(T,V,\mu)
-        &=\mp 4\pi C\cdot\bigg(
-            \frac{m\pi}{\beta}
-            \bigg)^{3/2}\cdot\bigg(
-            \frac{z^2}{2}\mp2z
-        \bigg) \\
-        &=\mp 4\pi C\cdot\bigg(
-            \frac{m\pi}{\beta}
-            \bigg)^{3/2}\cdot\bigg(
-            \frac{1}{2}e^{-2\beta\mu}\mp2e^{-\beta\mu}
-        \bigg)
+        &=\pm g_sV\cdot k_BT\cdot\bigg(
+            \frac{\pi m}{\beta h^2}
+        \bigg)^{3/2}\cdot\bigg[
+            \mp\sqrt{8}e^{\beta\mu}
+            +\frac{1}{2}e^{2\beta\mu}
+        \bigg] \\
     \end{align}
-    Particle number $N$:
+    Particle number $N=-\partial_\mu\Psi$:
     \begin{align}
         N
-        &=-\partial_\mu\Psi \\
-        &=\pm 4\pi C\bigg(
-            \frac{m\pi}{\beta}
-        \bigg)^{3/2}\cdot\partial_\mu\bigg(
-            \frac{1}{2}e^{-2\beta\mu}\mp2e^{-\beta\mu}
-        \bigg) \\
-        &=\pm 4\pi C\bigg(
-            \frac{m\pi}{\beta}
-        \bigg)^{3/2}\cdot\bigg(
-            -\beta e^{-2\beta\mu}\pm2\beta e^{-\beta\mu}
-        \bigg) \\
-        &=\pm 4\pi C\frac{(m\pi)^{3/2}}{\sqrt{\beta}}
-        \cdot\bigg(
-            \pm2e^{-\beta\mu}-e^{-2\beta\mu}
-        \bigg)
+        &=\pm g_sV\cdot k_BT\cdot\beta\bigg(
+            \frac{\pi m}{\beta h^2}
+        \bigg)^{3/2}\cdot\bigg[
+            \mp\sqrt{8}e^{\beta\mu}
+            +e^{2\beta\mu}
+        \bigg] \\
+    \end{align}
+    Density $\rho=N/V$:
+    \begin{align}
+        \rho&=\pm g_s\cdot k_BT\cdot\beta\bigg(
+            \frac{\pi m}{\beta h^2}
+        \bigg)^{3/2}\cdot\bigg[
+            \mp\sqrt{8}e^{\beta\mu}
+            +e^{2\beta\mu}
+        \bigg] \\
+    \end{align}
+    With $u=\rho\lambda^3/g_s$ and $z=e^{\beta\mu}$:
+    \begin{align}
+        u
+        &=\pm k_BT\cdot\beta\bigg(
+            \frac{\pi m\lambda^2}{\beta h^2}
+        \bigg)^{3/2}\cdot\bigg[
+            \mp\sqrt{8}e^{\beta\mu}
+            +e^{2\beta\mu}
+        \bigg] \\
+        &=\pm k_BT\cdot\beta\bigg(
+            \frac{\pi m\lambda^2}{\beta h^2}
+        \bigg)^{3/2}\cdot\bigg[
+            \mp\sqrt{8}z
+            +z^2
+        \bigg] \\
     \end{align}
 
 \paragraph{3. Combine your results for $\Psi$ and $u$ to obtain 
