@@ -9,7 +9,7 @@ The chemical potential of the atoms is $\mu$.
 The Hamiltonian of this lattice gas is
 \begin{equation}
     H=-J\cdot\sum_{\langle ij\rangle}n_in_j
-    -\mu\cdot\sum_in_i
+    -\mu\cdot\sum_in_i \,,
 \end{equation}
 where $\sum_{\langle ij\rangle}$ is the sum 
 over all pairs of neighbouring sites.
@@ -19,17 +19,169 @@ over all pairs of neighbouring sites.
     the transfer matrix $T$.  Calculate the 
     transfer matrix $T$ and its eigenvalues. 
     \textit{(2 points)}
-}
+} \ \\
+\\
+The partition sum is given by
+\begin{align}
+	Z_N = \sum_{\{n_i\}} e^{-\beta H} = 
+	\sum_{n_1=0,1} ... \sum_{n_N=0,1} e^{-\beta H} \,.
+\end{align}
+Let us rewrite the Hamiltonian in the following manner:
+\begin{align}
+	H &= - J \sum_{\langle ij\rangle} n_i n_j 
+	- \mu \sum_{i=1}^{N} n_i \notag \\
+	&= - J \sum_{i=1}^{N} n_i n_{i+1} - 
+	\frac{1}{2} \mu \sum_{i=1}^{N} (n_i + n_{i+1}) \,.
+\end{align}
+This is equivalent since we have periodic boundary conditions 
+($n_{N+1}=n_1$) and the lattice is one-dimensional. 
+Now, we can define
+\begin{align}
+	-\beta H = K \sum_{i=1}^{N} n_i n_{i+1} 
+	+ \frac{1}{2} L \sum_{i=1}^{N} (n_i + n_{i+1}) \,,
+\end{align}
+where $K = \beta J$ and $L = \beta \mu$. 
+This allows us to write the argument of the partition sum as
+\begin{align}
+	e^{-\beta H} = T_{1,2} \cdot T_{2,3} \cdot ... \cdot  T_{N,1} \,,
+\end{align}
+where 
+\begin{align}
+	T_{i,i+1} = e^{K n_i n_{i+1} + \frac{1}{2} L (n_i + n_{i+1})}
+\end{align}
+is the transfer matrix from lattice site $i$ to site $i+1$. 
+From the fact that there are two possible values for $n_i$ 
+and $n_{i+1}$ (unoccupied or occupied) which are independent 
+of the index $i$, one can conclude that the $2\times 2$ transfer 
+matrix is independent of the index $i$. Thus, one can write
+\begin{align}
+	T =
+	\begin{bmatrix}
+    1                & e^{\frac{1}{2}L} \\
+    e^{\frac{1}{2}L} & e^{K + L}
+    \end{bmatrix} \,,
+\end{align}
+where $T_{00}$ corresponds to $n_i=n_{i+1}=0$, $T_{01}$ corresponds 
+to $n_i=0$ and $n_{i+1}=1$, $T_{10}$ corresponds to $n_i=1$ and 
+$n_{i+1}=0$ and $T_{11}$ corresponds to $n_i=n_{i+1}=1$.
+Since the transfer matrix is independent of the index $i$, on 
+can simplify the partition sum further by defining
+\begin{align}
+	\vert n_i = 0 \rangle &= 
+	\begin{bmatrix}
+    1 \\
+    0
+    \end{bmatrix} \,, \\
+    \vert n_i = 1 \rangle &= 
+	\begin{bmatrix}
+    0 \\
+    1
+    \end{bmatrix} \,.
+\end{align}
+With this definition it follows that 
+$\sum_{n_i=0,1} \vert n_i\rangle \langle n_i\vert = 1$ and 
+\begin{align}
+	Z_N &= \sum_{n_1=0,1} ... \sum_{n_N=0,1}
+	T_{1,2} \cdot T_{2,3} \cdot ... \cdot T_{N,1} \\
+	&= \sum_{n_1=0,1} ... \sum_{n_N=0,1}
+	\langle n_1 \vert T \vert n_2 \rangle 
+	\langle n_2 \vert T \vert n_3 \rangle ... 
+	\langle n_N \vert T \vert n_1 \rangle \\
+	&= \sum_{n_1=0,1} 
+	\langle n_1 \vert T^N \vert n_1 \rangle \\
+	&= \lambda_1^N(K,L) + \lambda_2^N(K,L) \,,
+\end{align}
+where $\lambda_1$ and $\lambda_2$ are the eigenvalues of $T$ 
+which are given by
+\begin{align}
+	\lambda_{1/2}(K,L) = 
+	\frac{1+e^{K+L}\pm\sqrt{(1+e^{K+L})^2-4e^L(e^K-1)}}{2} \,. 
+\end{align}
 
 \paragraph{2. Find a transformation of the 
     occupancies $n_i$ to map the lattice gas 
-    model to the Ising model with spins $S_i$. 
+    model to the Ising model with spins $s_i$. 
     \textit{(2 points)}
-}
+} \ \\
+\\
+A map from the lattice gas model,
+\begin{align}
+	\label{lattice}
+	Z_L(K,L) = \sum_{\{n_i\}} 
+	e^{K\sum_i n_i n_{i+1}+L \sum_i n_i} \,,
+\end{align}
+with occupancies $n_i=0,1$ to the Ising model,
+\begin{align}
+	\label{ising}
+	Z_I(K',L') = \sum_{\{s_i\}} 
+	e^{K'\sum_i s_i s_{i+1}+L' \sum_i s_i} \,,
+\end{align}
+with spins $s_i=\pm 1$ can be given by
+\begin{align}
+	\label{map}
+	n_i = \frac{s_i + 1}{2} \,.
+\end{align}
+Inserting Eq.~\eqref{map} into Eq.~\eqref{lattice} yields
+\begin{align}
+	Z_L(K,L) = e^{\frac{N}{2}(\frac{K}{2} + L)} \cdot
+	Z_I\left(K'(K,L),L'(K,L)\right) \,,
+\end{align}
+with $K'(K,L) = K/4$ and $L'(K,L)=(K+L)/2$. Thus, 
+the lattice gas model and the Ising model are in fact 
+equivalent. Expressing the eigenvalues of the lattice 
+model $\lambda_{1/2}(K,L)$ with the new variables 
+$K'$ and $L'$, 
+\begin{align}
+	\lambda_{1/2}\left(K',L'\right) = 
+	e^{L'}\left(\cosh(L')\pm\sqrt{\cosh^2(L')-2e^{-2K'\sinh(2K')}}\right) \,,
+\end{align}
+and calculating the partition sum of the Ising model,
+\begin{align}
+	Z_I\left(K',L'\right) &= e^{-N(L'-K')} \, Z_L(K',L') 
+	= e^{-N(L'-K')} \left(\lambda_1^N\left(K',L'\right)+\lambda_2^N\left(K',L'\right)\right) \notag \\
+	&= \tilde{\lambda}_1^N\left(K',L'\right) + \tilde{\lambda}_2^N\left(K',L'\right) \,,
+\end{align}
+gives in fact the correct eigenvalues of the Ising model:
+\begin{align}
+	\tilde{\lambda}_{1/2}\left(K',L'\right) = 
+	e^{K'}\left(\cosh(L')\pm\sqrt{\cosh^2(L')-2e^{-2K'\sinh(2K')}}\right) \,.
+\end{align}
+
 
 \paragraph{3. Derive an expression for the 
     average $\langle n_i\rangle$ in the limit 
     of $N\to\infty$ in terms of the 
     eigenvalues of the transfer matrix.
     \textit{(2 points)}
-}
+} \ \\
+\\
+Since $\lambda_1>\lambda_2$ the partition sum can be simplified for $N\to\infty$:
+\begin{align}
+	Z = \lambda_1^N + \lambda_2^N
+	= \lambda_1^N \left[1+\left(\frac{\lambda_2}{\lambda_1}\right)^N\right] \,
+	\longrightarrow \, \lambda_1^N \,.
+\end{align}
+We see that only $\lambda_1$ matters in the limit $N\to\infty$. Thus, we will 
+neglect $\lambda_2$ in the following. \\
+An expression for $\langle n_i\rangle$ can be given as:
+\begin{align}
+	\langle n_i\rangle &= \frac{1}{Z} \sum_{n_1=0,1}...\sum_{n_N=0,1}
+	n_i \, e^{-\beta H} \notag \\
+	&= \frac{1}{Z} \sum_{n_1=0,1} ... \sum_{n_N=0,1} n_i \,
+	T_{1,2} \cdot T_{2,3} \cdot ... \cdot T_{N,1} \notag \\
+	&= \frac{1}{Z} \sum_{n_1=0,1} ... \sum_{n_N=0,1}
+	\langle n_1 \vert T \vert n_2 \rangle \,
+	... \, n_i \, \langle n_i \vert T \vert n_{i+1} \rangle \, ... \,
+	\langle n_N \vert T \vert n_1 \rangle \notag \\
+	&= \frac{1}{Z} \sum_{n_1=0,1}
+	\langle n_1 \vert T^{i-1} \vert n_i=1 \rangle
+	\langle n_i=1 \vert T^{N-(i-1)} \vert n_1 \rangle \notag \\
+	&\approx \frac{1}{Z} \, \lambda_1^N \,
+	\langle n_1=0 \vert n_i=1 \rangle
+	\langle n_i=1 \vert n_1=0 \rangle \notag \\
+	&= \langle n_1=0 \vert n_i=1 \rangle
+	\langle n_i=1 \vert n_1=0 \rangle \,.
+\end{align}
+Expressing the states in the eigenvector basis of $T$ and calculating 
+the scalar products yields the wanted expression for $\langle n_i\rangle$ 
+in the limit of $N\to\infty$.
