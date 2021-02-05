@@ -7,17 +7,29 @@ $\varepsilon_i$ with $i=1,2,...,M$.
     \textit{(1 point)}
 } \ \\
     \\
-    HINT: Pay attention to the degeneracy.
-    \begin{equation}
-        Z_G=
-        \sum_{i=1}^M\bigg[
-            1+2e^{
-                -\beta(\varepsilon_i-2\mu)  % 2 = Zahl der Teilchen fuer E_i
-            }+e^{
-                -\beta(\varepsilon_i-\mu)
-            }
-        \bigg]
-    \end{equation}
+    HINT: Pay attention to the degeneracy. \\
+\\
+We can have the following configurations for one energy level $\varepsilon_i$: 
+\begin{itemize}
+	\item[1.] The energy level is not occupied ($E=0$).
+	\item[2.] The energy level is occupied with one spin-up electron ($E=\varepsilon_i$).
+	\item[3.] The energy level is occupied with one spin-down electron ($E=\varepsilon_i$).
+	\item[4.] The energy level is occupied with two electron ($E=2\varepsilon_i$).
+\end{itemize}
+Since spin-up and spin-down electrons are distinguishable, we have two microstates with 
+energy $\varepsilon_i$. Thus, the partition sum for one energy level is:
+\begin{align}
+	z_i = 1+2e^{-\beta(\varepsilon_i-\mu)}+e^{-2\beta(\varepsilon_i-\mu)}
+	= \left( 1+e^{-\beta(\varepsilon_i-\mu)} \right)^2 \,.
+\end{align}
+Remark: In general, for degeneracy $g$, the partition sum would be given by
+\begin{align}
+	z_i = \left( 1+e^{-\beta(\varepsilon_i-\mu)} \right)^g \,.
+\end{align}
+For $M$ independent energy levels, the grand canonical partition sum is
+\begin{align}
+	Z_G = \prod_{i=1}^M \left( 1+e^{-\beta(\varepsilon_i-\mu)} \right)^2 \,.
+\end{align}
 
 \paragraph{b) Use the relation $F=-k_BT\ln Z_G+\mu\langle N\rangle$
     between the free energy, the grand canonical partition 
@@ -25,21 +37,23 @@ $\varepsilon_i$ with $i=1,2,...,M$.
     to show: the thermodynamic properties of the system stay 
     the same if one, instead of considering the 
     ⟨N⟩ particles, distributes $2M-\langle N\rangle$ 
-    "holes" with chemical potential $\mu$ on the energy levels
+    "holes" with chemical potential $-\mu$ on the energy levels
     $-\varepsilon_i$.
-}
-    % \begin{equation}
-    %     F=-k_BT\ln\bigg[
-    %         \sum_1^M2\cdot\exp\bigg(
-    %             -\beta (\varepsilon_i-2\mu)  % 2 = Zahl der Teilchen fuer E_i
-    %         \bigg)+\exp\bigg(
-    %             -\beta(\varepsilon_i-\mu)
-    %         \bigg)
-    %     \bigg]+\mu\langle N\rangle
-    % \end{equation}
-    % \begin{equation}
-    %     Z_G=
-    %     \sum_1^M2\cdot\exp\bigg(
-    %         -\beta (-\varepsilon_i-2\mu)  % 2 = Zahl der Teilchen fuer E_i
-    %     \bigg)
-    % \end{equation}
+    \textit{(3 points)}
+} \ \\
+\\
+You need to show that the free energy (from which all the physical properties 
+of the system are determined by derivatives) of the "holes" differs at most by
+a constant term: $F' = F + C$.
+The free energy of the particles is
+\begin{align}
+	F = \mu\langle N\rangle - 2k_BT \sum_{i=1}^M \ln\left( 1+e^{-\beta(\varepsilon_i-\mu)} \right) \,.
+\end{align}
+The free energy of the "holes" is
+\begin{align}
+	F' = -\mu(2M-\langle N\rangle) - 2k_BT \sum_{i=1}^M \ln\left( 1+e^{\beta(\varepsilon_i-\mu)} \right) \,.
+\end{align}
+Indeed one can show that
+\begin{align}
+	F' = F - 2\sum_{i=1}^M \varepsilon_i \,.
+\end{align}
