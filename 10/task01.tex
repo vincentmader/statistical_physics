@@ -84,5 +84,33 @@ $\mu$ of particle $i$.
     \textit{(2 points)}
 } \ \\
     \\
-    For $T\to0, M\sim N\mu$. \\
-    For $T\to\infty, M\sim\frac{1}{2}N\mu(\beta\mu h)=\frac{1}{2}N\beta\mu^2 h\to0$
+    For $T\to0$, i.e. $x\to\infty$: 
+    \begin{align}
+        \coth(x)=\frac{e^{2x}-1}{e^{2x}+1}
+        \approx\frac{e^{2x}}{e^{2x}}=1
+        \ \ \ \ \ \textnormal{and}\ \ \ \ \
+        1/x\to0
+    \end{align}
+    \begin{align}
+        \Rightarrow
+        M\approx N\mu 
+    \end{align}
+    As expected, all spins are aligned to 
+    the external magnetic field. \\ 
+    \\
+    For $T\to\infty$, i.e. $x\to0$: \\
+    \begin{align}
+        \coth x=\frac{e^{2x}-1}{e^{2x}+1}
+        % \approx\frac{x}{2}
+        % \ \ \ \ \ \textnormal{(Laurent power series)}
+        \to\frac{1-1}{1+1}=0
+    \end{align}
+    \begin{align}
+        \Rightarrow
+    %     M\approx\frac{1}{2}N\mu(\beta\mu h)
+    %     =\frac{1}{2}N\beta\mu^2 h\to0
+        M\to0
+    \end{align}
+    For high temperatures, the mean 
+    magnetization is zero, due to the 
+    non-uniform distribution of $\theta_i$.
