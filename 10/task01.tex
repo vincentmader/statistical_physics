@@ -44,12 +44,17 @@ $\mu$ of particle $i$.
             {\beta\mu h}
         \bigg)^N
     \end{align}
+    Here, $Z_0$ is the part of the partition 
+    function that does not include the 
+    integration over orientations. \\
+    \\
     Free energy:
     \begin{align}
         F
         &=-k_BT\ln(Z) \\
-        &=-k_BT\cdot(\ln(Z_0)+N\ln(4\pi))
-        -Nk_BT\ln\bigg(
+        &=-k_BT\cdot\bigg(
+            \ln(Z_0)+N\ln(4\pi)
+        \bigg)-Nk_BT\ln\bigg(
             \frac{\sinh(\beta\mu h)}{\beta\mu h}
         \bigg)
     \end{align}
@@ -60,7 +65,7 @@ $\mu$ of particle $i$.
         =N\mu\cdot\bigg(\coth(x)
         -\frac{1}{x}\bigg)
     \end{align}
-    with $x=\beta\mu h$.
+    with $x:=\beta\mu h$.
 
 \newpage
 \paragraph{2. The ratio of which quantities 
@@ -86,7 +91,7 @@ $\mu$ of particle $i$.
     \\
     For $T\to0$, i.e. $x\to\infty$: 
     \begin{align}
-        \coth(x)=\frac{e^{2x}-1}{e^{2x}+1}
+        \coth(x)=\frac{e^{2x}+1}{e^{2x}-1}
         \approx\frac{e^{2x}}{e^{2x}}=1
         \ \ \ \ \ \textnormal{and}\ \ \ \ \
         1/x\to0
@@ -100,16 +105,18 @@ $\mu$ of particle $i$.
     \\
     For $T\to\infty$, i.e. $x\to0$: \\
     \begin{align}
-        \coth x=\frac{e^{2x}-1}{e^{2x}+1}
-        % \approx\frac{x}{2}
-        % \ \ \ \ \ \textnormal{(Laurent power series)}
-        \to\frac{1-1}{1+1}=0
+        \coth x=\frac{e^{2x}+1}{e^{2x}-1}
+        \approx\frac{x}{2}
+        \ \ \ \ \ \textnormal{(Laurent power series)}
+        % \to\frac{1+1}{1-1}=0
     \end{align}
     \begin{align}
         \Rightarrow
-    %     M\approx\frac{1}{2}N\mu(\beta\mu h)
-    %     =\frac{1}{2}N\beta\mu^2 h\to0
-        M\to0
+        M\approx
+        % \frac{1}{2}N\mu(\beta\mu h)
+        % =
+        \frac{1}{2}N\beta\mu^2 h\to0
+        % M\to0
     \end{align}
     For high temperatures, the mean 
     magnetization is zero, due to the 
