@@ -11,7 +11,7 @@ fluids reads
 \begin{equation}
     \Psi(T,V,\mu)=\mp g_Sk_BT\frac{V}{h^3}\cdot
     \int\dd\vec p\cdot\ln\bigg[
-        1\pm ze^{-\beta\frac{\vec p^2}{2m}}
+        1\pm\ ze^{-\beta\frac{\vec p^2}{2m}}
     \bigg]
     \label{eq:ideal_quantum_fluid}
 \end{equation}
@@ -25,7 +25,7 @@ respectively. From thermodynamics, we also know $\Psi=-pV$.
     \\
     Taylor expansion of the natural logarithm:
     \begin{align}
-        \ln(1\pm x)
+        \ln(1\pm\ x)
         &=\sum_{n=1}^\infty(-1)^{n+1}\cdot\frac{x^n}{n}
         =\pm\ x-\frac{x^2}{2}+O(x^3) 
         % \ln(1-x)
@@ -39,17 +39,11 @@ respectively. From thermodynamics, we also know $\Psi=-pV$.
         \Psi(T,V,\mu)
         &\approx\mp C\cdot
         \int\dd\vec p\cdot\bigg[
-            \pm ze^{-\beta\frac{\vec p^2}{2m}}
+            \pm\ ze^{-\beta\frac{\vec p^2}{2m}}
             -\frac{z^2}{2}e^{-2\beta\frac{\vec p^2}{2m}}
         \bigg] \\
-        % &=\mp C\cdot\bigg[
-        %     \pm\int\dd\vec p\cdot
-        %         ze^{-\beta\frac{\vec p^2}{2m}}
-        %     -\frac{z^2}{2}\cdot\int\dd\vec p\cdot
-        %         e^{-\beta\frac{\vec p^2}{m}}
-        % \bigg] \\
         &=\mp 4\pi C\cdot\bigg[
-            \pm z\int p^2\dd p\cdot
+            \pm\ z\int p^2\dd p\cdot
                 e^{-\beta\frac{p^2}{2m}}
             -\frac{z^2}{2}\cdot\int p^2\dd p\cdot
                 e^{-\beta\frac{p^2}{m}}
@@ -92,21 +86,21 @@ respectively. From thermodynamics, we also know $\Psi=-pV$.
             +\frac{z^2}{2}\cdot\partial_\beta
                 \frac{1}{\sqrt{\beta}}
         \bigg] \\
-            &=\pm C\cdot
+        &=\pm\ C\cdot
             \bigg(\frac{\pi m}{\beta}\bigg)^{3/2}
             \cdot
         \bigg[
             \mp2\sqrt{2}z
             +\frac{z^2}{2}
         \bigg] \\
-            &=\pm g_sV\cdot k_BT\cdot
+        &=\pm\ g_sV\cdot k_BT\cdot
             \bigg(\frac{\pi m}{\beta h^2}\bigg)^{3/2}
             \cdot
         \bigg[
             \mp2\sqrt{2}z
             +\frac{z^2}{2}
         \bigg] \\
-            &=\pm g_sV\cdot k_BT\cdot
+        &=\pm\ g_sV\cdot k_BT\cdot
             \bigg(\frac{\pi m}{\beta h^2}\bigg)^{3/2}
             \cdot
         \bigg[
@@ -122,56 +116,69 @@ respectively. From thermodynamics, we also know $\Psi=-pV$.
     (2.5 points)
 } \ \\
     \\
-    \begin{align}
-        \Psi(T,V,\mu)
-        &=\pm g_sV\cdot k_BT\cdot\bigg(
-            \frac{\pi m}{\beta h^2}
-        \bigg)^{3/2}\cdot\bigg[
-            \mp\sqrt{8}e^{\beta\mu}
-            +\frac{1}{2}e^{2\beta\mu}
-        \bigg] \\
-    \end{align}
+    % \begin{align}
+        % \Psi(T,V,\mu)
+        % &=\pm\ g_sV\cdot k_BT\cdot\bigg(
+        %     \frac{\pi m}{\beta h^2}
+        % \bigg)^{3/2}\cdot\bigg[
+        %     \mp\sqrt{8}e^{\beta\mu}
+        %     +\frac{1}{2}e^{2\beta\mu}
+        % \bigg]
+    % \end{align}
     Particle number $N=-\partial_\mu\Psi$:
     \begin{align}
         N
-        &=\pm g_sV\cdot k_BT\cdot\beta\bigg(
+        &=\mp\ g_sV\cdot k_BT\cdot\beta\bigg(
             \frac{\pi m}{\beta h^2}
         \bigg)^{3/2}\cdot\bigg[
             \mp\sqrt{8}e^{\beta\mu}
             +e^{2\beta\mu}
-        \bigg] \\
+        \bigg]
     \end{align}
     Density $\rho=N/V$:
     \begin{align}
-        \rho&=\pm g_s\cdot k_BT\cdot\beta\bigg(
+        \rho&=\mp\ g_s\cdot k_BT\cdot\beta\bigg(
             \frac{\pi m}{\beta h^2}
         \bigg)^{3/2}\cdot\bigg[
             \mp\sqrt{8}e^{\beta\mu}
             +e^{2\beta\mu}
-        \bigg] \\
+        \bigg]
     \end{align}
     With $u=\rho\lambda^3/g_s$ and $z=e^{\beta\mu}$:
     \begin{align}
         u
-        &=\pm k_BT\cdot\beta\bigg(
+        &=\mp\ k_BT\cdot\beta\bigg(
             \frac{\pi m\lambda^2}{\beta h^2}
         \bigg)^{3/2}\cdot\bigg[
             \mp\sqrt{8}e^{\beta\mu}
             +e^{2\beta\mu}
         \bigg] \\
-        &=\pm k_BT\cdot\beta\bigg(
+        &=\mp\ k_BT\cdot\beta\bigg(
             \frac{\pi m\lambda^2}{\beta h^2}
         \bigg)^{3/2}\cdot\bigg[
             \mp\sqrt{8}z
             +z^2
-        \bigg] \\
+        \bigg]
     \end{align}
 
 \paragraph{3. Combine your results for $\Psi$ and $u$ to obtain 
     the first two terms for pressure p in an expansion in 
     $\rho$ to second order. \textit{(2.5 points)}
 } \ \\
-    \\
+    \begin{align}
+        p
+        &=-\Psi/V \\
+        &=\mp\ g_s\cdot k_BT\cdot\bigg(
+            \frac{\pi m}{\beta h^2}
+        \bigg)^{3/2}\cdot\bigg[
+            \mp\sqrt{8}e^{\beta\mu}
+            +\frac{1}{2}e^{2\beta\mu}
+        \bigg] \\
+        &=...?
+    \end{align}
+    % \begin{align}
+    %     p=-\Psi\rho/N
+    % \end{align}
 
 \paragraph{4. Discuss your results for the classical limit and 
     the first quantum correction. Where does degeneracy $g_s$
@@ -179,3 +186,6 @@ respectively. From thermodynamics, we also know $\Psi=-pV$.
     \textit{(1 point)}
 } \ \\
     \\
+    The grandcanonical potential with the minus sign 
+    $\Psi_-$ describes the ideal bosonic gas, while 
+    $\Psi_+$ describes the ideal fermionic gas.
