@@ -177,11 +177,35 @@ An expression for $\langle n_i\rangle$ can be given as:
 	\langle n_1 \vert T^{i-1} \vert n_i=1 \rangle
 	\langle n_i=1 \vert T^{N-(i-1)} \vert n_1 \rangle \notag \\
 	&\approx \frac{1}{Z} \, \lambda_1^N \,
-	\langle n_1=0 \vert n_i=1 \rangle
-	\langle n_i=1 \vert n_1=0 \rangle \notag \\
-	&= \langle n_1=0 \vert n_i=1 \rangle
-	\langle n_i=1 \vert n_1=0 \rangle \,.
+	\langle n'_1=0 \vert n_i=1 \rangle
+	\langle n_i=1 \vert n'_1=0 \rangle \notag \\
+	&\approx \langle n'_1=0 \vert n_i=1 \rangle
+	\langle n_i=1 \vert n'_1=0 \rangle \,.
 \end{align}
 Expressing the states in the eigenvector basis of $T$ and calculating 
 the scalar products yields the wanted expression for $\langle n_i\rangle$ 
-in the limit of $N\to\infty$.
+in the limit of $N\to\infty$. We know that $\vert n'_1=0 \rangle$ and 
+$\vert n'_1=1 \rangle$ are the eigenvectors of $T$ with eigenvalues 
+$\lambda_1$ and $\lambda_2$ respectively:
+\begin{align}
+	\vert n'_1=0 \rangle = 
+	\begin{bmatrix}
+    -e^{-\frac{L}{2}}\left(e^{K+L}-\lambda_1\right) \\
+    1
+    \end{bmatrix} \,, \quad
+    \vert n'_1=1 \rangle = 
+	\begin{bmatrix}
+    -e^{-\frac{L}{2}}\left(e^{K+L}-\lambda_2\right) \\
+    1
+    \end{bmatrix} \,,
+\end{align}
+and that they form a basis. Thus, we have
+\begin{align}
+	\langle n'_1=0 \vert n'_1=1 \rangle =
+	1 + e^{-L}(e^{K+L}-\lambda_1)(e^{K+L}-\lambda_2) \,.
+\end{align}
+And finally:
+\begin{align}
+	\langle n_i\rangle = 
+	\left( 1 + e^{-L}(e^{K+L}-\lambda_1)(e^{K+L}-\lambda_2) \right)^2 \,.
+\end{align}
