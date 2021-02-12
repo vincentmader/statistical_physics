@@ -102,21 +102,35 @@ def plot_magnetizations(magnetizations, temperatures):
     plt.ylabel(r'magnetization $\langle M\rangle$')
     plt.legend(loc='lower right')
     plt.savefig('../figures/magnetization_vs_time.pdf')
+    plt.close()
+
+
+def plot_grid(grid, T, idx):
+    plt.imshow(grid, cmap='gray')
+    plt.savefig(f'../figures/grid_{T}_{idx}.pdf')
+    plt.close()
 
 
 def main():
 
     temperatures = [1.5, 3]
+    nr_of_runs = 300
 
     magnetizations = []
     for T in temperatures:
         grid = initialize_spins(N)
 
         magnetization = []
-        for run_idx in tqdm(range(300)):
+        for run_idx in tqdm(range(nr_of_runs)):
+            # flip random spins
             for _ in range(N**2):
                 grid = flip_random_spin(grid, T)
+            # get magnetization
             magnetization.append(get_magnetization(grid))
+            # plot spins in grid
+            if run_idx in [0, 20, 50]:
+                plot_grid(grid, T, run_idx)
+
         magnetizations.append(magnetization)
 
     plot_magnetizations(magnetizations, temperatures)

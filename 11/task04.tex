@@ -41,19 +41,23 @@ $J=1$ and $k_B=1$ for simplicity.
         (note that the sum here is over all spins) \\
         \\
         Get the magnetization for a given grid:
-        \lstinputlisting[firstline=74,lastline=82]{./code/main.py} \ \\
+        \lstinputlisting[firstline=74,lastline=82]{./code/main.py}
+        \newpage
         Calculate mean magnetization after every $N^2$ "tests",
         do this for different temperatures and plot.
-        \lstinputlisting[firstline=107,lastline=123]{./code/main.py}
-        \newpage
+        \lstinputlisting[firstline=114,lastline=136]{./code/main.py} \ \\
         Plotting is done with this function: 
-        \lstinputlisting[firstline=85,lastline=104]{./code/main.py} \ \\
+        \lstinputlisting[firstline=85,lastline=111]{./code/main.py} 
 
+    % \newpage
     \item Why does this simple method sample phase 
-        space (rather) efficiently?
+        space (rather) efficiently? \\
+        \\
+        Choosing spins at random is an unbiased way of 
+        doing the calculation, since all grid cells are 
+        equally important. 
 \end{itemize}
 
-\newpage
 \paragraph{2. Study the system numerically for $N=32$ or 
     higher and for the two temperatures $T=3$ and $T=1.5$ 
     (note again that $J=1=k_B$, hence $T$ is the only 
@@ -84,9 +88,55 @@ $J=1$ and $k_B=1$ for simplicity.
             with a non-zero probability even if the 
             energy change is positive. For this reason, 
             one can see in the plot that the system at 
-            $T=3$ approximates the low-energy state much 
+            $T=3$ approximates the low-energy state a bit
             more slowly than the system at $T=1.5$ does.
     \end{enumerate}
+    
+    \newpage
+    Visualization of the grid's state at various times.
+    \begin{figure}[h!]
+        \centering
+        \begin{minipage}{.5\linewidth}
+          \centering
+          \subfloat[spins for $T=1.5$ after initialization]{
+            \label{:a}
+            \includegraphics[scale=.5]{./figures/grid_1.5_0.pdf}
+          }
+        \end{minipage}%
+        \begin{minipage}{.5\linewidth}
+          \centering
+          \subfloat[spins for $T=1.5$ after initialization]{
+            \label{:b}
+            \includegraphics[scale=.5]{./figures/grid_3_0.pdf}
+          }
+        \end{minipage}
+        \begin{minipage}{.5\linewidth}
+          \centering
+          \subfloat[spins for $T=1.5$ after 20 loops over the grid]{
+            \label{:a}
+            \includegraphics[scale=.5]{./figures/grid_1.5_20.pdf}
+          }
+        \end{minipage}%
+        \begin{minipage}{.5\linewidth}
+          \centering
+          \subfloat[spins for $T=3$ after 20 loops over the grid]{
+            \label{:b}
+            \includegraphics[scale=.5]{./figures/grid_3_20.pdf}
+          }
+        \end{minipage}
+        \begin{minipage}{.5\linewidth}
+          \centering
+          \subfloat[spins for $T=1.5$ after 50 loops over the grid]{
+            \label{:a}
+            \includegraphics[scale=.5]{./figures/grid_1.5_50.pdf}
+          }
+        \end{minipage}%
+        \begin{minipage}{.5\linewidth}
+          \centering
+          \subfloat[spins for $T=3$ after 50 loops over the grid]{
+            \label{:b}
+            \includegraphics[scale=.5]{./figures/grid_3_50.pdf}
+          }
+        \end{minipage}
 
-\newpage
-\lstinputlisting{./code/main.py} \ \\
+    \end{figure}
