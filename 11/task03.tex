@@ -1,0 +1,54 @@
+Consider a one-dimensional gas of $N$ particles of length $a$ confined to a strip of length $L$. The particles
+cannot overlap with each other (hard core repulsion) and otherwise do not interact with each other (no
+attraction like in the van der Waals gas).
+
+\paragraph{1. Calculate the canonical partition sum $Z$ by integrating over all possible values for the midpoints
+of the gas particles. \textit{(2 points)}
+} \ \\
+\\
+The canonical partition sum $Z$ is as usual a sum over all configurations in phase space:
+\begin{align}
+	Z &= \frac{1}{N!}\frac{1}{h^N} \int\dd^Np\int\dd^Nx \, e^{-\beta \left( \frac{p^2}{2m} + U(x) \right)} \notag \\
+	&= \frac{1}{N!} \left( \frac{1}{h} \int\dd p \, e^{-\beta \frac{p^2}{2m}} \right)^N \int\dd^Nx \, e^{-\beta U(x)} \notag \\
+	&= \frac{1}{N! \lambda^N} \int\dd x_1 \, ... \, \dd x_N \, e^{-\beta U(x)} \,.
+\end{align}
+Here, we write $\lambda$ for the thermal wavelength as usual and $U(x)$ for the potential of the system which depends on the midpoints 
+$x_1, ..., x_N$ of the particles. We see that the partition sum reduces to an integral over all possible values for the midpoints 
+of the gas particles. For hard core repulsion, we know that the weight $e^{-\beta U(x)}$ is either 0 (if any two particles overlap 
+which is not allowed) or 1 (if no particles overlap). Thus, we can reduce the integral to the case where $x_1 < x_2 < ... < x_N$ 
+and multiply by $N!$ to include all possibilities. Clearly, $x_i$ must then lie between $x_{i-1}+a$ and $L-(N-i)a-a/2$. With 
+successive integration we get
+\begin{align}
+	Z &= \frac{1}{\lambda^N} \int_{a/2}^{L-(N-1)a-a/2}\dd x_1  \int_{x_1+a}^{L-(N-2)a-a/2}\dd x_2 \, \, ... \int_{x_{N-1}+a}^{L-a/2}\dd x_N \notag \\
+	&= \frac{1}{\lambda^N} \int_{a/2}^{L-(N-1)a-a/2}\dd x_1  \int_{x_1+a}^{L-(N-2)a-a/2}\dd x_2 \, \, ... \int_{x_{N-2}+a}^{L-a-a/2}\dd x_{N-1} \, (L-3a/2-x_{N-1}) \notag \\
+	&= \frac{1}{2\lambda^N} \int_{a/2}^{L-(N-1)a-a/2}\dd x_1  \int_{x_1+a}^{L-(N-2)a-a/2}\dd x_2 \, \, ... \int_{x_{N-3}+a}^{L-2a-a/2}\dd x_{N-2} \, (L-5a/2-x_{N-2})^2 \notag \\
+	&= ... \notag \\
+	&= \frac{1}{i! \lambda^N} \int_{a/2}^{L-(N-1)a-a/2}\dd x_1  \int_{x_1+a}^{L-(N-2)a-a/2}\dd x_2 \, \, ... \int_{x_{N-i-1}+a}^{L-ia-a/2}\dd x_{N-i} \, (L-(2i+1)a/2-x_{N-i})^i \notag \\
+	&= ... \notag \\
+	&= \frac{1}{(N-1)! \lambda^N} \int_{a/2}^{L-(N-1)a-a/2}\dd x_1 \, (L-(2N-1)a/2-x_1)^{N-1} \notag \\
+	&= \frac{1}{N! \lambda^N} \, (L-Na)^N \,.
+\end{align}
+This makes also sense from a physical point of view: It's like we have $N$ independent particles which can move freely in a one-dimensional volume 
+$(L-Na)$.
+
+
+\newpage
+
+\paragraph{2. Calculate the free energy $F=-k_BT\ln Z$ and the pressure $p=-\partial_L F$. Evaluate the virial
+coefficient $B_2$ from the appropriate Mayer function and show that your result agrees with the
+virial expansion based on the exact solution. \textit{(2 points)}
+} \ \\
+\\
+The free energy is
+\begin{align}
+	F = - k_B T \left( N \ln\left( \frac{L-Na}{\lambda} \right) - \ln\left(N!\right) \right) \,.
+\end{align}
+The pressure is
+\begin{align}
+	p = \frac{N k_B T}{L-Na} \,.
+\end{align}
+The virial coefficient $B_2$ for one-dimensional hard particles with radius $a/2$ is
+\begin{align}
+	B_2 = -\frac{1}{2} \int_0^{\infty} \dd r \, \left( e^{-\beta U(r)} - 1 \right) = \frac{1}{2} \int_0^{a/2} \dd r = \frac{a}{4} \,,
+\end{align}
+since $e^{-\beta U(r)}$ can be either 0 or 1 as explained above.
