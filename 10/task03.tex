@@ -70,9 +70,12 @@ each iteration:
     exact result for the Ising chain. How good
     is the numerical agreement?
     \textit{(1.5 points)}
-}
+}	\ \\
+    \\
+	Our result by summing the series for $g$:
     \begin{align}
         f
-        &=\sum_{i=0}^{4}g_i
-        \approx2.3
+        &=\sum_{i=0}^{4} \frac{g_i}{2^i}
+        \approx1.106 \,.
     \end{align}
+    Compare to exact result $f=\ln\left(2\cosh(K)\right)=1.127$ for $K=1$.

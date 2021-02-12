@@ -128,7 +128,8 @@ Inserting Eq.~\eqref{map} into Eq.~\eqref{lattice} yields
 \end{align}
 with $K'(K,L) = K/4$ and $L'(K,L)=(K+L)/2$. Thus, 
 the lattice gas model and the Ising model are in fact 
-equivalent. Expressing the eigenvalues of the lattice 
+equivalent since the partition sum changes only by a 
+constant prefactor. Expressing the eigenvalues of the lattice 
 model $\lambda_{1/2}(K,L)$ with the new variables 
 $K'$ and $L'$, 
 \begin{align}
@@ -162,7 +163,7 @@ Since $\lambda_1>\lambda_2$ the partition sum can be simplified for $N\to\infty$
 	\longrightarrow \, \lambda_1^N \,.
 \end{align}
 We see that only $\lambda_1$ matters in the limit $N\to\infty$. Thus, we will 
-neglect $\lambda_2$ in the following. \\
+neglect $(\lambda_2/\lambda_1)^N$ in the following. \\
 An expression for $\langle n_i\rangle$ can be given as:
 \begin{align}
 	\langle n_i\rangle &= \frac{1}{Z} \sum_{n_1=0,1}...\sum_{n_N=0,1}
@@ -174,38 +175,54 @@ An expression for $\langle n_i\rangle$ can be given as:
 	... \, n_i \, \langle n_i \vert T \vert n_{i+1} \rangle \, ... \,
 	\langle n_N \vert T \vert n_1 \rangle \notag \\
 	&= \frac{1}{Z} \sum_{n_1=0,1}
-	\langle n_1 \vert T^{i-1} \vert n_i=1 \rangle
-	\langle n_i=1 \vert T^{N-(i-1)} \vert n_1 \rangle \notag \\
-	&\approx \frac{1}{Z} \, \lambda_1^N \,
-	\langle n'_1=0 \vert n_i=1 \rangle
-	\langle n_i=1 \vert n'_1=0 \rangle \notag \\
-	&\approx \langle n'_1=0 \vert n_i=1 \rangle
-	\langle n_i=1 \vert n'_1=0 \rangle \,.
+	\langle n_1 \vert T^{i-1} 
+	\begin{bmatrix}
+    0 & 0 \\
+    0 & 1
+    \end{bmatrix}
+	T^{N-(i-1)} \vert n_1 \rangle \notag \\
+	&= \frac{1}{Z} \, \text{tr}\left( T^N
+	\begin{bmatrix}
+    0 & 0 \\
+    0 & 1
+    \end{bmatrix}
+	\right) \notag \\
+	&= \frac{1}{Z} \, \text{tr}\left(
+	\begin{bmatrix}
+    \lambda_1^N & 0 \\
+    0 & \lambda_2^N
+    \end{bmatrix} U^{-1}
+	\begin{bmatrix}
+    0 & 0 \\
+    0 & 1
+    \end{bmatrix} U
+	\right) \,,
 \end{align}
-Expressing the states in the eigenvector basis of $T$ and calculating 
-the scalar products yields the wanted expression for $\langle n_i\rangle$ 
-in the limit of $N\to\infty$. We know that $\vert n'_1=0 \rangle$ and 
-$\vert n'_1=1 \rangle$ are the eigenvectors of $T$ with eigenvalues 
-$\lambda_1$ and $\lambda_2$ respectively:
+where $U$ is the matrix whose $i$th column is the eigenvector $v_i$ of $T$:
 \begin{align}
-	\vert n'_1=0 \rangle = 
+	v_1 = 
 	\begin{bmatrix}
     -e^{-\frac{L}{2}}\left(e^{K+L}-\lambda_1\right) \\
     1
     \end{bmatrix} \,, \quad
-    \vert n'_1=1 \rangle = 
+    v_2 = 
 	\begin{bmatrix}
     -e^{-\frac{L}{2}}\left(e^{K+L}-\lambda_2\right) \\
     1
-    \end{bmatrix} \,,
+    \end{bmatrix} \,.
 \end{align}
-and that they form a basis. Thus, we have
-\begin{align}
-	\langle n'_1=0 \vert n'_1=1 \rangle =
-	1 + e^{-L}(e^{K+L}-\lambda_1)(e^{K+L}-\lambda_2) \,.
-\end{align}
-And finally:
+Thus, we have in the limit $N\to\infty$:
 \begin{align}
 	\langle n_i\rangle = 
-	\left( 1 + e^{-L}(e^{K+L}-\lambda_1)(e^{K+L}-\lambda_2) \right)^2 \,.
+	\frac{e^{K+L}-\lambda_2}{\lambda_1-\lambda_2} 
+	= \frac{\lambda_1 - 1}{\lambda_1-\lambda_2} \,.
 \end{align}
+\ \\
+\textbf{Addition:} It's easier if you use a small trick here. \\
+The average $\langle n_i\rangle$ can be calculated through the sum of all occupation numbers:
+\begin{align}
+	\langle n_i\rangle = \frac{1}{N} \left\langle\sum_{i=1}^N n_i\right\rangle
+	= \frac{1}{N} \, \partial_{L} \ln Z = \partial_{L} \ln \lambda_1
+	= \frac{\lambda_1 - 1}{\lambda_1-\lambda_2} \,.
+\end{align}
+Both methods yield the same result but you don't need to compute the eigenvectors with the latter.
