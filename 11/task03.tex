@@ -47,8 +47,14 @@ The pressure is
 \begin{align}
 	p = \frac{N k_B T}{L-Na} \,.
 \end{align}
-The virial coefficient $B_2$ for one-dimensional hard particles with radius $a/2$ is
+The virial coefficient $B_2$ for one-dimensional hard particles with size $a$ is
 \begin{align}
-	B_2 = -\frac{1}{2} \int_0^{\infty} \dd r \, \left( e^{-\beta U(r)} - 1 \right) = \frac{1}{2} \int_0^{a/2} \dd r = \frac{a}{4} \,,
+	B_2 = -\frac{1}{2} \int_{-\infty}^{\infty} \dd x \, \left( e^{-\beta U(x)} - 1 \right) = \frac{1}{2} \int_{-a}^{a} \dd x = a \,,
 \end{align}
-since $e^{-\beta U(r)}$ can be either 0 or 1 as explained above.
+since $e^{-\beta U(r)}$ can be either 0 (when two balls intersect, $\vert x\vert \leq a$) or 1 (when $\vert x\vert > a$) as explained above. 
+In comparison with the exact solution,
+\begin{align}
+	p = \frac{N k_B T}{L-Na} = \frac{n k_B T}{1-na} \approx n k_B T \left( 1+na+n^2a^2+... \right) \,,
+\end{align}
+we see that the virial coefficient $B_2$ reproduces the coefficient in the expansion of the exact result. 
+However, this is not the case in general.
