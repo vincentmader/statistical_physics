@@ -22,17 +22,10 @@ $\mu$ of particle $i$.
     Partition function:
     \begin{align}
         Z
-        &=\frac{1}{h^{3N}}\cdot
-        \int d^{3N}r 
-        \int d^{3N}p
-        \int d^N\Omega\
-        e^{-\beta\mathcal{H}} \\
         &=Z_0\cdot\bigg(
-            \int_0^{2\pi}d\varphi 
-            \int_0^\pi d\theta
-            \cdot\sin\theta\cdot 
+            \int \dd^N\Omega \, \,
             e^{h\beta\mu\sum_i^N\cos\theta_i}
-        \bigg) \\
+            \bigg) \\
         &=Z_0\cdot\bigg(
             \int_0^{2\pi}d\varphi 
             \int_0^\pi d\theta
@@ -106,10 +99,10 @@ $\mu$ of particle $i$.
     For $T\to\infty$, i.e. $x\to0$: \\
     \begin{align}
         \coth x=\frac{e^{2x}+1}{e^{2x}-1}
-        \approx\frac{x}{2}
+        \to\frac{1}{x}
         \ \ \ \ \ \textnormal{(Laurent power series)}
-        % \to\frac{1+1}{1-1}=0
     \end{align}
+    which actually cancels the divergence $-1/x$ and thus
     \begin{align}
         \Rightarrow
         M\approx

@@ -1,0 +1,72 @@
+Bethe proposed a refined mean field theory, where one considers \textit{clusters} of spins. The simplest (smallest)
+cluster is the one taking the nearest neighbours of a chosen spin, $s_0$, into account. Those neighbours
+interact exactly with $s_0$, but see their own further neighbours only via an effective mean field $\bar{B}$. The Hamiltonian hence reads:
+\begin{align}
+	\mathcal{H}_{\text{Bethe}}(s_0,\{s_i\})=-J s_0\sum_{i=1}^z s_i -\bar{B}\sum_{i=1}^z s_i \,.
+\end{align}
+Self-consistency again demands $\langle s_0 \rangle = \langle s_i \rangle$ for any $i$.
+
+\paragraph{1. Calculate the partition sum and use it to determine $\langle s_0 \rangle$ and $\langle s_i \rangle$. \textit{(3 points)}
+} \ \\
+\\
+The partition sum is given by
+\begin{align}
+	Z &= \sum_{s_0=\pm 1} \sum_{\{s_i\}} e^{\beta(Js_0+\bar{B})\sum_{i=1}^z s_i} \notag \\
+	&= \sum_{s_0=\pm 1} \sum_{\{s_i\}} \prod_{i=1}^z e^{\beta(Js_0+\bar{B}) s_i} \notag \\
+	&= \sum_{\{s_i\}} \prod_{i=1}^z \left( e^{\beta(J+\bar{B}) s_i} + e^{\beta(-J+\bar{B}) s_i} \right) \notag \\
+	&= \left( 2\cosh\beta(J+\bar{B}) \right)^z + \left( 2\cosh\beta(J-\bar{B}) \right)^z \,.
+\end{align}
+The two mean values are given by
+\begin{align}
+	Z \langle s_0 \rangle &= \sum_{s_0=\pm 1} \sum_{\{s_i\}} s_0 \, e^{\beta(Js_0+\bar{B})\sum_{i=1}^z s_i} \notag \\
+	&= \left( 2\cosh\beta(J+\bar{B}) \right)^z - \left( 2\cosh\beta(J-\bar{B}) \right)^z \,.
+\end{align}
+\begin{align}
+	Z \langle s_i \rangle &= \sum_{s_0=\pm 1} \sum_{\{s_j\}} s_i \, e^{\beta(Js_0+\bar{B})\sum_{j=1}^z s_j} \notag \\
+	&= \sum_{\{s_j\}} \prod_{j=1}^z \left( s_i \, e^{\beta(J+\bar{B}) s_j} + s_i \, e^{\beta(-J+\bar{B}) s_j} \right) \notag \\
+	&= 2\sinh\beta(J+\bar{B})\left( 2\cosh\beta(J+\bar{B}) \right)^{z-1} \notag \\
+	&- 2\sinh\beta(J-\bar{B})\left( 2\cosh\beta(J-\bar{B}) \right)^{z-1} \,.
+\end{align}
+
+\newpage
+
+\paragraph{2. Show that the consistency condition then implies
+\begin{align}
+	\left(\frac{\cosh\beta(J+\bar{B})}{\cosh\beta(J-\bar{B})}\right)^{z-1}=e^{2\beta\bar{B}} \,.
+\end{align}
+Show that this equation always has one solution and that (two) more may exist. \textit{(3 points)} \\
+\textsc{Hint}: Study the behavior for large $\bar{B}$
+as well as the slopes of the left and right sides at $\bar{B}=0$.
+} \ \\
+\\
+Equating $\langle s_0 \rangle$ and $\langle s_i \rangle$, one obtains:
+\begin{align}
+	\frac{\cosh\beta(J+\bar{B}) - \sinh\beta(J+\bar{B})}{\cosh\beta(J-\bar{B}) - \sinh\beta(J-\bar{B})}
+	=  \left( \frac{\cosh\beta(J-\bar{B})}{\cosh\beta(J+\bar{B})} \right)^{z-1} \,.
+\end{align}
+Noting that $\cosh x - \sinh x = e^{-x}$, one obtains further:
+\begin{align}
+	\label{B}
+	e^{2\beta \bar{B}}
+	=  \left( \frac{\cosh\beta(J+\bar{B})}{\cosh\beta(J-\bar{B})} \right)^{z-1} \,.
+\end{align}
+
+
+\paragraph{3. Show that the critical temperature for the phase transition is 
+$k_B T_c = \frac{2J}{\ln(\frac{z}{z-1})}$. \textit{(1 point)}
+} \ \\
+\\
+Again, we obtain the solution of Eq.~\eqref{B} by equating the slopes of the LHS and the RHS:
+\begin{align}
+	\label{B}
+	2\beta_c =  2 (z-1) \beta_c \tanh(\beta_c J) \, \, \, \rightarrow \, \, \,
+	k_B T_c = \frac{J}{\text{arcoth}(\frac{1}{z-1})} = \frac{2J}{\ln(\frac{z}{z-2})} \,.
+\end{align}
+
+
+\paragraph{4. Discuss in how far this result is better than the one developed in 11.1. \textit{(1 point)}
+} \ \\
+\\
+It is better than the result developed in 11.1 because at least for $d=1$ we get a qualitatively correct answer:
+There is no phase transition at finite temperature, $T_c=0$. For $d=2$, there is a phase transition at finite 
+temperature which is also correct.

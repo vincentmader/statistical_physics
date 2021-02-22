@@ -1,0 +1,58 @@
+Consider the Ising model on a cubic lattice in $d = 1$ and 2 dimensions. So the number of nearest
+neighbours is $z = 2$ for $d = 1$ and $z = 4$ for $d = 2$. Using the argument introduced by Weiss, we will
+rederive here the mean field result obtained in the lecture through the Bogoliubov inequality. The idea
+is to consider a spin $s_0$ and to take only the mean value $\langle s_i \rangle = \langle s \rangle$ 
+of the neighbouring spins $i$:
+\begin{align}
+	\mathcal{H}_{\text{Ising}}=-J\sum_{\langle ij\rangle} s_i s_j 
+	\, \rightarrow \,
+	\mathcal{H}_{\text{Weiss}}(s_0)=-J s_0\sum_{i=1}^z \langle s_i \rangle \,.
+\end{align}
+The second step in the argument is that the chosen spin is not special, hence 
+$\langle s_0 \rangle = \langle s \rangle$, which constitutes a self-consistency condition.
+
+\paragraph{1. What is the value of the ’mean field’ $\tilde{B}$, i.e. the effective field the spin $s_0$ experiences if the
+Hamiltonian is rewritten as $\mathcal{H}_{s_0}=-s_0\tilde{B}$? Derive an equation for the magnetization 
+$m = \langle s \rangle$ using the self-consistency condition. \textit{(2 points)}
+} \ \\
+\\
+With the condition $m = \langle s \rangle$, we see that 
+\begin{align}
+	\mathcal{H}_{\text{Weiss}}(s_0)=-J s_0\sum_{i=1}^z \langle s_i \rangle
+	= -J s_0 m z \,, 
+\end{align}
+anf thus $\tilde{B} = J m z$. To derive an equation for the magnetization $m$, we can use the partition function:
+\begin{align}
+	Z = \sum_{s_0=\pm 1} e^{-\beta\mathcal{H}_{\text{Weiss}}} = 2\cosh(\beta\tilde{B}) \,.
+\end{align}
+One can notice that 
+\begin{align}
+	Z \langle s_0 \rangle = \sum_{s_0=\pm 1} s_0 e^{-\beta\mathcal{H}_{\text{Weiss}}(s_0)} = 2\sinh(\beta\tilde{B}) \,,
+\end{align}
+and thus
+\begin{align}
+	m = \langle s_0 \rangle = \tanh(\beta\tilde{B}) \,.
+\end{align}
+This leads to a self-consistent equation for $\tilde{B}$:
+\begin{align}
+	\label{m}
+	J z \tanh(\beta\tilde{B}) = \tilde{B} \,.
+\end{align}
+
+
+\paragraph{2. Solve this equation graphically. How many solutions are there as a function of $T$? \\
+Show that the critical temperature for the phase transition is given by $k_BT_c = zJ$. \\
+Discuss the result in comparison to the full analytical solutions in $d = 1$ and 2 given in the lecture. \textit{(1 point)}
+} \ \\
+\\
+In order to solve this equation, we need to notice that the following. First of all, the LHS of Eq.~\eqref{m} 
+intersects with the RHS at the origin. Thus, $\tilde{B}=0$ is a solution. But then, the LHS is also monotonous and limited. 
+With a proper choice of $\beta$, one can achieve a second intersection for $\tilde{B}\neq 0$. The critical $\beta_c$ for which 
+we get such an intersection can be calculated from the following condition:
+\begin{align}
+	\label{m}
+	J z \frac{\dd}{\dd \tilde{B}}\tanh(\beta_c\tilde{B}) \Big\vert_{\tilde{B}=0} = \frac{\dd}{\dd \tilde{B}}\tilde{B} \Big\vert_{\tilde{B}=0} 
+	\, \, \, \rightarrow \, \, \, Jz = k_B T_c \,.
+\end{align}
+In both cases $d=1,2$, we get a result which is not only quantitatively wrong but also qualitatively. For $d=1$, there is no phase 
+transition and we should have $T_c=0$ but the mean field theory predicts a $T_c\neq 0$.
