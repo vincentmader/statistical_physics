@@ -1,0 +1,59 @@
+\documentclass[11 pt]{article}
+
+% \usepackage{equation}
+\usepackage[left=2cm,right=2cm,top=2cm,bottom=2cm]{geometry}
+\usepackage{fancyhdr}
+
+\pagestyle{fancy}
+\fancyhf{}
+\chead{Exercise 01}
+\lhead{Theoretical Statistical Physics}
+\rhead{E. Dizer, V. Mader}
+\setlength{\headheight}{15pt}
+
+
+\begin{document}
+
+    \section{Gambling in the lottery}
+        In the lottery, six numbered balls are drawn randomly from a sample of 
+        49 balls carrying the numbers 1 to 49. The balls are drawn 
+        sequentially and are not placed back in the sample, so that each number
+        can only occur at most once. In every drawing step, each of the 
+        remaining balls is chosen with equal probability. To win the lottery,
+        you have to guess the six random numbers, where the order of the 
+        numbers is irrelevant.
+
+        \subsection{Calculate the number of possible sequences of 6 out of 49}
+
+            \begin{equation}
+                N
+                =49\cdot48\cdot47\cdot46\cdot45\cdot44
+                =10068347520
+            \end{equation}
+
+        \subsection{Calculate the probability that you guess all six numbers correctly}
+
+            \begin{equation}
+                P
+                =\frac{1}{N}
+                % &=?
+            \end{equation}
+
+        \subsection{Calculate the probability that you guess exactly four numbers correctly}
+
+            ...
+
+    \section{Birthdays}
+        Assuming that the birthdays of a population are distributed equally 
+        over the 365 days of a year, how large is the probability that in a 
+        lecture attended by 150 students at least two of the students have 
+        their birthday on the same day of the year? How many people would have
+        to attend the lecture so that the probability for them having their 
+        birthday on the same day is 0.5?
+
+    \section{Bayes and a-posteriori probabilities}
+        Bayes theorem can be used to improve/revise our guesses on 
+        probabilities.
+
+
+\end{document}
